@@ -17,5 +17,5 @@ grow_vertical = 2
 script = ExtResource("1_dylel")
 ease_type = 2
 trans_type = 11
-duration = 0.05
+duration = 0.3
 metadata/_custom_type_script = "uid://c8cruhhsaphsj"
