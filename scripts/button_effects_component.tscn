@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bhq7k2fh6grn4"]
+
+[ext_resource type="Script" uid="uid://c8cruhhsaphsj" path="res://scripts/button_effects_component.gd" id="1_e0qbd"]
+
+[node name="ButtonEffectsComponent" type="Node2D" unique_id=319245680]
+script = ExtResource("1_e0qbd")
