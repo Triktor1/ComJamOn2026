@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="ComJamOn2026"
+run/main_scene="uid://b6gvdyse5dqo7"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
-GameManager="*uid://dbmra3l672c5p"
-AudioManager="*uid://bo5434b401qqo"
+GameManager="*uid://cufuavjitbcok"
+AudioManager="*uid://cfgqelfnt2efb"
 
 [display]
 
