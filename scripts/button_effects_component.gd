@@ -7,7 +7,7 @@ class_name ButtonEffectsComponent
 @export var scale_amount: Vector2 = Vector2(1.1, 1.1)
 @export var rotation_amount: float = 3.0
 
-@onready var button: Variant = get_parent()
+@onready var button: Button = get_parent()
 
 var tween: Tween
 
