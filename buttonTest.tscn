@@ -2,18 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c8cruhhsaphsj" path="res://scripts/button_effects_component.gd" id="1_dylel"]
 
-[node name="ButtonTest" type="Button" unique_id=447941600]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 218.0
-offset_top = 236.0
-offset_right = -361.0
-offset_bottom = -291.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="ButtonEffectsComponent" type="Node2D" parent="." unique_id=569650148]
+[node name="ButtonEffectsComponent" type="Node2D" unique_id=569650148]
 script = ExtResource("1_dylel")
 ease_type = 2
 trans_type = 11
