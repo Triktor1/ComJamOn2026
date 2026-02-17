@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c3hdamf707snv"]
 
-[ext_resource type="PackedScene" uid="uid://djjik12ixv52p" path="res://buttonTest.tscn" id="1_nm7lk"]
+[ext_resource type="PackedScene" uid="uid://djjik12ixv52p" path="res://escenas/tests/buttonTest.tscn" id="1_nm7lk"]
 
 [node name="Credits" type="Node2D" unique_id=1597446570]
 
