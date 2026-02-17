@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://b6gvdyse5dqo7"]
+[gd_scene format=3 uid="uid://hxfcwwnysmll"]
 
-[ext_resource type="PackedScene" uid="uid://djjik12ixv52p" path="res://escenas/tests/buttonTest.tscn" id="1_wut1r"]
+[ext_resource type="PackedScene" uid="uid://c71lnth3o7asr" path="res://buttonTest.tscn" id="1_wut1r"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_l1xq8"]
 load_path = "res://.godot/imported/TituloReal.png-efb7537852cef16af042978627611803.ctex"
