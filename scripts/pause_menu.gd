@@ -4,6 +4,8 @@ extends Control
 @onready var main_button:Button=$MainMenuButton
 @onready var quit_button:Button=$QuitButton
 
+@export var main_menu_scene:PackedScene
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -16,7 +18,7 @@ func _continue():
 	get_tree().paused=!get_tree().paused
 
 func _main_menu():
-	get_tree().change_scene_to_file("res://mainMenu.tscn")
+	get_tree().change_scene_to_packed(main_menu_scene)
 
 func _quit():
 	get_tree().quit()

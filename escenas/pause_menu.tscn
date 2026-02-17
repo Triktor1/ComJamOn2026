@@ -1,7 +1,8 @@
-[gd_scene format=3 uid="uid://iw0exxhl52xm"]
+[gd_scene format=3 uid="uid://dywdg2xa4vxe3"]
 
 [ext_resource type="Script" uid="uid://b5ash1gwygw01" path="res://scripts/pause_menu.gd" id="1_hdmo1"]
 [ext_resource type="PackedScene" uid="uid://bhq7k2fh6grn4" path="res://escenas/prefabs/button_effects_component.tscn" id="2_nwcfo"]
+[ext_resource type="PackedScene" uid="uid://b6gvdyse5dqo7" path="res://escenas/mainMenu.tscn" id="2_pjyxd"]
 
 [node name="PauseMenu" type="Control" unique_id=1735628407]
 process_mode = 3
@@ -12,6 +13,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_hdmo1")
+main_menu_scene = ExtResource("2_pjyxd")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=955781304]
 layout_mode = 0
