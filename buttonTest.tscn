@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://c71lnth3o7asr"]
+
+[ext_resource type="Script" uid="uid://c8cruhhsaphsj" path="res://scripts/button_effects_component.gd" id="1_dylel"]
+
+[node name="ButtonEffectsComponent" type="Node2D" unique_id=569650148]
+script = ExtResource("1_dylel")
+ease_type = 2
+trans_type = 11
+duration = 0.3
+metadata/_custom_type_script = "uid://c8cruhhsaphsj"
