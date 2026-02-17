@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dsbbuxiphcp51"]
+
+[ext_resource type="Script" uid="uid://bo5434b401qqo" path="res://scripts/audio_manager.gd" id="1_jisk1"]
+[ext_resource type="PackedScene" uid="uid://bwulgyj6k0u0n" path="res://audio_one_shot.tscn" id="2_bq1v2"]
+
+[node name="AudioManager" type="Node" unique_id=1234427582 node_paths=PackedStringArray("clips", "one_shots")]
+process_mode = 3
+script = ExtResource("1_jisk1")
+clips = NodePath("Clips")
+one_shots = NodePath("OneShots")
+audio_one_shot_scene = ExtResource("2_bq1v2")
+
+[node name="Clips" type="Node" parent="." unique_id=858779457]
+
+[node name="Main" type="AudioStreamPlayer" parent="Clips" unique_id=1411947816]
+
+[node name="OneShots" type="Node" parent="." unique_id=1977166210]
