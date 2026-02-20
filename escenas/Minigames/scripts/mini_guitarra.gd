@@ -11,6 +11,8 @@ var current_key=0
 
 var heights:Array=[-174,-37,37,174]
 
+var done:bool=false
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	keys=[key1,key2,key3,key4]
@@ -37,21 +39,23 @@ func assign_key(number:int,label:Label):
 	label.global_position.y=heights[number-1]
 
 func _input(event: InputEvent) -> void:
-	if event is InputEventKey and event.pressed and not event.echo:
-		if event.is_action_pressed("Up") and keys_to_press[current_key]==1:
-			keys[current_key].text=""
-			current_key+=1
-		elif event.is_action_pressed("Left") and keys_to_press[current_key]==2:
-			keys[current_key].text=""
-			current_key+=1
-		elif event.is_action_pressed("Down") and keys_to_press[current_key]==3:
-			keys[current_key].text=""
-			current_key+=1
-		elif event.is_action_pressed("Right") and keys_to_press[current_key]==4:
-			keys[current_key].text=""
-			current_key+=1
-		else:
-			print("lose :(") #perder automaticamente
-		if current_key==4:
-			print("win :)") #win automatico
-		
+	if not done:
+		if event is InputEventKey and event.pressed and not event.echo:
+			if event.is_action_pressed("Up") and keys_to_press[current_key]==1:
+				keys[current_key].text=""
+				current_key+=1
+			elif event.is_action_pressed("Left") and keys_to_press[current_key]==2:
+				keys[current_key].text=""
+				current_key+=1
+			elif event.is_action_pressed("Down") and keys_to_press[current_key]==3:
+				keys[current_key].text=""
+				current_key+=1
+			elif event.is_action_pressed("Right") and keys_to_press[current_key]==4:
+				keys[current_key].text=""
+				current_key+=1
+			else:
+				print("lose :(") #perder automaticamente
+				done=true
+			if current_key==4:
+				print("win :)") #win automatico
+				done=true
