@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://xfryq41w5dvc"]
+
+[ext_resource type="Texture2D" uid="uid://cw3fnq4453abi" path="res://assets/fakeAlfredo.png" id="1_hrp06"]
+[ext_resource type="Texture2D" uid="uid://dgrur2vavys1n" path="res://icon.svg" id="2_skode"]
+[ext_resource type="Script" uid="uid://hqgnxhaemmhi" path="res://escenas/Minigames/scripts/alfredo_fall.gd" id="3_skode"]
+[ext_resource type="PackedScene" uid="uid://b54unurjerieg" path="res://escenas/managers/minigame_manager.tscn" id="3_xnbno"]
+
+[node name="Mini_Alfredo" type="Node2D" unique_id=1716738336]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=500726510]
+position = Vector2(561, 477)
+scale = Vector2(0.3515625, 0.3125)
+texture = ExtResource("2_skode")
+
+[node name="MinigameManager" parent="." unique_id=1806882873 instance=ExtResource("3_xnbno")]
+
+[node name="Node2D" type="Node2D" parent="." unique_id=609681378 node_paths=PackedStringArray("minigame_manager")]
+position = Vector2(556, 459)
+script = ExtResource("3_skode")
+minigame_manager = NodePath("../MinigameManager")
+
+[node name="Alfredo" type="Sprite2D" parent="Node2D" unique_id=603704373]
+position = Vector2(18, -126)
+scale = Vector2(0.20707312, 0.20898436)
+texture = ExtResource("1_hrp06")

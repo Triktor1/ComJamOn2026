@@ -93,6 +93,7 @@ func _state_lose():
 	lives -= 1
 	lost.emit()
 	AudioManager.play("PERDIDO")
+	print("sdasdasdasd")
 	
 	await get_tree().create_timer(2.4).timeout
 	
