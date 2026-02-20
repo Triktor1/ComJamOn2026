@@ -3,8 +3,12 @@
 [ext_resource type="Script" uid="uid://b6asekge4jen4" path="res://scripts/boton_incio.gd" id="1_6uepu"]
 [ext_resource type="Texture2D" uid="uid://c4atqrod3f72r" path="res://assets/UI/TituloReal.png" id="1_81hdd"]
 [ext_resource type="PackedScene" uid="uid://c71lnth3o7asr" path="res://escenas/tests/buttonTest.tscn" id="1_wut1r"]
+[ext_resource type="Texture2D" uid="uid://dtybquer37yw5" path="res://assets/UI/ButtonJugar.png" id="2_1f6lb"]
 [ext_resource type="PackedScene" uid="uid://cg4co1hxxhhep" path="res://escenas/transition_scene.tscn" id="2_hvyp7"]
+[ext_resource type="Texture2D" uid="uid://cmu5ue4oam5rc" path="res://assets/UI/ButtonJugarHover.png" id="3_0a063"]
 [ext_resource type="Script" uid="uid://dk3i6o3eljb5m" path="res://scripts/boton_salir.gd" id="3_60els"]
+[ext_resource type="Texture2D" uid="uid://dkriess4iv02s" path="res://assets/UI/ButtonSalir.png" id="7_kf80i"]
+[ext_resource type="Texture2D" uid="uid://bjjks0r417fqt" path="res://assets/UI/ButtonSalirHover.png" id="8_ee8nr"]
 
 [node name="MainMenu" type="Control" unique_id=1907411161]
 layout_mode = 3
@@ -23,28 +27,34 @@ layout_mode = 2
 texture = ExtResource("1_81hdd")
 
 [node name="CenterContainerBotones" type="CenterContainer" parent="CanvasLayer" unique_id=1247026197]
+custom_minimum_size = Vector2(0, 300)
 offset_left = 471.0
 offset_top = 316.0
 offset_right = 709.0
 offset_bottom = 568.0
 
 [node name="Botones" type="VBoxContainer" parent="CanvasLayer/CenterContainerBotones" unique_id=282673893]
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 theme_override_constants/separation = 30
 
-[node name="BotonIncio" type="Button" parent="CanvasLayer/CenterContainerBotones/Botones" unique_id=870312435]
+[node name="BotonIncio" type="TextureButton" parent="CanvasLayer/CenterContainerBotones/Botones" unique_id=1152185994]
+custom_minimum_size = Vector2(208.35, 105)
 layout_mode = 2
-theme_override_font_sizes/font_size = 75
-text = "JUGAR"
+texture_normal = ExtResource("2_1f6lb")
+texture_hover = ExtResource("3_0a063")
+stretch_mode = 6
 script = ExtResource("1_6uepu")
 startScene = ExtResource("2_hvyp7")
 
 [node name="BotonIniciar" parent="CanvasLayer/CenterContainerBotones/Botones/BotonIncio" unique_id=447941600 instance=ExtResource("1_wut1r")]
 
-[node name="BotonSalir" type="Button" parent="CanvasLayer/CenterContainerBotones/Botones" unique_id=1889767684]
+[node name="BotonSalir" type="TextureButton" parent="CanvasLayer/CenterContainerBotones/Botones" unique_id=2032437182]
+custom_minimum_size = Vector2(55, 105)
 layout_mode = 2
-theme_override_font_sizes/font_size = 75
-text = "SALIR"
+texture_normal = ExtResource("7_kf80i")
+texture_hover = ExtResource("8_ee8nr")
+stretch_mode = 0
 script = ExtResource("3_60els")
 
 [node name="BotonSalir" parent="CanvasLayer/CenterContainerBotones/Botones/BotonSalir" unique_id=1818324085 instance=ExtResource("1_wut1r")]
