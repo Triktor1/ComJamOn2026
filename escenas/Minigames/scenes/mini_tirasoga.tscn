@@ -11,8 +11,12 @@ size = Vector2(27, 39)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6k3k2"]
 size = Vector2(20, 593)
 
-[node name="Mini_Tirasoga" type="Node2D" unique_id=629707850]
+[node name="Mini_Tirasoga" type="Node2D" unique_id=629707850 node_paths=PackedStringArray("tirasoga", "lose_area", "win_area", "minigame_manager")]
 script = ExtResource("1_ubnpu")
+tirasoga = NodePath("Tirasoga")
+lose_area = NodePath("LoseArea")
+win_area = NodePath("WinArea")
+minigame_manager = NodePath("Minigame_Manager")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1437394162]
 
