@@ -1,8 +1,8 @@
-[gd_scene format=3 uid="uid://cxnnstdefdpuh"]
+[gd_scene format=3 uid="uid://0xv1hppkgnqe"]
 
-[ext_resource type="Script" path="res://escenas/Minigames/scripts/minigame_tirasoga.gd" id="1_ubnpu"]
+[ext_resource type="Script" uid="uid://c1sg54ny6asow" path="res://escenas/Minigames/scripts/mini_tirasoga.gd" id="1_ubnpu"]
 [ext_resource type="Script" uid="uid://dvkp78n5nmrxa" path="res://scripts/minigame_manager.gd" id="2_xpre0"]
-[ext_resource type="Script" path="res://escenas/Minigames/scripts/tirasoga.gd" id="3_q7ktg"]
+[ext_resource type="Script" uid="uid://rqbqxgmt473w" path="res://escenas/Minigames/scripts/tirasoga.gd" id="3_q7ktg"]
 [ext_resource type="Texture2D" uid="uid://dgrur2vavys1n" path="res://icon.svg" id="4_ro7t0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3ww0j"]
@@ -11,8 +11,12 @@ size = Vector2(27, 39)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6k3k2"]
 size = Vector2(20, 593)
 
-[node name="Mini_Tirasoga" type="Node2D" unique_id=629707850]
+[node name="Mini_Tirasoga" type="Node2D" unique_id=629707850 node_paths=PackedStringArray("tirasoga", "lose_area", "win_area", "minigame_manager")]
 script = ExtResource("1_ubnpu")
+tirasoga = NodePath("Tirasoga")
+lose_area = NodePath("LoseArea")
+win_area = NodePath("WinArea")
+minigame_manager = NodePath("Minigame_Manager")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1437394162]
 
