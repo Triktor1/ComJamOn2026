@@ -2,6 +2,9 @@
 
 [ext_resource type="Script" uid="uid://bo5434b401qqo" path="res://scripts/audio_manager.gd" id="1_jisk1"]
 [ext_resource type="PackedScene" uid="uid://beai37s1qagup" path="res://escenas/tests/audio_one_shot.tscn" id="2_1xt1v"]
+[ext_resource type="AudioStream" uid="uid://b2u80f23h8aj7" path="res://assets/Sounds/SPEED UP.wav" id="3_cbx1k"]
+[ext_resource type="AudioStream" uid="uid://ccw2fi56nylvw" path="res://assets/Sounds/SIGUIENTE.mp3" id="5_0ir4k"]
+[ext_resource type="AudioStream" uid="uid://b3in2n4dbvvxo" path="res://assets/Sounds/GANAR.mp3" id="6_te2r7"]
 
 [node name="AudioManager" type="Node" unique_id=1234427582 node_paths=PackedStringArray("clips", "one_shots")]
 process_mode = 3
@@ -13,5 +16,15 @@ audio_one_shot_scene = ExtResource("2_1xt1v")
 [node name="Clips" type="Node" parent="." unique_id=858779457]
 
 [node name="Main" type="AudioStreamPlayer" parent="Clips" unique_id=1411947816]
+stream = ExtResource("6_te2r7")
+
+[node name="SPEEDUP" type="AudioStreamPlayer" parent="Clips" unique_id=1615242254]
+stream = ExtResource("3_cbx1k")
+
+[node name="NEXT" type="AudioStreamPlayer" parent="Clips" unique_id=1862070817]
+stream = ExtResource("5_0ir4k")
+
+[node name="GANAR" type="AudioStreamPlayer" parent="Clips" unique_id=374761413]
+stream = ExtResource("6_te2r7")
 
 [node name="OneShots" type="Node" parent="." unique_id=1977166210]

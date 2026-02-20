@@ -29,22 +29,27 @@ func _state_start():
 	minigame_count = 0
 	current_speed = 1.0
 	current_pitch = 1.0
+	
+	AudioManager.play("GANAR")
+	
 	# animaciones de comienzo, emitiendo señal o no se
-	#jingle de comenzar
-	# ESPERAR HASTA LLAMAR AL SIGUIENTE ESTADOP
-	# CAMBIAR A ESTADO MINIGAME INTRO
+	
+	await get_tree().create_timer(2.4).timeout
+	
+	_state_minigame_intro()
 
 # ESTADO 1 COMIENZA MINIJUEGO
 
 func _state_minigame_intro():
 	boss_time = false
-	# tocar jingle de comienzo de minijuego
+	
+	AudioManager.play("NEXT")
 	
 	_load_next_minigame()
 	
 	#que se muestre el control a usar en una imagen
 	
-	#minipausa de tiempo
+	await get_tree().create_timer(1).timeout
 	
 	#señal de animacion de transicion
 	

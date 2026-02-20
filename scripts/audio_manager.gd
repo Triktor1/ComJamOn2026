@@ -2,7 +2,6 @@ extends Node
 
 var active_music_stream:AudioStreamPlayer
 
-@export_group("Main")
 @export var clips:Node
 @export var one_shots:Node
 @export var audio_one_shot_scene:PackedScene
