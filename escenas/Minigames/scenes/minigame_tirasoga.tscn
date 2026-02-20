@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://0xv1hppkgnqe"]
+
+[ext_resource type="Script" uid="uid://c1sg54ny6asow" path="res://escenas/Minigames/scripts/minigame_tirasoga.gd" id="1_v1n12"]
+
+[node name="Minigame_Tirasoga" type="Node2D" unique_id=629707850]
+script = ExtResource("1_v1n12")
