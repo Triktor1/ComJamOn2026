@@ -24,6 +24,7 @@ var boss_time: bool = false
 signal comence
 signal minigame_start
 signal win
+signal lost
 
 # ESTADO 0 START
 
@@ -53,7 +54,7 @@ func _state_minigame_intro():
 	
 	#que se muestre el control a usar en una imagen
 	
-	await get_tree().create_timer(1).timeout
+	await get_tree().create_timer(2.4).timeout
 	
 	minigame_start.emit()
 	#texto que indica lo que hacer
@@ -66,52 +67,51 @@ func _state_win():
 	win.emit()
 	minigame_count += 1
 	
-	await get_tree().create_timer(1).timeout
+	await get_tree().create_timer(2.4).timeout
 	
 	if boss_time:
 		if not endless:
-			#cambiar a estado de boss
+			_state_boss_intro()
 			return
 		else:
 			lives += 1
 	
 	if _speedup():
-		#cambiar al estado speed up
+		_state_speed_up()
 		return
 	elif _boss_time():
-		#cambiar a estado de boss
+		_state_boss_intro()
 		return
 	else:
-		#cambiar a estado minigame intro
-		return
+		_state_minigame_intro()
 
 # ESTADO 3 PERDER
 
 func _state_lose():
 	lives -= 1
-	#animacion de derrota de la escena y tal
-	#Jingle de derrota
+	lost.emit()
+	AudioManager.play("PERDIDO")
 	
-	#se espera a fin de jingle
+	await get_tree().create_timer(2.4).timeout
 	
 	if lives <= 0:
-		#cambiar a estado de game over
+		_state_game_over()
 		return
 	
 	if boss_time:
 		if endless:
 			boss_time = false
-			#cambiar a estado minigame intro
+			_state_minigame_intro()
 		else:
-			#cambiar a estado de boss
+			_state_boss_intro()
 			return
 		return
 	
 	if _speedup():
-		#cambiar a estado de speed up
+		_state_speed_up()
 		return
 	else:
-		#cambiar a estado de minigame intro
+		_state_minigame_intro()
 		return
 
 # ESTADO 4 GAME OVER

@@ -4,7 +4,10 @@
 [ext_resource type="PackedScene" uid="uid://beai37s1qagup" path="res://escenas/tests/audio_one_shot.tscn" id="2_1xt1v"]
 [ext_resource type="AudioStream" uid="uid://b2u80f23h8aj7" path="res://assets/Sounds/SPEED UP.wav" id="3_cbx1k"]
 [ext_resource type="AudioStream" uid="uid://ccw2fi56nylvw" path="res://assets/Sounds/SIGUIENTE.mp3" id="5_0ir4k"]
+[ext_resource type="AudioStream" uid="uid://cpgs7tm2071gi" path="res://assets/Sounds/PERDIDO.MP3" id="6_0ir4k"]
 [ext_resource type="AudioStream" uid="uid://b3in2n4dbvvxo" path="res://assets/Sounds/GANAR.mp3" id="6_te2r7"]
+[ext_resource type="AudioStream" uid="uid://bywa1obws7ndo" path="res://assets/Sounds/GAMEOVER.mp3" id="7_te2r7"]
+[ext_resource type="AudioStream" uid="uid://cep7vbyqeicnl" path="res://assets/Sounds/BOSSTIME.mp3" id="8_uh43i"]
 
 [node name="AudioManager" type="Node" unique_id=1234427582 node_paths=PackedStringArray("clips", "one_shots")]
 process_mode = 3
@@ -23,6 +26,15 @@ stream = ExtResource("3_cbx1k")
 
 [node name="NEXT" type="AudioStreamPlayer" parent="Clips" unique_id=1862070817]
 stream = ExtResource("5_0ir4k")
+
+[node name="PERDIDO" type="AudioStreamPlayer" parent="Clips" unique_id=108555933]
+stream = ExtResource("6_0ir4k")
+
+[node name="GAMEOVER" type="AudioStreamPlayer" parent="Clips" unique_id=1338429019]
+stream = ExtResource("7_te2r7")
+
+[node name="BOSSTIME" type="AudioStreamPlayer" parent="Clips" unique_id=1198037915]
+stream = ExtResource("8_uh43i")
 
 [node name="GANAR" type="AudioStreamPlayer" parent="Clips" unique_id=374761413]
 stream = ExtResource("6_te2r7")
