@@ -1,4 +1,5 @@
 extends Node
+class_name MiniGameManager
 
 @export var isWining = true
 @export var time = 8.0
@@ -18,6 +19,7 @@ func _process(delta):
 			GameManager._state_win()
 		else:
 			GameManager._state_lose()
+		print(isWining)
 
 func changeWin(win:bool):
 	isWining = win
