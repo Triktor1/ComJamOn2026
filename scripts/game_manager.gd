@@ -25,6 +25,8 @@ signal comence
 signal minigame_start
 signal win
 signal lost
+signal speedup
+signal boss_intro
 
 # ESTADO 0 START
 
@@ -120,38 +122,39 @@ func _state_game_over():
 	current_speed = 1.0
 	current_pitch = 1.0
 	_apply_speed()
-	#jingle de game over
-	#esperar a que acabe jingle de game over
+	AudioManager.play("GAMEOVER")
+	await get_tree().create_timer(2.4).timeout
 	#ir a pantalla de game over
 
 # ESTADO 5 SPEED UP
 
 func _state_speed_up():
-	#jingle de speed up
-	#tweens de speed up y animaciones
+	AudioManager.play("SPEEDUP")
+	speedup.emit()
 	
 	#para que no se pase de velocidad
 	current_speed = min(current_speed + speed_increment, max_speed)
 	current_pitch = min(current_pitch + speed_increment, max_speed)
 	_apply_speed()
 	
-	#se espera a fin de jingle de speed up
+	await get_tree().create_timer(2.4).timeout
 	
 	if _boss_time():
-		#cambiar a estado de boss
+		_state_boss_intro()
 		return
 	else:
-		#cambiar a estado minigame intro
+		_state_minigame_intro()
 		return
 
 # ESTADO 6 BOSS INTRO
 
 func _state_boss_intro():
 	boss_time = true
-	#jingle de boss
+	AudioManager.play("BOSSTIME")
 	_load_random_boss()
-	#esperar a fin de jingle 
+	await get_tree().create_timer(2.4).timeout
 	
+	boss_intro.emit()
 	#mostrar imagnees del control que toca
 	#transiciones hasta nivel de boss blabla
 	#texto que indica lo que hacer
