@@ -7,6 +7,7 @@
 script = ExtResource("1_ksm4v")
 
 [node name="HealthManager" type="Node2D" parent="." unique_id=1650855632]
+position = Vector2(0, -2)
 
 [node name="LevelCount" type="TextEdit" parent="." unique_id=1478048450]
 offset_left = 232.0
