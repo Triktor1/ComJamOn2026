@@ -1,8 +1,0 @@
-[gd_scene format=3 uid="uid://cwcknfkf3b56"]
-
-[ext_resource type="PackedScene" uid="uid://c0y5r46jp55h6" path="res://scripts/3D/GlamFreddyRG.fbx" id="1_su2cy"]
-
-[node name="Node3D" type="Node3D" unique_id=33425831]
-
-[node name="GlamFreddyRG" parent="." unique_id=1929605833 instance=ExtResource("1_su2cy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.012373447, 0, 0.101989746)
