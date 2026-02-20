@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://swy032seduot"
-path="res://.godot/imported/TituloReal.png-efb7537852cef16af042978627611803.ctex"
+uid="uid://bgufq54lorovc"
+path="res://.godot/imported/HeartIdle.png-13b680a6f9b742c9491275420e7268de.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/TituloReal.png"
-dest_files=["res://.godot/imported/TituloReal.png-efb7537852cef16af042978627611803.ctex"]
+source_file="res://assets/UI/HeartIdle.png"
+dest_files=["res://.godot/imported/HeartIdle.png-13b680a6f9b742c9491275420e7268de.ctex"]
 
 [params]
 
