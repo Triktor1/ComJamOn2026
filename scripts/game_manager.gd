@@ -5,7 +5,7 @@ extends Node
 
 @export var endless: bool = false
 @export var boss_interval: int = 15
-@export var speedup_interval: int = 6
+@export var speedup_interval: int = 2
 
 @export var max_speed: float = 3.0
 @export var speed_increment: float = 0.15
@@ -37,7 +37,7 @@ func _state_start():
 	current_speed = 1.0
 	current_pitch = 1.0
 	
-	AudioManager.play("GANAR")
+	AudioManager.play("GANAR", current_speed)
 	
 	comence.emit()
 	
@@ -49,8 +49,8 @@ func _state_start():
 
 func _state_minigame_intro():
 	boss_time = false
-	
-	AudioManager.play("NEXT")
+	minigame_count += 1
+	AudioManager.play("NEXT", current_speed)
 	
 	
 	
@@ -69,9 +69,9 @@ func _state_minigame_intro():
 # ESTADO 2 - VICTORIA
 
 func _state_win():
-	AudioManager.play("GANAR")
+	AudioManager.play("GANAR", current_speed)
 	win.emit()
-	minigame_count += 1
+
 	_cleanup_minigame()
 	
 	await get_tree().create_timer(2.4).timeout
@@ -97,7 +97,7 @@ func _state_win():
 func _state_lose():
 	lives -= 1
 	lost.emit()
-	AudioManager.play("PERDIDO")
+	AudioManager.play("PERDIDO", current_speed)
 	_cleanup_minigame()
 	
 	await get_tree().create_timer(2.4).timeout
@@ -128,14 +128,14 @@ func _state_game_over():
 	current_speed = 1.0
 	current_pitch = 1.0
 	_apply_speed()
-	AudioManager.play("GAMEOVER")
+	AudioManager.play("GAMEOVER", current_speed)
 	await get_tree().create_timer(2.4).timeout
 	#ir a pantalla de game over
 
 # ESTADO 5 SPEED UP
 
 func _state_speed_up():
-	AudioManager.play("SPEEDUP")
+	AudioManager.play("SPEEDUP", current_speed)
 	speedup.emit()
 	
 	#para que no se pase de velocidad
@@ -143,7 +143,7 @@ func _state_speed_up():
 	current_pitch = min(current_pitch + speed_increment, max_speed)
 	_apply_speed()
 	
-	await get_tree().create_timer(2.4).timeout
+	await get_tree().create_timer(1.4).timeout
 	
 	if _boss_time():
 		_state_boss_intro()
@@ -156,7 +156,7 @@ func _state_speed_up():
 
 func _state_boss_intro():
 	boss_time = true
-	AudioManager.play("BOSSTIME")
+	AudioManager.play("BOSSTIME", current_speed)     
 	_load_random_boss()
 	await get_tree().create_timer(2.4).timeout
 	
@@ -198,8 +198,10 @@ func _spawn_minigame(scene: PackedScene):
 	move_child(current_minigame, 0)
 
 func _speedup() -> bool:
-	# HACER
-	return false
+	if ((minigame_count % speedup_interval) == 0):
+		return true
+	else: 
+		return false
 
 func _boss_time() -> bool:
 	# HACER
@@ -207,7 +209,6 @@ func _boss_time() -> bool:
 
 func _apply_speed():
 	Engine.time_scale = current_speed
-	#cambiar el pitch global de sonido
 
 func _fade_out_overlay():
 	return
