@@ -22,5 +22,5 @@ func _process(delta):
 		else:
 			GameManager._state_lose()
 
-func changeWin(bool):
-	isWining = bool
+func changeWin(win:bool):
+	isWining = win

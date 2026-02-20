@@ -4,3 +4,5 @@
 
 [node name="Minigame_Tirasoga" type="Node2D" unique_id=629707850]
 script = ExtResource("1_v1n12")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1437394162]
