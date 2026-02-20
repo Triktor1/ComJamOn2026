@@ -52,6 +52,7 @@ func _state_minigame_intro():
 	minigame_count += 1
 	AudioManager.play("NEXT", current_speed)
 	
+	minigame_start.emit()
 	
 	
 	
@@ -62,7 +63,7 @@ func _state_minigame_intro():
 	_fade_out_overlay()
 	_load_next_minigame()
 	
-	minigame_start.emit()
+	
 	#texto que indica lo que hacer
 	#voz dice lo que hacer
 
@@ -220,3 +221,6 @@ func _cleanup_minigame():
 	if current_minigame:
 		current_minigame.queue_free()
 		current_minigame = null
+
+func get_mini_count() -> int:
+	return minigame_count
