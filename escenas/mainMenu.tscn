@@ -9,6 +9,9 @@
 [ext_resource type="Script" uid="uid://dk3i6o3eljb5m" path="res://scripts/boton_salir.gd" id="3_60els"]
 [ext_resource type="Texture2D" uid="uid://dkriess4iv02s" path="res://assets/UI/ButtonSalir.png" id="7_kf80i"]
 [ext_resource type="Texture2D" uid="uid://bjjks0r417fqt" path="res://assets/UI/ButtonSalirHover.png" id="8_ee8nr"]
+[ext_resource type="Texture2D" uid="uid://dfb6toxkrutm7" path="res://assets/UI/ButtonEndless.png" id="10_nympv"]
+[ext_resource type="Texture2D" uid="uid://bo7ebxrubfjew" path="res://assets/UI/ButtonEndlessHover.png" id="11_cyout"]
+[ext_resource type="Script" uid="uid://6eboju2ojn52" path="res://escenas/boton_endless.gd" id="12_cyout"]
 
 [node name="MainMenu" type="Control" unique_id=1907411161]
 layout_mode = 3
@@ -29,14 +32,14 @@ texture = ExtResource("1_81hdd")
 [node name="CenterContainerBotones" type="CenterContainer" parent="CanvasLayer" unique_id=1247026197]
 custom_minimum_size = Vector2(0, 300)
 offset_left = 471.0
-offset_top = 316.0
+offset_top = 279.74
 offset_right = 709.0
-offset_bottom = 568.0
+offset_bottom = 634.74036
 
 [node name="Botones" type="VBoxContainer" parent="CanvasLayer/CenterContainerBotones" unique_id=282673893]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
-theme_override_constants/separation = 30
+theme_override_constants/separation = 20
 
 [node name="BotonIncio" type="TextureButton" parent="CanvasLayer/CenterContainerBotones/Botones" unique_id=1152185994]
 custom_minimum_size = Vector2(208.35, 105)
@@ -58,4 +61,15 @@ stretch_mode = 0
 script = ExtResource("3_60els")
 
 [node name="BotonSalir" parent="CanvasLayer/CenterContainerBotones/Botones/BotonSalir" unique_id=1818324085 instance=ExtResource("1_wut1r")]
+position = Vector2(0, -28)
+
+[node name="BotonEndless" type="TextureButton" parent="CanvasLayer/CenterContainerBotones/Botones" unique_id=1713388567]
+custom_minimum_size = Vector2(55, 105)
+layout_mode = 2
+texture_normal = ExtResource("10_nympv")
+texture_hover = ExtResource("11_cyout")
+stretch_mode = 0
+script = ExtResource("12_cyout")
+
+[node name="BotonEndless" parent="CanvasLayer/CenterContainerBotones/Botones/BotonEndless" unique_id=569650148 instance=ExtResource("1_wut1r")]
 position = Vector2(0, -28)
