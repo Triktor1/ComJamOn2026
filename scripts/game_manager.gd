@@ -52,11 +52,15 @@ func _state_minigame_intro():
 	
 	AudioManager.play("NEXT")
 	
-	_load_next_minigame()
+	
+	
 	
 	#que se muestre el control a usar en una imagen
 	
-	await get_tree().create_timer(2.4).timeout
+	await get_tree().create_timer(2).timeout
+	
+	_fade_out_overlay()
+	_load_next_minigame()
 	
 	minigame_start.emit()
 	#texto que indica lo que hacer
@@ -68,6 +72,7 @@ func _state_win():
 	AudioManager.play("GANAR")
 	win.emit()
 	minigame_count += 1
+	_cleanup_minigame()
 	
 	await get_tree().create_timer(2.4).timeout
 	
@@ -93,7 +98,7 @@ func _state_lose():
 	lives -= 1
 	lost.emit()
 	AudioManager.play("PERDIDO")
-	print("sdasdasdasd")
+	_cleanup_minigame()
 	
 	await get_tree().create_timer(2.4).timeout
 	
@@ -171,24 +176,29 @@ func _state_final_victory():
 # METODOS AUXILIARES
 
 func _shuffle_minigames():
-	return
-
-func _load_next_minigame():
-	return
+	shuffled_minigames = minigames.duplicate()
+	shuffled_minigames.shuffle()
+	current_minigame_index = 0
+	
+func _load_next_minigame():	
+	if current_minigame_index >= shuffled_minigames.size():
+		_shuffle_minigames()
+	
+	var scene: PackedScene = shuffled_minigames[current_minigame_index]
+	current_minigame_index += 1
+	
+	_spawn_minigame(scene)
 
 func _load_random_boss():
 	return
 
 func _spawn_minigame(scene: PackedScene):
-	return
-
-func _on_minigame_won():
-	# ESTE METODO LO LLAMARAN LOS MINIJUEGOS PARA CAMBIAR AL ESTADO DE VICTORIA
-	return
-
-func _on_minigame_lost():
-	# ESTE METODO LO LLAMARAN LOS MINIJUEGOS PARA CAMBIAR AL ESTADO DE DERROTA
-	return 
+	if current_minigame:
+		current_minigame.queue_free()
+	
+	current_minigame = scene.instantiate()
+	add_child(current_minigame)
+	move_child(current_minigame, 0)
 
 func _speedup() -> bool:
 	# HACER
@@ -201,3 +211,14 @@ func _boss_time() -> bool:
 func _apply_speed():
 	Engine.time_scale = current_speed
 	#cambiar el pitch global de sonido
+
+func _fade_out_overlay():
+	return
+	
+func _fade_in_overlay():
+	return
+	
+func _cleanup_minigame():
+	if current_minigame:
+		current_minigame.queue_free()
+		current_minigame = null

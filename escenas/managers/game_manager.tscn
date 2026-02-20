@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://cufuavjitbcok"]
 
 [ext_resource type="Script" uid="uid://cfjb0nxhp0qbu" path="res://scripts/game_manager.gd" id="1_70yv6"]
+[ext_resource type="PackedScene" uid="uid://cxnnstdefdpuh" path="res://escenas/Minigames/scenes/mini_tirasoga.tscn" id="2_nkm13"]
+[ext_resource type="PackedScene" uid="uid://xfryq41w5dvc" path="res://escenas/Minigames/scenes/mini_alfredo.tscn" id="3_idhd0"]
 
 [node name="GameManager" type="Node" unique_id=1288491050]
 script = ExtResource("1_70yv6")
+minigames = Array[PackedScene]([ExtResource("2_nkm13"), ExtResource("3_idhd0")])
