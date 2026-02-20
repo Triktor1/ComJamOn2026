@@ -2,6 +2,14 @@
 
 [ext_resource type="Script" uid="uid://c1sg54ny6asow" path="res://escenas/Minigames/scripts/minigame_tirasoga.gd" id="1_v1n12"]
 [ext_resource type="Script" uid="uid://dvkp78n5nmrxa" path="res://scripts/minigame_gamaner.gd" id="2_3ww0j"]
+[ext_resource type="Texture2D" uid="uid://dgrur2vavys1n" path="res://icon.svg" id="3_6k3k2"]
+[ext_resource type="Script" uid="uid://rqbqxgmt473w" path="res://escenas/Minigames/scripts/tirasoga.gd" id="3_bf83a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3ww0j"]
+size = Vector2(27, 39)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6k3k2"]
+size = Vector2(20, 593)
 
 [node name="Minigame_Tirasoga" type="Node2D" unique_id=629707850]
 script = ExtResource("1_v1n12")
@@ -10,3 +18,33 @@ script = ExtResource("1_v1n12")
 
 [node name="Minigame_Manager" type="Node" parent="." unique_id=992632763]
 script = ExtResource("2_3ww0j")
+
+[node name="Tirasoga" type="Node2D" parent="." unique_id=1601303618]
+script = ExtResource("3_bf83a")
+
+[node name="Area2D" type="Area2D" parent="Tirasoga" unique_id=78133546]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tirasoga/Area2D" unique_id=7970670]
+position = Vector2(-1.5, -0.5)
+shape = SubResource("RectangleShape2D_3ww0j")
+
+[node name="Sprite2D" type="Sprite2D" parent="Tirasoga" unique_id=1044486548]
+position = Vector2(-1.5000002, 0)
+scale = Vector2(0.2578125, 1)
+texture = ExtResource("3_6k3k2")
+
+[node name="LoseArea" type="Area2D" parent="." unique_id=1772248345]
+position = Vector2(-288, -32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LoseArea" unique_id=67574227]
+position = Vector2(0, 37.5)
+scale = Vector2(25, 1)
+shape = SubResource("RectangleShape2D_6k3k2")
+
+[node name="WinArea" type="Area2D" parent="." unique_id=1399068754]
+position = Vector2(288, -32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WinArea" unique_id=1720740714]
+position = Vector2(0, 37.5)
+scale = Vector2(25, 1)
+shape = SubResource("RectangleShape2D_6k3k2")
