@@ -192,10 +192,7 @@ func _load_next_minigame():
 func _load_random_boss():
 	return
 
-func _spawn_minigame(scene: PackedScene):
-	if current_minigame:
-		current_minigame.queue_free()
-	
+func _spawn_minigame(scene: PackedScene):	
 	current_minigame = scene.instantiate()
 	add_child(current_minigame)
 	move_child(current_minigame, 0)
