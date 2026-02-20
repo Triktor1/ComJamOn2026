@@ -20,6 +20,10 @@ var current_minigame_index: int = 0
 var current_minigame: Node
 var boss_time: bool = false
 
+# SEÑALES
+signal comence
+signal minigame_start
+signal win
 
 # ESTADO 0 START
 
@@ -32,7 +36,7 @@ func _state_start():
 	
 	AudioManager.play("GANAR")
 	
-	# animaciones de comienzo, emitiendo señal o no se
+	comence.emit()
 	
 	await get_tree().create_timer(2.4).timeout
 	
@@ -51,29 +55,25 @@ func _state_minigame_intro():
 	
 	await get_tree().create_timer(1).timeout
 	
-	#señal de animacion de transicion
-	
+	minigame_start.emit()
 	#texto que indica lo que hacer
 	#voz dice lo que hacer
 
-# =========================
 # ESTADO 2 - VICTORIA
-# =========================
 
 func _state_win():
-	#jingle de victoria
-	#comienza la animacion de que vuelve la transicion y se quita el minijuego anterior al terminar
+	AudioManager.play("GANAR")
+	win.emit()
 	minigame_count += 1
+	
+	await get_tree().create_timer(1).timeout
 	
 	if boss_time:
 		if not endless:
-			#esperar a fin de jingle
 			#cambiar a estado de boss
 			return
 		else:
 			lives += 1
-	
-	#se espera a fin de jingle
 	
 	if _speedup():
 		#cambiar al estado speed up

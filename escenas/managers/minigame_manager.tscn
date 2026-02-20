@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://b54unurjerieg"]
 
-[ext_resource type="Script" uid="uid://dvkp78n5nmrxa" path="res://scripts/minigame_gamaner.gd" id="1_h0hkb"]
+[ext_resource type="Script" uid="uid://dvkp78n5nmrxa" path="res://scripts/minigame_gamaner.gd" id="1_or7hl"]
 
 [node name="MinigameManager" type="Node2D" unique_id=1806882873]
-script = ExtResource("1_h0hkb")
+script = ExtResource("1_or7hl")
 
 [node name="Timer" type="Timer" parent="." unique_id=1286914377]
 wait_time = 3.4709999999999996
