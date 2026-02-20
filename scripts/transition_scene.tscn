@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cg4co1hxxhhep"]
+
+[ext_resource type="Script" uid="uid://0wqrbmshs52p" path="res://transition_scene.gd" id="1_ksm4v"]
+
+[node name="TransitionScene" type="Node2D" unique_id=1906840405]
+script = ExtResource("1_ksm4v")

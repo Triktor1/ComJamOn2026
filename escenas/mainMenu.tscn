@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://hxfcwwnysmll"]
 
-[ext_resource type="Script" uid="uid://b6asekge4jen4" path="res://scripts/boton_incio.gd" id="1_6uepu"]
+[ext_resource type="Script" path="res://scripts/boton_incio.gd" id="1_6uepu"]
 [ext_resource type="PackedScene" uid="uid://c71lnth3o7asr" path="res://escenas/tests/buttonTest.tscn" id="1_wut1r"]
-[ext_resource type="Script" uid="uid://dk3i6o3eljb5m" path="res://scripts/boton_salir.gd" id="3_60els"]
+[ext_resource type="PackedScene" uid="uid://cg4co1hxxhhep" path="res://scripts/transition_scene.tscn" id="2_hvyp7"]
+[ext_resource type="Script" path="res://scripts/boton_salir.gd" id="3_60els"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_l1xq8"]
 load_path = "res://.godot/imported/TituloReal.png-efb7537852cef16af042978627611803.ctex"
@@ -38,6 +39,7 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 75
 text = "JUGAR"
 script = ExtResource("1_6uepu")
+startScene = ExtResource("2_hvyp7")
 
 [node name="BotonIniciar" parent="CanvasLayer/CenterContainerBotones/Botones/BotonIncio" unique_id=447941600 instance=ExtResource("1_wut1r")]
 
