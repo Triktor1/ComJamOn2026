@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/boton_incio.gd" id="1_6uepu"]
 [ext_resource type="PackedScene" uid="uid://c71lnth3o7asr" path="res://escenas/tests/buttonTest.tscn" id="1_wut1r"]
-[ext_resource type="PackedScene" uid="uid://cg4co1hxxhhep" path="res://scripts/transition_scene.tscn" id="2_hvyp7"]
+[ext_resource type="PackedScene" uid="uid://cg4co1hxxhhep" path="res://escenas/transition_scene.tscn" id="2_hvyp7"]
 [ext_resource type="Script" path="res://scripts/boton_salir.gd" id="3_60els"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_l1xq8"]
