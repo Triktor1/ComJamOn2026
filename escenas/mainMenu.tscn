@@ -1,13 +1,18 @@
 [gd_scene format=3 uid="uid://hxfcwwnysmll"]
 
-[ext_resource type="PackedScene" uid="uid://c71lnth3o7asr" path="res://buttonTest.tscn" id="1_wut1r"]
+[ext_resource type="Script" uid="uid://b6asekge4jen4" path="res://scripts/boton_incio.gd" id="1_6uepu"]
+[ext_resource type="PackedScene" uid="uid://c71lnth3o7asr" path="res://escenas/tests/buttonTest.tscn" id="1_wut1r"]
+[ext_resource type="Script" uid="uid://dk3i6o3eljb5m" path="res://scripts/boton_salir.gd" id="3_60els"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_l1xq8"]
 load_path = "res://.godot/imported/TituloReal.png-efb7537852cef16af042978627611803.ctex"
 
-[node name="MainMenu" type="Node2D" unique_id=796241826]
+[node name="MainMenu" type="Control" unique_id=1907411161]
+layout_mode = 3
+anchors_preset = 0
 
 [node name="CenterContainerLogo" type="CenterContainer" parent="." unique_id=1620032173]
+layout_mode = 0
 offset_top = 58.285
 offset_right = 1371.4285
 offset_bottom = 321.285
@@ -18,6 +23,7 @@ layout_mode = 2
 texture = SubResource("CompressedTexture2D_l1xq8")
 
 [node name="CenterContainerBotones" type="CenterContainer" parent="." unique_id=1247026197]
+layout_mode = 0
 offset_top = 447.37
 offset_right = 1921.0
 offset_bottom = 1027.3699
@@ -30,6 +36,7 @@ theme_override_constants/separation = 30
 layout_mode = 2
 theme_override_font_sizes/font_size = 75
 text = "JUGAR"
+script = ExtResource("1_6uepu")
 
 [node name="BotonIniciar" parent="CenterContainerBotones/Botones/BotonIncio" unique_id=447941600 instance=ExtResource("1_wut1r")]
 
@@ -37,6 +44,7 @@ text = "JUGAR"
 layout_mode = 2
 theme_override_font_sizes/font_size = 75
 text = "SALIR"
+script = ExtResource("3_60els")
 
 [node name="BotonSalir" parent="CenterContainerBotones/Botones/BotonSalir" unique_id=1818324085 instance=ExtResource("1_wut1r")]
 position = Vector2(0, -28)
