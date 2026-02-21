@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://c5scdg5mdj3iq"]
+
+[ext_resource type="Script" uid="uid://dvkp78n5nmrxa" path="res://scripts/minigame_manager.gd" id="1_sk12o"]
+
+[node name="Mini_Dialogo" type="Node2D" unique_id=1446933127]
+
+[node name="MiniGame_Manager" type="Node" parent="." unique_id=1283280026]
+script = ExtResource("1_sk12o")
