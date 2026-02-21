@@ -1,8 +1,26 @@
 [gd_scene format=3 uid="uid://c5scdg5mdj3iq"]
 
+[ext_resource type="Script" uid="uid://c57aj7ukri5po" path="res://escenas/Minigames/scripts/mini_dialogo.gd" id="1_86aga"]
 [ext_resource type="Script" uid="uid://dvkp78n5nmrxa" path="res://scripts/minigame_manager.gd" id="1_sk12o"]
 
-[node name="Mini_Dialogo" type="Node2D" unique_id=1446933127]
+[node name="Mini_Dialogo" type="Node2D" unique_id=1446933127 node_paths=PackedStringArray("minigame_manager", "dialogue_label")]
+script = ExtResource("1_86aga")
+minigame_manager = NodePath("MiniGame_Manager")
+dialogue_label = NodePath("DialogueLabel")
 
 [node name="MiniGame_Manager" type="Node" parent="." unique_id=1283280026]
 script = ExtResource("1_sk12o")
+isWining = false
+time = 5.0
+endEarlyIfWon = true
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=484150014]
+
+[node name="DialogueLabel" type="Label" parent="." unique_id=1527995503]
+offset_left = -494.0
+offset_top = 74.0
+offset_right = 506.0
+offset_bottom = 274.0
+theme_override_font_sizes/font_size = 60
+text = "Dialogue"
+autowrap_mode = 3
