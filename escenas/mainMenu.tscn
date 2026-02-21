@@ -12,6 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://dfb6toxkrutm7" path="res://assets/UI/ButtonEndless.png" id="10_nympv"]
 [ext_resource type="Texture2D" uid="uid://bo7ebxrubfjew" path="res://assets/UI/ButtonEndlessHover.png" id="11_cyout"]
 [ext_resource type="Script" uid="uid://6eboju2ojn52" path="res://escenas/boton_endless.gd" id="12_cyout"]
+[ext_resource type="Texture2D" uid="uid://bd8tetmqgayie" path="res://assets/UI/ButtonCreditos.png" id="13_jm1qe"]
+[ext_resource type="Texture2D" uid="uid://mmobdxlrdbmo" path="res://assets/UI/ButtonCreditosHover.png" id="14_drc3i"]
 
 [node name="MainMenu" type="Control" unique_id=1907411161]
 layout_mode = 3
@@ -31,17 +33,28 @@ texture = ExtResource("1_81hdd")
 
 [node name="CenterContainerBotones" type="CenterContainer" parent="CanvasLayer" unique_id=1247026197]
 custom_minimum_size = Vector2(0, 300)
-offset_left = 471.0
-offset_top = 279.74
-offset_right = 709.0
-offset_bottom = 634.74036
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -218.0
+offset_top = -24.0
+offset_right = 218.0
+offset_bottom = 276.00098
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="Botones" type="VBoxContainer" parent="CanvasLayer/CenterContainerBotones" unique_id=282673893]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/CenterContainerBotones" unique_id=2101051516]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="BotonesH1" type="VBoxContainer" parent="CanvasLayer/CenterContainerBotones/HBoxContainer" unique_id=282673893]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
-theme_override_constants/separation = 20
+theme_override_constants/separation = 30
 
-[node name="BotonIncio" type="TextureButton" parent="CanvasLayer/CenterContainerBotones/Botones" unique_id=1152185994]
+[node name="BotonIncio" type="TextureButton" parent="CanvasLayer/CenterContainerBotones/HBoxContainer/BotonesH1" unique_id=1152185994]
 custom_minimum_size = Vector2(208.35, 105)
 layout_mode = 2
 texture_normal = ExtResource("2_1f6lb")
@@ -50,9 +63,35 @@ stretch_mode = 6
 script = ExtResource("1_6uepu")
 startScene = ExtResource("2_hvyp7")
 
-[node name="BotonIniciar" parent="CanvasLayer/CenterContainerBotones/Botones/BotonIncio" unique_id=447941600 instance=ExtResource("1_wut1r")]
+[node name="BotonIniciar" parent="CanvasLayer/CenterContainerBotones/HBoxContainer/BotonesH1/BotonIncio" unique_id=447941600 instance=ExtResource("1_wut1r")]
 
-[node name="BotonSalir" type="TextureButton" parent="CanvasLayer/CenterContainerBotones/Botones" unique_id=2032437182]
+[node name="BotonCreditos" type="TextureButton" parent="CanvasLayer/CenterContainerBotones/HBoxContainer/BotonesH1" unique_id=2002169348]
+custom_minimum_size = Vector2(208.35, 105)
+layout_mode = 2
+texture_normal = ExtResource("13_jm1qe")
+texture_hover = ExtResource("14_drc3i")
+stretch_mode = 0
+script = ExtResource("3_60els")
+
+[node name="BotonCreditos" parent="CanvasLayer/CenterContainerBotones/HBoxContainer/BotonesH1/BotonCreditos" unique_id=2044988408 instance=ExtResource("1_wut1r")]
+position = Vector2(0, -28)
+
+[node name="BotonesH2" type="VBoxContainer" parent="CanvasLayer/CenterContainerBotones/HBoxContainer" unique_id=1017843417]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="BotonEndless" type="TextureButton" parent="CanvasLayer/CenterContainerBotones/HBoxContainer/BotonesH2" unique_id=1713388567]
+custom_minimum_size = Vector2(208.35, 105)
+layout_mode = 2
+texture_normal = ExtResource("10_nympv")
+texture_hover = ExtResource("11_cyout")
+stretch_mode = 0
+script = ExtResource("12_cyout")
+
+[node name="BotonEndless" parent="CanvasLayer/CenterContainerBotones/HBoxContainer/BotonesH2/BotonEndless" unique_id=569650148 instance=ExtResource("1_wut1r")]
+position = Vector2(0, -28)
+
+[node name="BotonSalir" type="TextureButton" parent="CanvasLayer/CenterContainerBotones/HBoxContainer/BotonesH2" unique_id=2032437182]
 custom_minimum_size = Vector2(55, 105)
 layout_mode = 2
 texture_normal = ExtResource("7_kf80i")
@@ -60,16 +99,5 @@ texture_hover = ExtResource("8_ee8nr")
 stretch_mode = 0
 script = ExtResource("3_60els")
 
-[node name="BotonSalir" parent="CanvasLayer/CenterContainerBotones/Botones/BotonSalir" unique_id=1818324085 instance=ExtResource("1_wut1r")]
-position = Vector2(0, -28)
-
-[node name="BotonEndless" type="TextureButton" parent="CanvasLayer/CenterContainerBotones/Botones" unique_id=1713388567]
-custom_minimum_size = Vector2(55, 105)
-layout_mode = 2
-texture_normal = ExtResource("10_nympv")
-texture_hover = ExtResource("11_cyout")
-stretch_mode = 0
-script = ExtResource("12_cyout")
-
-[node name="BotonEndless" parent="CanvasLayer/CenterContainerBotones/Botones/BotonEndless" unique_id=569650148 instance=ExtResource("1_wut1r")]
+[node name="BotonSalir" parent="CanvasLayer/CenterContainerBotones/HBoxContainer/BotonesH2/BotonSalir" unique_id=1818324085 instance=ExtResource("1_wut1r")]
 position = Vector2(0, -28)
