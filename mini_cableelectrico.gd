@@ -1,6 +1,6 @@
 extends Node2D
 @export var miniGameManager : MiniGameManager
-@onready var piezas = [$Wire1, $Wire2, $Wire3]
+@export var piezas: Array[Node2D]
 
 var rotaciones_correctas = [0,0,0]
 var pieza_actual = 0
