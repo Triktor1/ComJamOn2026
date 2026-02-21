@@ -1,6 +1,7 @@
 extends Node2D
 
 @export var heart_scene: PackedScene
+@export var ovillo: PackedScene
 @export var start_lives: int = 4
 
 var hearts: Array[Node2D] = []
