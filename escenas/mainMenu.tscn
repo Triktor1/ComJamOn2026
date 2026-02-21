@@ -1,9 +1,11 @@
 [gd_scene format=3 uid="uid://hxfcwwnysmll"]
 
+[ext_resource type="Shader" uid="uid://jwwg2huy2cr1" path="res://Particulas y shaders/mainMenu.gdshader" id="1_5l8dw"]
 [ext_resource type="Script" uid="uid://b6asekge4jen4" path="res://scripts/boton_incio.gd" id="1_6uepu"]
 [ext_resource type="Texture2D" uid="uid://c4atqrod3f72r" path="res://assets/UI/TituloReal.png" id="1_81hdd"]
 [ext_resource type="PackedScene" uid="uid://c71lnth3o7asr" path="res://escenas/tests/buttonTest.tscn" id="1_wut1r"]
 [ext_resource type="Texture2D" uid="uid://dtybquer37yw5" path="res://assets/UI/ButtonJugar.png" id="2_1f6lb"]
+[ext_resource type="Texture2D" uid="uid://dgrur2vavys1n" path="res://icon.svg" id="2_c7pnh"]
 [ext_resource type="PackedScene" uid="uid://cg4co1hxxhhep" path="res://escenas/transition_scene.tscn" id="2_hvyp7"]
 [ext_resource type="Texture2D" uid="uid://cmu5ue4oam5rc" path="res://assets/UI/ButtonJugarHover.png" id="3_0a063"]
 [ext_resource type="Script" uid="uid://dk3i6o3eljb5m" path="res://scripts/boton_salir.gd" id="3_60els"]
@@ -14,10 +16,35 @@
 [ext_resource type="Script" uid="uid://6eboju2ojn52" path="res://escenas/boton_endless.gd" id="12_cyout"]
 [ext_resource type="Texture2D" uid="uid://bd8tetmqgayie" path="res://assets/UI/ButtonCreditos.png" id="13_jm1qe"]
 [ext_resource type="Texture2D" uid="uid://mmobdxlrdbmo" path="res://assets/UI/ButtonCreditosHover.png" id="14_drc3i"]
+[ext_resource type="Material" uid="uid://c3oojfr7h7plv" path="res://Particulas y shaders/particulasVerde.tres" id="15_2va1m"]
+[ext_resource type="Material" uid="uid://emv3sdwb1rik" path="res://Particulas y shaders/particulasRoja.tres" id="16_5l8dw"]
+[ext_resource type="Material" uid="uid://ww6oht52j32" path="res://Particulas y shaders/particulasAzul.tres" id="17_c7pnh"]
+
+[sub_resource type="Gradient" id="Gradient_c7pnh"]
+colors = PackedColorArray(0, 0, 1, 1, 1, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_l0rh0"]
+gradient = SubResource("Gradient_c7pnh")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c7pnh"]
+shader = ExtResource("1_5l8dw")
+shader_parameter/gradient = SubResource("GradientTexture2D_l0rh0")
+shader_parameter/circle_color = Color(0.8392157, 0.21176471, 0.21176471, 1)
+shader_parameter/circle_multiplier = 10.0
+shader_parameter/speed = 1.0
+shader_parameter/direction = Vector2(1, 0)
+shader_parameter/rotation = Transform2D(1, -1, 1, 1, 0, 0)
 
 [node name="MainMenu" type="Control" unique_id=1907411161]
 layout_mode = 3
 anchors_preset = 0
+
+[node name="Node2D" type="Sprite2D" parent="." unique_id=1941186521]
+material = SubResource("ShaderMaterial_c7pnh")
+position = Vector2(577.3806, 412.6019)
+rotation = 1.57149
+scale = Vector2(7.6039553, 9.244015)
+texture = ExtResource("2_c7pnh")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=622631869]
 
@@ -101,3 +128,27 @@ script = ExtResource("3_60els")
 
 [node name="BotonSalir" parent="CanvasLayer/CenterContainerBotones/HBoxContainer/BotonesH2/BotonSalir" unique_id=1818324085 instance=ExtResource("1_wut1r")]
 position = Vector2(0, -28)
+
+[node name="ParticulasVerdes" type="GPUParticles2D" parent="." unique_id=1733605364]
+modulate = Color(0, 0.5294118, 0.31764707, 1)
+position = Vector2(1166, 332)
+amount = 300
+lifetime = 20.0
+preprocess = 10.0
+process_material = ExtResource("15_2va1m")
+
+[node name="ParticulasRojas" type="GPUParticles2D" parent="." unique_id=1104658247]
+modulate = Color(0.8392157, 0.21176471, 0.21176471, 1)
+position = Vector2(564, -11)
+amount = 300
+lifetime = 20.0
+preprocess = 10.0
+process_material = ExtResource("16_5l8dw")
+
+[node name="ParticulasAzules" type="GPUParticles2D" parent="." unique_id=338622200]
+modulate = Color(0, 0.35686275, 0.6745098, 1)
+position = Vector2(0, 342)
+amount = 300
+lifetime = 20.0
+preprocess = 10.0
+process_material = ExtResource("17_c7pnh")
