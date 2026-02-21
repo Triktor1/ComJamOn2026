@@ -1,0 +1,80 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://c2yb666mqcwxr"]
+
+[ext_resource type="Texture2D" uid="uid://d34wxnh383b4o" path="res://assets/UI/HeartDeath.png" id="1_lxx6l"]
+[ext_resource type="Texture2D" uid="uid://bgufq54lorovc" path="res://assets/UI/HeartIdle.png" id="2_ogv0m"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0pdua"]
+atlas = ExtResource("1_lxx6l")
+region = Rect2(0, 0, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x70cb"]
+atlas = ExtResource("1_lxx6l")
+region = Rect2(80, 0, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0jgkc"]
+atlas = ExtResource("1_lxx6l")
+region = Rect2(160, 0, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x3d2r"]
+atlas = ExtResource("1_lxx6l")
+region = Rect2(240, 0, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1vel5"]
+atlas = ExtResource("1_lxx6l")
+region = Rect2(320, 0, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bwijt"]
+atlas = ExtResource("1_lxx6l")
+region = Rect2(400, 0, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uknvu"]
+atlas = ExtResource("2_ogv0m")
+region = Rect2(0, 0, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qrd8m"]
+atlas = ExtResource("2_ogv0m")
+region = Rect2(80, 0, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w14vh"]
+atlas = ExtResource("2_ogv0m")
+region = Rect2(160, 0, 80, 64)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0pdua")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x70cb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0jgkc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x3d2r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1vel5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bwijt")
+}],
+"loop": false,
+"name": &"heart_death",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uknvu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qrd8m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w14vh")
+}],
+"loop": true,
+"name": &"heart_idle",
+"speed": 10.0
+}]

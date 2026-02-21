@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://t4lkg1phd0fg"]
+
+[ext_resource type="SpriteFrames" uid="uid://c2yb666mqcwxr" path="res://escenas/Animations/heart_idle.tres" id="1_0crco"]
+
+[node name="Heart" type="Node2D" unique_id=2134835541]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2000230715]
+position = Vector2(0, 3)
+sprite_frames = ExtResource("1_0crco")
+animation = &"heart_death"
+frame = 5
+frame_progress = 1.0
