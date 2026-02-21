@@ -1,11 +1,15 @@
 [gd_scene format=3 uid="uid://xfryq41w5dvc"]
 
 [ext_resource type="Texture2D" uid="uid://cw3fnq4453abi" path="res://assets/fakeAlfredo.png" id="1_hrp06"]
+[ext_resource type="Script" uid="uid://13iqj1l5uwo8" path="res://escenas/mini_data.gd" id="1_xnbno"]
 [ext_resource type="Texture2D" uid="uid://dgrur2vavys1n" path="res://icon.svg" id="2_skode"]
 [ext_resource type="Script" uid="uid://hqgnxhaemmhi" path="res://escenas/Minigames/scripts/alfredo_fall.gd" id="3_skode"]
 [ext_resource type="PackedScene" uid="uid://b54unurjerieg" path="res://escenas/managers/minigame_manager.tscn" id="3_xnbno"]
 
 [node name="Mini_Alfredo" type="Node2D" unique_id=1716738336]
+script = ExtResource("1_xnbno")
+instr = "NO TE CAIGAS"
+control_type = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=500726510]
 position = Vector2(561, 477)

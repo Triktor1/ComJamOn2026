@@ -5,7 +5,17 @@
 [ext_resource type="PackedScene" uid="uid://xfryq41w5dvc" path="res://escenas/Minigames/scenes/mini_alfredo.tscn" id="3_idhd0"]
 [ext_resource type="PackedScene" uid="uid://bcjubf8rcupmq" path="res://escenas/Minigames/scenes/mini_guitarra.tscn" id="4_idhd0"]
 [ext_resource type="PackedScene" uid="uid://b8afn2otjlwku" path="res://escenas/Minigames/scenes/mini_aguja.tscn" id="5_kkigx"]
+[ext_resource type="Texture2D" uid="uid://byrvwb5fgokky" path="res://assets/UI/TeclaW.png" id="6_vdewe"]
+[ext_resource type="Texture2D" uid="uid://dws3g5a1mrg7f" path="res://assets/UI/TeclaA.png" id="7_7vvxm"]
+[ext_resource type="Texture2D" uid="uid://c7w8t43lflupg" path="res://assets/UI/TeclaS.png" id="8_lfqoy"]
+[ext_resource type="Texture2D" uid="uid://dpsk1jytbe2p7" path="res://assets/UI/TeclaD.png" id="9_3m7g8"]
+[ext_resource type="Texture2D" uid="uid://b8ckkojala6uv" path="res://assets/UI/TeclaZ.png" id="10_l5ecj"]
+[ext_resource type="Texture2D" uid="uid://m2wnk8863mxh" path="res://assets/UI/TeclaX.png" id="11_ud0in"]
+[ext_resource type="Texture2D" uid="uid://cd86fe8aivax3" path="res://assets/UI/TeclaSpace.png" id="12_il1yq"]
 
 [node name="GameManager" type="Node" unique_id=1288491050]
 script = ExtResource("1_70yv6")
 minigames = Array[PackedScene]([ExtResource("3_idhd0"), ExtResource("2_nkm13"), ExtResource("4_idhd0"), ExtResource("5_kkigx")])
+wasd_textures = Array[Texture2D]([ExtResource("6_vdewe"), ExtResource("7_7vvxm"), ExtResource("8_lfqoy"), ExtResource("9_3m7g8")])
+zx_textures = Array[Texture2D]([ExtResource("10_l5ecj"), ExtResource("11_ud0in")])
+space_textures = Array[Texture2D]([ExtResource("12_il1yq")])

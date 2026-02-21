@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b8afn2otjlwku"]
 
 [ext_resource type="Script" uid="uid://gghdf4b74d5y" path="res://escenas/Minigames/scripts/mini_aguja.gd" id="1_7x618"]
+[ext_resource type="Script" uid="uid://13iqj1l5uwo8" path="res://escenas/mini_data.gd" id="1_pjvlw"]
 [ext_resource type="Script" uid="uid://dvkp78n5nmrxa" path="res://scripts/minigame_manager.gd" id="1_vgh2l"]
 [ext_resource type="Texture2D" uid="uid://dgrur2vavys1n" path="res://icon.svg" id="3_o3q8y"]
 
@@ -12,12 +13,17 @@ size = Vector2(47, 688)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vgh2l"]
 
-[node name="Mini_Aguja" type="Node2D" unique_id=1618101336 node_paths=PackedStringArray("minigame_manager", "needle", "win_area", "lose_area")]
+[node name="Mini_Aguja" type="Node2D" unique_id=1618101336]
+script = ExtResource("1_pjvlw")
+instr = "METE"
+control_type = 2
+
+[node name="AgujaManager" type="Node2D" parent="." unique_id=1245285449 node_paths=PackedStringArray("minigame_manager", "needle", "win_area", "lose_area")]
 script = ExtResource("1_7x618")
-minigame_manager = NodePath("MiniGame_Manager")
-needle = NodePath("needle")
-win_area = NodePath("win_area")
-lose_area = NodePath("lose_area")
+minigame_manager = NodePath("../MiniGame_Manager")
+needle = NodePath("../needle")
+win_area = NodePath("../win_area")
+lose_area = NodePath("../lose_area")
 speed = 1200.0
 
 [node name="MiniGame_Manager" type="Node" parent="." unique_id=567200864]
