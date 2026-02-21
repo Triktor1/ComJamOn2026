@@ -3,6 +3,8 @@ class_name MiniGameManager
 
 @export var isWining = true
 @export var time = 8.0
+@export var endEarlyIfWon = false
+@export var endEarlyIfLost = false
 
 var end = false
 
@@ -19,6 +21,23 @@ func _process(delta):
 		else:
 			GameManager._state_lose()
 		print(isWining)
+		
 
-func changeWin(win:bool):
+
+func changeWin(win: bool):
+	if end:
+		return
+		
 	isWining = win
+	
+	if endEarlyIfLost and !isWining:
+		end = true
+		await get_tree().create_timer(1).timeout
+		if GameManager.in_minigame:
+			GameManager._state_lose()
+			
+	elif endEarlyIfWon and isWining:
+		end = true
+		await get_tree().create_timer(1).timeout
+		if GameManager.in_minigame:
+			GameManager._state_win()

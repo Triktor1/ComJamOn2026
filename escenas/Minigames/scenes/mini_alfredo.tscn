@@ -13,6 +13,7 @@ scale = Vector2(0.3515625, 0.3125)
 texture = ExtResource("2_skode")
 
 [node name="MinigameManager" parent="." unique_id=1806882873 instance=ExtResource("3_xnbno")]
+endEarlyIfLost = true
 
 [node name="Node2D" type="Node2D" parent="." unique_id=609681378 node_paths=PackedStringArray("minigame_manager")]
 position = Vector2(556, 459)

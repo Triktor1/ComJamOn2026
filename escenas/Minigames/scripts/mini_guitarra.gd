@@ -4,6 +4,7 @@ extends Node2D
 @export var key2:Label
 @export var key3:Label
 @export var key4:Label
+@export var minigame_manager:MiniGameManager
 
 var keys:Array=[]
 var keys_to_press:Array=[]
@@ -55,7 +56,9 @@ func _input(event: InputEvent) -> void:
 				current_key+=1
 			else:
 				print("lose :(") #perder automaticamente
+				minigame_manager.changeWin(false)
 				done=true
 			if current_key==4:
 				print("win :)") #win automatico
+				minigame_manager.changeWin(true)
 				done=true

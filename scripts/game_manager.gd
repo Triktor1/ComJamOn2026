@@ -20,6 +20,8 @@ var current_minigame_index: int = 0
 var current_minigame: Node
 var boss_time: bool = false
 
+var in_minigame: bool = false
+
 # SEÑALES
 signal comence
 signal minigame_start
@@ -36,7 +38,7 @@ func _state_start():
 	minigame_count = 0
 	current_speed = 1.0
 	current_pitch = 1.0
-	
+	in_minigame = false
 	AudioManager.play("GANAR", current_speed)
 	
 	comence.emit()
@@ -54,7 +56,7 @@ func _state_minigame_intro():
 	
 	minigame_start.emit()
 	
-	
+	in_minigame = true
 	
 	#que se muestre el control a usar en una imagen
 	
@@ -72,7 +74,7 @@ func _state_minigame_intro():
 func _state_win():
 	AudioManager.play("GANAR", current_speed)
 	win.emit()
-
+	in_minigame = false
 	_cleanup_minigame()
 	
 	await get_tree().create_timer(2.4).timeout
@@ -99,6 +101,7 @@ func _state_lose():
 	lives -= 1
 	lost.emit()
 	AudioManager.play("PERDIDO", current_speed)
+	in_minigame = false
 	_cleanup_minigame()
 	
 	await get_tree().create_timer(2.4).timeout
