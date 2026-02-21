@@ -7,3 +7,4 @@ func _ready() -> void:
 
 func _exitGame() -> void:
 	get_tree().quit()
+	AudioManager.stop()

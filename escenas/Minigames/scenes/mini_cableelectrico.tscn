@@ -1,7 +1,8 @@
-[gd_scene format=3 uid="uid://cshg3nqb2m38b"]
+[gd_scene format=3 uid="uid://byjeqmexfvfmq"]
 
+[ext_resource type="Script" path="res://escenas/mini_data.gd" id="1_ahtef"]
 [ext_resource type="Script" uid="uid://dvkp78n5nmrxa" path="res://scripts/minigame_manager.gd" id="1_aq63c"]
-[ext_resource type="Script" uid="uid://cafx2uyhfuj8t" path="res://mini_cableelectrico.gd" id="1_flrll"]
+[ext_resource type="Script" path="res://mini_cableelectrico.gd" id="1_flrll"]
 [ext_resource type="Texture2D" uid="uid://dgrur2vavys1n" path="res://icon.svg" id="2_m4jyr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m4jyr"]
@@ -13,9 +14,10 @@ size = Vector2(119.00001, 118.99999)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ahtef"]
 size = Vector2(119, 117)
 
-[node name="MiniCableelectrico" type="Node2D" unique_id=916984755 node_paths=PackedStringArray("miniGameManager")]
-script = ExtResource("1_flrll")
-miniGameManager = NodePath("MiniGameManager")
+[node name="MiniCableelectrico" type="Node2D" unique_id=916984755]
+script = ExtResource("1_ahtef")
+instr = "CONECTA"
+control_type = 1
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=617459185]
 
@@ -59,3 +61,7 @@ texture = ExtResource("2_m4jyr")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wire3/Area2D" unique_id=1148353301]
 position = Vector2(-0.49999815, -1.5)
 shape = SubResource("RectangleShape2D_ahtef")
+
+[node name="cableManager" type="Node2D" parent="." unique_id=531922096 node_paths=PackedStringArray("miniGameManager")]
+script = ExtResource("1_flrll")
+miniGameManager = NodePath("../MiniGameManager")

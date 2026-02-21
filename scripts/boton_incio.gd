@@ -7,4 +7,5 @@ func _ready() -> void:
 	pressed.connect(_startGame)
 
 func _startGame() -> void:
+	AudioManager.stop()
 	get_tree().change_scene_to_packed(startScene)
