@@ -39,6 +39,11 @@ shader_parameter/rotation = Transform2D(1, -1, 1, 1, 0, 0)
 layout_mode = 3
 anchors_preset = 0
 
+[node name="ColorRect" type="ColorRect" parent="." unique_id=187341102]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
 [node name="Node2D" type="Sprite2D" parent="." unique_id=1941186521]
 material = SubResource("ShaderMaterial_c7pnh")
 position = Vector2(577.3806, 412.6019)
