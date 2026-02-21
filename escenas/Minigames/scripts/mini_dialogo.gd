@@ -36,7 +36,6 @@ func _change_dialogue():
 	
 	if skips>=skips_to_win:
 		minigame_manager.changeWin(true)
-		print("won")
 
 
 func _input(event: InputEvent) -> void:

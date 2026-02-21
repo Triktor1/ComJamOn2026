@@ -33,11 +33,9 @@ func changeWin(win: bool):
 	if endEarlyIfLost and !isWining:
 		end = true
 		await get_tree().create_timer(1).timeout
-		if GameManager.in_minigame:
-			GameManager._state_lose()
+		GameManager._state_lose()
 			
 	elif endEarlyIfWon and isWining:
 		end = true
 		await get_tree().create_timer(1).timeout
-		if GameManager.in_minigame:
-			GameManager._state_win()
+		GameManager._state_win()
