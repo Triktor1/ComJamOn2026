@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://47rpvm1noa64"]
+[gd_scene format=3 uid="uid://b8afn2otjlwku"]
 
 [ext_resource type="Script" uid="uid://gghdf4b74d5y" path="res://escenas/Minigames/scripts/mini_aguja.gd" id="1_7x618"]
 [ext_resource type="Script" uid="uid://dvkp78n5nmrxa" path="res://scripts/minigame_manager.gd" id="1_vgh2l"]

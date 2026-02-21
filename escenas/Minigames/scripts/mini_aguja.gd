@@ -31,7 +31,9 @@ func _input(event: InputEvent) -> void:
 
 func _on_col(area:Area2D):
 	if area==win_area:
-		print("win") #funcion instawin
+		print("win")
+		minigame_manager.changeWin(true)
 	elif area==lose_area:
-		print("lose") #funcion instalose
+		print("loose")
+		minigame_manager.changeWin(false)
 	
