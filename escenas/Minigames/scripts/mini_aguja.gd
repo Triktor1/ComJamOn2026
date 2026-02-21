@@ -34,6 +34,6 @@ func _on_col(area:Area2D):
 		print("win")
 		minigame_manager.changeWin(true)
 	elif area==lose_area:
-		print("loose")
+		print("lose")
 		minigame_manager.changeWin(false)
 	
