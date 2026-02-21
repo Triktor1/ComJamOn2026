@@ -1,14 +1,14 @@
 [gd_scene format=3 uid="uid://c5scdg5mdj3iq"]
 
+[ext_resource type="Script" uid="uid://13iqj1l5uwo8" path="res://escenas/mini_data.gd" id="1_8apfu"]
 [ext_resource type="Script" uid="uid://c57aj7ukri5po" path="res://escenas/Minigames/scripts/mini_dialogo.gd" id="1_86aga"]
 [ext_resource type="Script" uid="uid://dvkp78n5nmrxa" path="res://scripts/minigame_manager.gd" id="1_sk12o"]
 [ext_resource type="Texture2D" uid="uid://cuknmx0llsppa" path="res://assets/Muerte.png" id="3_oumfm"]
 
-[node name="Mini_Dialogo" type="Node2D" unique_id=1446933127 node_paths=PackedStringArray("minigame_manager", "dialogue_label")]
-script = ExtResource("1_86aga")
-minigame_manager = NodePath("MiniGame_Manager")
-dialogue_label = NodePath("DialogueLabel")
-skips_to_win = 15
+[node name="Mini_Dialogo" type="Node2D" unique_id=1446933127]
+script = ExtResource("1_8apfu")
+instr = "SKIP"
+control_type = 2
 
 [node name="MiniGame_Manager" type="Node" parent="." unique_id=1283280026]
 script = ExtResource("1_sk12o")
@@ -45,3 +45,9 @@ offset_bottom = 274.0
 theme_override_font_sizes/font_size = 60
 text = "Dialogue"
 autowrap_mode = 3
+
+[node name="dialogo_manager" type="Node2D" parent="." unique_id=789985481 node_paths=PackedStringArray("minigame_manager", "dialogue_label")]
+script = ExtResource("1_86aga")
+minigame_manager = NodePath("../MiniGame_Manager")
+dialogue_label = NodePath("../DialogueLabel")
+skips_to_win = 15
