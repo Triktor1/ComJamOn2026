@@ -5,7 +5,7 @@ extends Node2D
 @export var win_area:Area2D
 @export var lose_area:Area2D
 
-@export var speed:float=20.0
+@export var speed:float=12.0
 
 var limit:float=300.0
 var dir:int=-1
