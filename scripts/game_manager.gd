@@ -36,21 +36,6 @@ enum ControlType {
 	SPACE
 }
 
-# NUEVO: array de minijuegos con su texto y control
-var minigame_data: Array = [] # cada elemento es {text: String, control: ControlType}
-
-func _ready():
-	_prepare_minigame_data()
-
-func _prepare_minigame_data():
-	minigame_data.clear()
-	for scene in minigames:
-		var inst = scene.instantiate()
-		var text = inst.get("instr")    
-		var control = inst.get("control_type")
-		minigame_data.append({"text": text, "control": control})
-		inst.queue_free()
-
 # ESTADO 0 START
 func _state_start():
 	_shuffle_minigames()
@@ -81,11 +66,18 @@ func _state_minigame_intro():
 	_load_next_minigame()
 
 func _emit_intro_data():
-	if current_minigame_index >= minigame_data.size():
+	if current_minigame_index >= shuffled_minigames.size():
 		_shuffle_minigames()
 	
-	var data = minigame_data[current_minigame_index]
-	show_intro.emit(data["text"], data["control"])
+	var scene: PackedScene = shuffled_minigames[current_minigame_index]
+	var inst = scene.instantiate()
+
+	var text: String = inst.instr
+	var control: int = inst.control_type
+
+	inst.queue_free()
+
+	show_intro.emit(text, control)
 
 # RESTO DEL CÓDIGO SIN CAMBIOS
 
