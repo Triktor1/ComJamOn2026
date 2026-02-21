@@ -3,11 +3,13 @@ extends Node2D
 @export var piezas: Array[Node2D]
 
 var rotaciones_correctas = [0,0,0]
+var rotaciones = [90,180,270]
 var pieza_actual = 0
 var piezas_fijadas = []
 
 func _ready() -> void:
 	for i in piezas.size():
+		piezas[i].rotation_degrees += rotaciones.pick_random()
 		piezas_fijadas.append(false)
 		
 		
@@ -21,7 +23,6 @@ func rotar_pieza():
 	if piezas_fijadas[pieza_actual]:
 		return
 	piezas[pieza_actual].rotation_degrees += 90
-	
 	if piezas[pieza_actual].rotation_degrees >= 360:
 		piezas[pieza_actual].rotation_degrees = 0
 		
