@@ -137,8 +137,8 @@ lifetime = 20.0
 preprocess = 10.0
 process_material = ExtResource("15_2va1m")
 
-[node name="ParticulasRojas" type="GPUParticles2D" parent="." unique_id=1104658247]
-modulate = Color(0.8392157, 0.21176471, 0.21176471, 1)
+[node name="ParticulasNegras" type="GPUParticles2D" parent="." unique_id=1104658247]
+modulate = Color(0, 0, 0, 1)
 position = Vector2(564, -11)
 amount = 300
 lifetime = 20.0
