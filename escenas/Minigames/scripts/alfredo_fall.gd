@@ -1,8 +1,8 @@
 extends Node2D
 
-@export var max_angle = 60.0
+@export var max_angle = 65.0
 @export var tilt_speed = 120.0    
-@export var fall_accel = 50.0 
+@export var fall_accel = 40.0 
 @export var minigame_manager:MiniGameManager
 
 var current_angle = 0.0
