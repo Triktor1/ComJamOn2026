@@ -2,11 +2,13 @@
 
 [ext_resource type="Script" uid="uid://c57aj7ukri5po" path="res://escenas/Minigames/scripts/mini_dialogo.gd" id="1_86aga"]
 [ext_resource type="Script" uid="uid://dvkp78n5nmrxa" path="res://scripts/minigame_manager.gd" id="1_sk12o"]
+[ext_resource type="Texture2D" uid="uid://cuknmx0llsppa" path="res://assets/Muerte.png" id="3_oumfm"]
 
 [node name="Mini_Dialogo" type="Node2D" unique_id=1446933127 node_paths=PackedStringArray("minigame_manager", "dialogue_label")]
 script = ExtResource("1_86aga")
 minigame_manager = NodePath("MiniGame_Manager")
 dialogue_label = NodePath("DialogueLabel")
+skips_to_win = 15
 
 [node name="MiniGame_Manager" type="Node" parent="." unique_id=1283280026]
 script = ExtResource("1_sk12o")
@@ -14,9 +16,28 @@ isWining = false
 time = 5.0
 endEarlyIfWon = true
 
+[node name="BGColorRect" type="ColorRect" parent="." unique_id=1591923300]
+offset_left = -576.0
+offset_top = -324.0
+offset_right = 576.0
+offset_bottom = 324.0
+
 [node name="Camera2D" type="Camera2D" parent="." unique_id=484150014]
 
+[node name="Muerte" type="Sprite2D" parent="." unique_id=1762063652]
+position = Vector2(3, 37)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_oumfm")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=962823694]
+offset_left = -494.0
+offset_top = 74.0
+offset_right = 506.0
+offset_bottom = 274.0
+color = Color(0, 0, 0, 1)
+
 [node name="DialogueLabel" type="Label" parent="." unique_id=1527995503]
+visibility_layer = 2
 offset_left = -494.0
 offset_top = 74.0
 offset_right = 506.0
