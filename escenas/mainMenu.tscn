@@ -2,13 +2,13 @@
 
 [ext_resource type="Shader" uid="uid://jwwg2huy2cr1" path="res://Particulas y shaders/mainMenu.gdshader" id="1_5l8dw"]
 [ext_resource type="Script" uid="uid://b6asekge4jen4" path="res://scripts/boton_incio.gd" id="1_6uepu"]
-[ext_resource type="Texture2D" uid="uid://c4atqrod3f72r" path="res://assets/UI/TituloReal.png" id="1_81hdd"]
 [ext_resource type="PackedScene" uid="uid://c71lnth3o7asr" path="res://escenas/tests/buttonTest.tscn" id="1_wut1r"]
 [ext_resource type="Texture2D" uid="uid://dtybquer37yw5" path="res://assets/UI/ButtonJugar.png" id="2_1f6lb"]
 [ext_resource type="Texture2D" uid="uid://dgrur2vavys1n" path="res://icon.svg" id="2_c7pnh"]
 [ext_resource type="PackedScene" uid="uid://cg4co1hxxhhep" path="res://escenas/transition_scene.tscn" id="2_hvyp7"]
 [ext_resource type="Texture2D" uid="uid://cmu5ue4oam5rc" path="res://assets/UI/ButtonJugarHover.png" id="3_0a063"]
 [ext_resource type="Script" uid="uid://dk3i6o3eljb5m" path="res://scripts/boton_salir.gd" id="3_60els"]
+[ext_resource type="Texture2D" uid="uid://dn7v5nmg3jsap" path="res://assets/UI/yarnmaticLogo.png" id="3_c7pnh"]
 [ext_resource type="Texture2D" uid="uid://dkriess4iv02s" path="res://assets/UI/ButtonSalir.png" id="7_kf80i"]
 [ext_resource type="Texture2D" uid="uid://bjjks0r417fqt" path="res://assets/UI/ButtonSalirHover.png" id="8_ee8nr"]
 [ext_resource type="Texture2D" uid="uid://dfb6toxkrutm7" path="res://assets/UI/ButtonEndless.png" id="10_nympv"]
@@ -60,8 +60,10 @@ offset_right = 1148.0
 offset_bottom = 271.0
 
 [node name="LogoTex" type="TextureRect" parent="CanvasLayer/CenterContainerLogo" unique_id=392111397]
+custom_minimum_size = Vector2(950, 200)
 layout_mode = 2
-texture = ExtResource("1_81hdd")
+texture = ExtResource("3_c7pnh")
+stretch_mode = 6
 
 [node name="CenterContainerBotones" type="CenterContainer" parent="CanvasLayer" unique_id=1247026197]
 custom_minimum_size = Vector2(0, 300)
