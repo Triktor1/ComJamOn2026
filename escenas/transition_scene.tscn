@@ -9,14 +9,15 @@
 script = ExtResource("1_ksm4v")
 
 [node name="HealthManager" type="Node2D" parent="." unique_id=1650855632]
-position = Vector2(391, 514)
+position = Vector2(284.99997, 493)
+scale = Vector2(2, 2)
 script = ExtResource("2_cow4l")
 heart_scene = ExtResource("3_8awbl")
 
-[node name="LevelCount" type="TextEdit" parent="." unique_id=1478048450]
-offset_left = 232.0
-offset_top = 201.0
-offset_right = 933.0
-offset_bottom = 409.0
+[node name="Label" type="Label" parent="." unique_id=1620334625]
+offset_left = 316.0
+offset_top = 204.0
+offset_right = 882.0
+offset_bottom = 349.0
 theme_override_font_sizes/font_size = 128
 script = ExtResource("2_2t0xx")
