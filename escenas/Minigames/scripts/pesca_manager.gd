@@ -58,8 +58,6 @@ func _process(delta: float) -> void:
 			key.global_position.y-=speed*delta
 		elif current_direction=="D":
 			key.global_position.x-=speed*delta
-		
-		print(score," ",evil_score)
 
 func _randomize_direction():
 	current_direction=directions.pick_random()

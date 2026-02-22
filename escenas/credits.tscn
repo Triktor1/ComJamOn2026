@@ -1,31 +1,41 @@
 [gd_scene format=3 uid="uid://cx72k18hvwx15"]
 
-[ext_resource type="PackedScene" uid="uid://c71lnth3o7asr" path="res://buttonTest.tscn" id="1_nm7lk"]
+[ext_resource type="PackedScene" uid="uid://bhq7k2fh6grn4" path="res://escenas/prefabs/button_effects_component.tscn" id="1_000v3"]
+[ext_resource type="Script" uid="uid://d0ye38lh4so8l" path="res://scripts/credits.gd" id="1_ccpcd"]
 
-[node name="Credits" type="Node2D" unique_id=1597446570]
+[node name="Credits" type="Control" unique_id=507493597 node_paths=PackedStringArray("back_button")]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_ccpcd")
+back_button = NodePath("Back_Button")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=208783343]
+layout_mode = 1
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 1)
 
 [node name="Label" type="Label" parent="." unique_id=489592771]
-offset_left = 306.0
-offset_top = 169.0
-offset_right = 1547.0
-offset_bottom = 920.0
+layout_mode = 0
+offset_right = 1241.0
+offset_bottom = 751.0
 theme_override_font_sizes/font_size = 65
-text = "CREDITOS
-
-VICTOR: 
-L
-DAIDDIRIAN!l
-OSCAR:
-ALFRED"
+text = "CRÉDITOS
+Adrián de Miguel Cerezo
+Óscar Daniel Fernández
+Óscar Silva Urbina
+Víctor Castro Álvarez
+Víctor Álvarez Peral
+Mars(Música)"
 horizontal_alignment = 1
 
-[node name="Button" type="Button" parent="." unique_id=1494491952]
-offset_left = 732.99994
-offset_top = 94.0
-offset_right = 2012.0
-offset_bottom = 132.0
-rotation = -0.6942511
-scale = Vector2(-5.5969567, 1)
+[node name="Back_Button" type="Button" parent="." unique_id=1759254898]
+layout_mode = 0
+offset_left = 79.0
+offset_top = 468.0
+offset_right = 179.0
+offset_bottom = 568.0
+theme_override_font_sizes/font_size = 40
+text = "Back"
 
-[node name="ButtonEffectsComponent" parent="Button" unique_id=569650148 instance=ExtResource("1_nm7lk")]
-position = Vector2(508, 940)
+[node name="ButtonEffectsComponent" parent="Back_Button" unique_id=319245680 instance=ExtResource("1_000v3")]
