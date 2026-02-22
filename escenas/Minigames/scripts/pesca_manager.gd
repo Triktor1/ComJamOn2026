@@ -6,6 +6,7 @@ extends Node2D
 @export var time_to_change:float=1.0
 @export var max_score_to_reach:float=200.0
 @export var key:Sprite2D
+@export var fishes:Node
 
 
 @export var speed:float=2.0
@@ -44,10 +45,10 @@ func _process(delta: float) -> void:
 			time=0
 		if is_pressed:
 			score+=delta
-			if score>=max_score_to_reach:
-				minigame_manager.changeWin(true)
+			if score>=max_score_to_reach and evil_score<score:
+				_catch_fish()
 		evil_score+=delta
-		if evil_score>score:
+		if evil_score>=score:
 			minigame_manager.changeWin(false)
 		
 		if current_direction=="W":
@@ -69,3 +70,9 @@ func _randomize_direction():
 		key.texture=sprites[2]
 	elif current_direction=="D":
 		key.texture=sprites[3]
+
+
+func _catch_fish():
+	var caught_fish:Sprite2D=fishes.get_children().pick_random()
+	caught_fish.visible=true
+	minigame_manager.changeWin(true)
