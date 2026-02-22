@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cuknmx0llsppa" path="res://assets/Muerte.png" id="3_oumfm"]
 [ext_resource type="PackedScene" uid="uid://bbydgh63rc1xo" path="res://escenas/time_string.tscn" id="5_cgobl"]
 [ext_resource type="PackedScene" uid="uid://dywdg2xa4vxe3" path="res://escenas/pause_menu.tscn" id="6_o5knb"]
+[ext_resource type="AudioStream" uid="uid://cdncrehia0qis" path="res://assets/Sounds/dialogo.wav" id="7_d6a3s"]
 
 [node name="Mini_Dialogo" type="Node2D" unique_id=1446933127]
 script = ExtResource("1_8apfu")
@@ -66,3 +67,5 @@ offset_right = -576.0
 offset_bottom = -324.0
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=864238614]
+stream = ExtResource("7_d6a3s")
+autoplay = true

@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cdg6teqmw78yy" path="res://escenas/ModelsScenes/trozo_cable_3.tscn" id="7_qy11p"]
 [ext_resource type="PackedScene" uid="uid://c7u3tvpf211jn" path="res://escenas/ModelsScenes/postes_cables.tscn" id="8_an2rk"]
 [ext_resource type="PackedScene" uid="uid://bbydgh63rc1xo" path="res://escenas/time_string.tscn" id="8_burv3"]
+[ext_resource type="AudioStream" uid="uid://cp1e4weyy6dau" path="res://assets/Sounds/cable.wav" id="9_mi5tu"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_rb4fl"]
 viewport_path = NodePath("Wire1/TrozoCable1")
@@ -100,3 +101,7 @@ texture = SubResource("ViewportTexture_1jsmp")
 position = Vector2(-290, 258)
 scale = Vector2(2, 2)
 minigame_manager = NodePath("../MiniGameManager")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1509146697]
+stream = ExtResource("9_mi5tu")
+autoplay = true

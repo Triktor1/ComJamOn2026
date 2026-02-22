@@ -50,14 +50,18 @@ func _input(event: InputEvent) -> void:
 		if event is InputEventKey and event.pressed and not event.echo:
 			if event.is_action_pressed("Up") and keys_to_press[current_key]==1:
 				sprites_left[current_key].texture=null
+				AudioManager.play("B4")
 				current_key+=1
 			elif event.is_action_pressed("Left") and keys_to_press[current_key]==2:
 				sprites_left[current_key].texture=null
+				AudioManager.play("B1")
 				current_key+=1
 			elif event.is_action_pressed("Down") and keys_to_press[current_key]==3:
 				sprites_left[current_key].texture=null
+				AudioManager.play("B2")
 				current_key+=1
 			elif event.is_action_pressed("Right") and keys_to_press[current_key]==4:
+				AudioManager.play("B3")
 				sprites_left[current_key].texture=null
 				current_key+=1
 			elif (event.is_action_pressed("Up") and keys_to_press[current_key]!=1) or (event.is_action_pressed("Left") and keys_to_press[current_key]!=2) or (event.is_action_pressed("Down") and keys_to_press[current_key]!=3) or (event.is_action_pressed("Right") and keys_to_press[current_key]!=4) :
