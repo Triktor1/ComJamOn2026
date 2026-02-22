@@ -1,6 +1,6 @@
 extends Control
 
-@export var main_menu_button:Button
+@export var main_menu_button:BaseButton
 @export var label_score:Label
 
 # Called when the node enters the scene tree for the first time.

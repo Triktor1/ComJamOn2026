@@ -1,7 +1,9 @@
-[gd_scene format=3 uid="uid://mky8kc7nfe0h"]
+[gd_scene format=3 uid="uid://hyat0jl5p2ig"]
 
 [ext_resource type="Script" uid="uid://dnfp60q071onv" path="res://scripts/end_screen.gd" id="1_3373n"]
 [ext_resource type="PackedScene" uid="uid://bhq7k2fh6grn4" path="res://escenas/prefabs/button_effects_component.tscn" id="1_n825o"]
+[ext_resource type="Texture2D" uid="uid://5v8ucruc03vx" path="res://assets/UI/ButtonMenu.png" id="2_ra2i1"]
+[ext_resource type="Texture2D" uid="uid://bisrjfdcfu3xw" path="res://assets/UI/ButtonMenuHover.png" id="3_ny2qg"]
 
 [node name="EndScreen" type="Control" unique_id=112317611 node_paths=PackedStringArray("main_menu_button", "label_score")]
 layout_mode = 3
@@ -32,13 +34,16 @@ offset_bottom = 312.0
 theme_override_font_sizes/font_size = 60
 text = "0"
 
-[node name="Button" type="Button" parent="." unique_id=1107768440]
+[node name="Button" type="TextureButton" parent="." unique_id=1239724046]
+custom_minimum_size = Vector2(200, 105)
 layout_mode = 0
 offset_left = 393.0
 offset_top = 437.0
 offset_right = 620.0
 offset_bottom = 528.0
-theme_override_font_sizes/font_size = 40
-text = "Main menu"
+texture_normal = ExtResource("2_ra2i1")
+texture_pressed = ExtResource("2_ra2i1")
+texture_hover = ExtResource("3_ny2qg")
+stretch_mode = 6
 
 [node name="ButtonEffectsComponent" parent="Button" unique_id=319245680 instance=ExtResource("1_n825o")]
