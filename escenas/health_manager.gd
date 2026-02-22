@@ -12,7 +12,8 @@ func _ready():
 	
 	GameManager.lost.connect(_on_player_lost)
 	GameManager.comence.connect(_on_game_start)
-
+	GameManager.UIocult.connect(_on_ui_ocult)
+	GameManager.minigame_end.connect(_on_minigame_end)
 
 func _on_game_start():
 	_initialize_hearts(start_lives)
@@ -25,13 +26,11 @@ func _initialize_hearts(lives: int):
 		var heart = heart_scene.instantiate()
 		add_child(heart)
 		
-		heart.position.x = i * (heart.get_node("AnimatedSprite2D").sprite_frames.get_frame_texture("heart_idle", 0).get_width())
+		var anim_sprite = heart.get_node("AnimatedSprite2D")
+		heart.position.x = i * anim_sprite.sprite_frames.get_frame_texture("heart_idle", 0).get_width()
 		
-		var anim = heart.get_node("AnimatedSprite2D")
-		anim.play("heart_idle")
-		
+		anim_sprite.play("heart_idle")
 		hearts.append(heart)
-
 
 func _on_player_lost():
 	if current_lives <= 0:
@@ -44,8 +43,13 @@ func _on_player_lost():
 	anim.play("heart_death")
 	
 	await anim.animation_finished
-	heart.visible = false
+	heart.modulate.a = 0.3 # se hace parcialmente transparente
 
+func _on_ui_ocult():
+	modulate.a = 0
+
+func _on_minigame_end():
+	modulate.a = 1
 
 func _clear_hearts():
 	for h in hearts:

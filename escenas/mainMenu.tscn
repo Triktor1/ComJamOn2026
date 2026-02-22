@@ -2,6 +2,7 @@
 
 [ext_resource type="Shader" uid="uid://jwwg2huy2cr1" path="res://Particulas y shaders/mainMenu.gdshader" id="1_5l8dw"]
 [ext_resource type="Script" uid="uid://b6asekge4jen4" path="res://scripts/boton_incio.gd" id="1_6uepu"]
+[ext_resource type="Script" uid="uid://cl18x4uhqwk6o" path="res://escenas/main_menu.gd" id="1_l0rh0"]
 [ext_resource type="PackedScene" uid="uid://c71lnth3o7asr" path="res://escenas/tests/buttonTest.tscn" id="1_wut1r"]
 [ext_resource type="Texture2D" uid="uid://dtybquer37yw5" path="res://assets/UI/ButtonJugar.png" id="2_1f6lb"]
 [ext_resource type="Texture2D" uid="uid://dgrur2vavys1n" path="res://icon.svg" id="2_c7pnh"]
@@ -38,6 +39,7 @@ shader_parameter/rotation = Transform2D(1, -1, 1, 1, 0, 0)
 [node name="MainMenu" type="Control" unique_id=1907411161]
 layout_mode = 3
 anchors_preset = 0
+script = ExtResource("1_l0rh0")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=187341102]
 layout_mode = 0

@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://c2nyx1enyht0s"
-path="res://.godot/imported/SPEED UP.wav-1976d9a649885474a471066ad5e55268.sample"
+uid="uid://cma7bxsl182pq"
+path="res://.godot/imported/ganar.wav-cd0769873615e95d7d455202ac837771.sample"
 
 [deps]
 
-source_file="res://assets/Sounds/SPEED UP.wav"
-dest_files=["res://.godot/imported/SPEED UP.wav-1976d9a649885474a471066ad5e55268.sample"]
+source_file="res://assets/Sounds/ganar.wav"
+dest_files=["res://.godot/imported/ganar.wav-cd0769873615e95d7d455202ac837771.sample"]
 
 [params]
 

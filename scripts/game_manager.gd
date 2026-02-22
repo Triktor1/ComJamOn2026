@@ -29,6 +29,8 @@ signal lost
 signal speedup
 signal boss_intro
 signal show_intro(text: String, control_type: int)
+signal UIocult
+signal minigame_end
 
 enum ControlType {
 	WASD,
@@ -47,7 +49,7 @@ func _state_start():
 	AudioManager.play("GANAR", current_speed)
 	
 	comence.emit()
-	await get_tree().create_timer(2.4).timeout
+	await get_tree().create_timer(4.3).timeout
 	_state_minigame_intro()
 
 # ESTADO 1 COMIENZA MINIJUEGO
@@ -60,12 +62,15 @@ func _state_minigame_intro():
 	in_minigame = true
 	
 	_emit_intro_data()
-	await get_tree().create_timer(2).timeout
+	await get_tree().create_timer(2.7).timeout
 	
+	UIocult.emit()
 	_fade_out_overlay()
 	_load_next_minigame()
 
+
 func _emit_intro_data():
+	minigame_end.emit()
 	if current_minigame_index >= shuffled_minigames.size():
 		_shuffle_minigames()
 	
@@ -79,14 +84,14 @@ func _emit_intro_data():
 
 	show_intro.emit(text, control)
 
-# RESTO DEL CÓDIGO SIN CAMBIOS
-
+# ESTADO 2 SE GANA MINIJEUEGO
 func _state_win():
+	minigame_end.emit()
 	AudioManager.play("GANAR", current_speed)
 	win.emit()
 	in_minigame = false
 	_cleanup_minigame()
-	await get_tree().create_timer(2.4).timeout
+	await get_tree().create_timer(4.3).timeout
 	if boss_time:
 		if not endless:
 			_state_boss_intro()
@@ -102,13 +107,15 @@ func _state_win():
 	else:
 		_state_minigame_intro()
 
+# ESTADO 3 SE PIERDE M9INIJUEGO
 func _state_lose():
+	minigame_end.emit()
 	lives -= 1
 	lost.emit()
 	AudioManager.play("PERDIDO", current_speed)
 	in_minigame = false
 	_cleanup_minigame()
-	await get_tree().create_timer(2.4).timeout
+	await get_tree().create_timer(2.7).timeout
 	if lives <= 0:
 		_state_game_over()
 		return
@@ -153,6 +160,8 @@ func _state_boss_intro():
 	await get_tree().create_timer(2.4).timeout
 	boss_intro.emit()
 
+func _state_results():
+	pass
 func _state_final_victory():
 	return
 	

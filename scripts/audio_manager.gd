@@ -21,4 +21,8 @@ func play_one_shot(audio_stream:AudioStream,volume_db:float=0.0,from_position:fl
 	
 	one_shots.add_child(audio_one_shot)
 	return audio_one_shot
-	
+
+func stop() ->void:
+	if active_music_stream && active_music_stream.playing:
+		active_music_stream.stop()
+	active_music_stream = null

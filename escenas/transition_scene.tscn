@@ -4,8 +4,10 @@
 [ext_resource type="Script" uid="uid://bsfbodaqg44ws" path="res://escenas/level_count_text.gd" id="2_2t0xx"]
 [ext_resource type="Script" uid="uid://d2sdy00h8wea8" path="res://escenas/health_manager.gd" id="2_cow4l"]
 [ext_resource type="PackedScene" uid="uid://t4lkg1phd0fg" path="res://escenas/heart.tscn" id="3_8awbl"]
-[ext_resource type="Script" path="res://escenas/controles.gd" id="5_8bhlb"]
-[ext_resource type="Script" path="res://escenas/instruccion.gd" id="5_ih10d"]
+[ext_resource type="PackedScene" uid="uid://eotlsmvlj8tq" path="res://escenas/heart_ovillo.tscn" id="4_o5o1d"]
+[ext_resource type="Script" uid="uid://dccalsp4nlcss" path="res://escenas/controles.gd" id="5_8bhlb"]
+[ext_resource type="Script" uid="uid://by13a1gehg4dw" path="res://escenas/instruccion.gd" id="5_ih10d"]
+[ext_resource type="FontFile" uid="uid://bhdfurpui1ibs" path="res://assets/PlaywriteNZBasic-VariableFont_wght.ttf" id="5_wdphn"]
 [ext_resource type="Texture2D" uid="uid://byrvwb5fgokky" path="res://assets/UI/TeclaW.png" id="7_thy87"]
 [ext_resource type="Texture2D" uid="uid://dws3g5a1mrg7f" path="res://assets/UI/TeclaA.png" id="8_o5o1d"]
 [ext_resource type="Texture2D" uid="uid://c7w8t43lflupg" path="res://assets/UI/TeclaS.png" id="9_wdphn"]
@@ -22,12 +24,19 @@ position = Vector2(284.99997, 493)
 scale = Vector2(2, 2)
 script = ExtResource("2_cow4l")
 heart_scene = ExtResource("3_8awbl")
+ovillo = ExtResource("4_o5o1d")
+
+[node name="AnimatedSprite2D" parent="HealthManager" unique_id=2011428439 instance=ExtResource("4_o5o1d")]
+position = Vector2(-80, 2)
+autoplay = "heart_ov"
 
 [node name="Label" type="Label" parent="." unique_id=1620334625]
 offset_left = 316.0
 offset_top = 204.0
 offset_right = 882.0
 offset_bottom = 349.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_wdphn")
 theme_override_font_sizes/font_size = 128
 script = ExtResource("2_2t0xx")
 
@@ -48,4 +57,6 @@ offset_left = 709.0
 offset_top = 311.0
 offset_right = 749.0
 offset_bottom = 334.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_wdphn")
 script = ExtResource("5_8bhlb")
