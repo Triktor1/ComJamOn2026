@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://d0402hf4buurk" path="res://escenas/mano.tscn" id="4_xdq5c"]
 [ext_resource type="PackedScene" uid="uid://dn8pk608jei26" path="res://escenas/aguja.tscn" id="5_a8a75"]
 [ext_resource type="PackedScene" uid="uid://bbydgh63rc1xo" path="res://escenas/time_string.tscn" id="6_a8a75"]
+[ext_resource type="PackedScene" uid="uid://dywdg2xa4vxe3" path="res://escenas/pause_menu.tscn" id="7_p1o6e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7x618"]
 size = Vector2(29, 93)
@@ -77,10 +78,15 @@ texture = SubResource("ViewportTexture_p1o6e")
 
 [node name="Aguja" parent="." unique_id=1138073587 instance=ExtResource("5_a8a75")]
 position = Vector2(136.00002, 275)
-scale = Vector2(3, 3)
 texture = SubResource("ViewportTexture_t3u0j")
 
 [node name="TimeString" parent="." unique_id=394185148 node_paths=PackedStringArray("minigame_manager") instance=ExtResource("6_a8a75")]
 position = Vector2(-290, 258)
 scale = Vector2(2, 2)
 minigame_manager = NodePath("../MiniGame_Manager")
+
+[node name="PauseMenu" parent="." unique_id=1975666058 instance=ExtResource("7_p1o6e")]
+offset_left = -576.0
+offset_top = -324.0
+offset_right = -576.0
+offset_bottom = -324.0

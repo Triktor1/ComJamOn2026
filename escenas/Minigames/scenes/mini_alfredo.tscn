@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://hqgnxhaemmhi" path="res://escenas/Minigames/scripts/alfredo_fall.gd" id="3_skode"]
 [ext_resource type="PackedScene" uid="uid://b54unurjerieg" path="res://escenas/managers/minigame_manager.tscn" id="3_xnbno"]
 [ext_resource type="PackedScene" uid="uid://botkdjgpn363i" path="res://escenas/ModelsScenes/alfredito.tscn" id="5_xnbno"]
+[ext_resource type="PackedScene" uid="uid://dywdg2xa4vxe3" path="res://escenas/pause_menu.tscn" id="7_kayi4"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_68x11"]
 viewport_path = NodePath("Node2D/Alfredo/Alfredito")
@@ -38,3 +39,9 @@ position = Vector2(7, -115)
 texture = SubResource("ViewportTexture_68x11")
 
 [node name="Alfredito" parent="Node2D/Alfredo" unique_id=259962109 instance=ExtResource("5_xnbno")]
+
+[node name="PauseMenu" parent="." unique_id=1975666058 instance=ExtResource("7_kayi4")]
+offset_left = -576.0
+offset_top = -324.0
+offset_right = -576.0
+offset_bottom = -324.0
