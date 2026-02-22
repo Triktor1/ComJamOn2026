@@ -29,6 +29,8 @@ signal lost
 signal speedup
 signal boss_intro
 signal show_intro(text: String, control_type: int)
+signal UIocult
+signal minigame_end
 
 enum ControlType {
 	WASD,
@@ -62,10 +64,13 @@ func _state_minigame_intro():
 	_emit_intro_data()
 	await get_tree().create_timer(2.7).timeout
 	
+	UIocult.emit()
 	_fade_out_overlay()
 	_load_next_minigame()
 
+
 func _emit_intro_data():
+	minigame_end.emit()
 	if current_minigame_index >= shuffled_minigames.size():
 		_shuffle_minigames()
 	
@@ -79,7 +84,9 @@ func _emit_intro_data():
 
 	show_intro.emit(text, control)
 
+# ESTADO 2 SE GANA MINIJEUEGO
 func _state_win():
+	minigame_end.emit()
 	AudioManager.play("GANAR", current_speed)
 	win.emit()
 	in_minigame = false
@@ -100,7 +107,9 @@ func _state_win():
 	else:
 		_state_minigame_intro()
 
+# ESTADO 3 SE PIERDE M9INIJUEGO
 func _state_lose():
+	minigame_end.emit()
 	lives -= 1
 	lost.emit()
 	AudioManager.play("PERDIDO", current_speed)

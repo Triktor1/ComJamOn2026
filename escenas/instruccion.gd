@@ -6,6 +6,14 @@ extends Control
 
 func _ready():
 	GameManager.show_intro.connect(_on_show_intro)
+	GameManager.UIocult.connect(_on_ui_ocult)
+	GameManager.minigame_end.connect(_on_minigame_end)
+
+func _on_ui_ocult():
+	modulate.a = 0
+
+func _on_minigame_end():
+	modulate.a = 1
 
 func _on_show_intro(_text: String, control_type: int):
 	for child in get_children():
