@@ -3,6 +3,7 @@ extends Control
 @export var wasd_textures: Array[Texture2D]
 @export var zx_textures: Array[Texture2D]
 @export var space_textures: Array[Texture2D]
+@export var ads_textures: Array[Texture2D]
 
 func _ready():
 	GameManager.show_intro.connect(_on_show_intro)
@@ -28,6 +29,8 @@ func _on_show_intro(_text: String, control_type: int):
 			textures = zx_textures
 		GameManager.ControlType.SPACE:
 			textures = space_textures
+		GameManager.ControlType.ADS:
+			textures = ads_textures
 	
 	for texture in textures:
 		var sprite := Sprite2D.new()

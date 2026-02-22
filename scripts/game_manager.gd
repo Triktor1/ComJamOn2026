@@ -50,7 +50,8 @@ signal cat_boss
 enum ControlType {
 	WASD,
 	ZX,
-	SPACE
+	SPACE,
+	ADS
 }
 
 # ESTADO 0 START
