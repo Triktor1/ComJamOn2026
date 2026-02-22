@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://c6g2p0hl5wfta" path="res://assets/Facundo.png" id="8_ixalb"]
 [ext_resource type="Texture2D" uid="uid://q3khdap5v0tf" path="res://assets/fish_rock.png" id="9_cyg7n"]
 [ext_resource type="Texture2D" uid="uid://d4klxq3antfbe" path="res://assets/Blowjob.png" id="10_cyg7n"]
+[ext_resource type="PackedScene" uid="uid://bbydgh63rc1xo" path="res://escenas/time_string.tscn" id="11_xi77v"]
 
 [node name="Mini_Pesca" type="Node2D" unique_id=1386607904]
 script = ExtResource("1_12e0j")
@@ -59,3 +60,8 @@ visible = false
 position = Vector2(147, -19)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("10_cyg7n")
+
+[node name="TimeString" parent="." unique_id=394185148 node_paths=PackedStringArray("minigame_manager") instance=ExtResource("11_xi77v")]
+position = Vector2(-290, 258)
+scale = Vector2(2, 2)
+minigame_manager = NodePath("../MiniGame_Manager")

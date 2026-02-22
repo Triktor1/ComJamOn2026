@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://dvkp78n5nmrxa" path="res://scripts/minigame_manager.gd" id="1_vgh2l"]
 [ext_resource type="PackedScene" uid="uid://d0402hf4buurk" path="res://escenas/mano.tscn" id="4_xdq5c"]
 [ext_resource type="PackedScene" uid="uid://dn8pk608jei26" path="res://escenas/aguja.tscn" id="5_a8a75"]
+[ext_resource type="PackedScene" uid="uid://bbydgh63rc1xo" path="res://escenas/time_string.tscn" id="6_a8a75"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7x618"]
 size = Vector2(29, 93)
@@ -34,7 +35,7 @@ minigame_manager = NodePath("../MiniGame_Manager")
 needle = NodePath("../needle")
 win_area = NodePath("../win_area")
 lose_area = NodePath("../lose_area")
-speed = 1200.0
+speed = 750.0
 
 [node name="MiniGame_Manager" type="Node" parent="." unique_id=567200864]
 script = ExtResource("1_vgh2l")
@@ -78,3 +79,8 @@ texture = SubResource("ViewportTexture_p1o6e")
 position = Vector2(136.00002, 275)
 scale = Vector2(3, 3)
 texture = SubResource("ViewportTexture_t3u0j")
+
+[node name="TimeString" parent="." unique_id=394185148 node_paths=PackedStringArray("minigame_manager") instance=ExtResource("6_a8a75")]
+position = Vector2(-290, 258)
+scale = Vector2(2, 2)
+minigame_manager = NodePath("../MiniGame_Manager")

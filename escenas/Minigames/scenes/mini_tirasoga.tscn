@@ -1,12 +1,13 @@
 [gd_scene format=3 uid="uid://0xv1hppkgnqe"]
 
-[ext_resource type="Script" uid="uid://c1sg54ny6asow" path="res://escenas/Minigames/scripts/mini_tirasoga.gd" id="1_ubnpu"]
+[ext_resource type="Script" path="res://escenas/Minigames/scripts/mini_tirasoga.gd" id="1_ubnpu"]
 [ext_resource type="Script" uid="uid://13iqj1l5uwo8" path="res://escenas/mini_data.gd" id="1_xpre0"]
 [ext_resource type="Script" uid="uid://dvkp78n5nmrxa" path="res://scripts/minigame_manager.gd" id="2_xpre0"]
-[ext_resource type="Script" uid="uid://rqbqxgmt473w" path="res://escenas/Minigames/scripts/tirasoga.gd" id="3_q7ktg"]
+[ext_resource type="Script" path="res://escenas/Minigames/scripts/tirasoga.gd" id="3_q7ktg"]
 [ext_resource type="PackedScene" uid="uid://bpsuua2ja5d5i" path="res://escenas/ModelsScenes/cheering_guy_2.tscn" id="5_ro7t0"]
 [ext_resource type="PackedScene" uid="uid://pe5yqcwt8s7o" path="res://escenas/ModelsScenes/Soga.tscn" id="5_xpre0"]
 [ext_resource type="PackedScene" uid="uid://dvceifd5esbv8" path="res://escenas/ModelsScenes/cheering_guy.tscn" id="6_q7ktg"]
+[ext_resource type="PackedScene" uid="uid://bbydgh63rc1xo" path="res://escenas/time_string.tscn" id="8_yogf2"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_ro7t0"]
 viewport_path = NodePath("Cheerer1/CheeringGuy")
@@ -71,7 +72,7 @@ texture = SubResource("ViewportTexture_yogf2")
 [node name="Tirasoga" type="Node2D" parent="." unique_id=1601303618]
 script = ExtResource("3_q7ktg")
 speed = 50.0
-jump = 15.0
+jump = 18.0
 
 [node name="Area2D" type="Area2D" parent="Tirasoga" unique_id=78133546]
 
@@ -100,3 +101,8 @@ position = Vector2(288, -32)
 position = Vector2(0, 37.5)
 scale = Vector2(25, 1)
 shape = SubResource("RectangleShape2D_6k3k2")
+
+[node name="TimeString" parent="." unique_id=394185148 node_paths=PackedStringArray("minigame_manager") instance=ExtResource("8_yogf2")]
+position = Vector2(-290, 258)
+scale = Vector2(2, 2)
+minigame_manager = NodePath("../Minigame_Manager")

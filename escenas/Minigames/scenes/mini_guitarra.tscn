@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dpsk1jytbe2p7" path="res://assets/UI/TeclaD.png" id="6_xstek"]
 [ext_resource type="Texture2D" uid="uid://df8h4braadfoq" path="res://assets/3DModels/GuitarraMinigame/WinScreenGuitar.png" id="9_xstek"]
 [ext_resource type="Texture2D" uid="uid://d1la35ue5smb3" path="res://assets/3DModels/GuitarraMinigame/LoseScreenGuitar.png" id="10_u7ix7"]
+[ext_resource type="PackedScene" uid="uid://bbydgh63rc1xo" path="res://escenas/time_string.tscn" id="11_u7ix7"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_fq6ps"]
 viewport_path = NodePath("BajoSprite/Bajo")
@@ -30,6 +31,7 @@ texture = SubResource("ViewportTexture_fq6ps")
 
 [node name="MiniGame_Manager" type="Node" parent="." unique_id=943754305]
 script = ExtResource("1_x5euf")
+isWining = false
 endEarlyIfWon = true
 endEarlyIfLost = true
 
@@ -74,3 +76,8 @@ texture = ExtResource("9_xstek")
 visible = false
 scale = Vector2(1.1, 1.1)
 texture = ExtResource("10_u7ix7")
+
+[node name="TimeString" parent="." unique_id=394185148 node_paths=PackedStringArray("minigame_manager") instance=ExtResource("11_u7ix7")]
+position = Vector2(-290, 258)
+scale = Vector2(2, 2)
+minigame_manager = NodePath("../MiniGame_Manager")
