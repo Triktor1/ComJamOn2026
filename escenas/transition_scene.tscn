@@ -30,10 +30,10 @@ position = Vector2(-80, 2)
 autoplay = "heart_ov"
 
 [node name="Label" type="Label" parent="." unique_id=1620334625]
-offset_left = 316.0
-offset_top = 204.0
-offset_right = 882.0
-offset_bottom = 349.0
+offset_left = 539.0
+offset_top = 216.0
+offset_right = 1071.0
+offset_bottom = 441.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_wdphn")
 theme_override_font_sizes/font_size = 128
@@ -42,20 +42,22 @@ script = ExtResource("2_2t0xx")
 [node name="Controles" type="Control" parent="." unique_id=427053296]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 502.0
-offset_top = 62.0
-offset_right = 707.0
-offset_bottom = 192.0
+offset_left = 462.0
+offset_top = 416.00003
+offset_right = 667.0
+offset_bottom = 546.0
+scale = Vector2(3, 3)
 script = ExtResource("5_ih10d")
 wasd_textures = Array[Texture2D]([ExtResource("7_thy87"), ExtResource("8_o5o1d"), ExtResource("9_wdphn"), ExtResource("10_hko7j")])
 zx_textures = Array[Texture2D]([ExtResource("11_shmcw"), ExtResource("12_y5t0s")])
 space_textures = Array[Texture2D]([ExtResource("13_su6wb")])
 
 [node name="Instruccion" type="Label" parent="." unique_id=845575253]
-offset_left = 709.0
-offset_top = 311.0
-offset_right = 749.0
-offset_bottom = 334.0
+offset_left = 507.0
+offset_top = 571.0
+offset_right = 547.0
+offset_bottom = 598.0
+scale = Vector2(3, 3)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_wdphn")
 script = ExtResource("5_8bhlb")
