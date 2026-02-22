@@ -1,10 +1,13 @@
 [gd_scene format=3 uid="uid://xfryq41w5dvc"]
 
-[ext_resource type="Texture2D" uid="uid://cw3fnq4453abi" path="res://assets/fakeAlfredo.png" id="1_hrp06"]
 [ext_resource type="Script" uid="uid://13iqj1l5uwo8" path="res://escenas/mini_data.gd" id="1_xnbno"]
 [ext_resource type="Texture2D" uid="uid://dgrur2vavys1n" path="res://icon.svg" id="2_skode"]
 [ext_resource type="Script" uid="uid://hqgnxhaemmhi" path="res://escenas/Minigames/scripts/alfredo_fall.gd" id="3_skode"]
 [ext_resource type="PackedScene" uid="uid://b54unurjerieg" path="res://escenas/managers/minigame_manager.tscn" id="3_xnbno"]
+[ext_resource type="PackedScene" uid="uid://botkdjgpn363i" path="res://escenas/ModelsScenes/alfredito.tscn" id="5_xnbno"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_68x11"]
+viewport_path = NodePath("Node2D/Alfredo/Alfredito")
 
 [node name="Mini_Alfredo" type="Node2D" unique_id=1716738336]
 script = ExtResource("1_xnbno")
@@ -25,6 +28,7 @@ script = ExtResource("3_skode")
 minigame_manager = NodePath("../MinigameManager")
 
 [node name="Alfredo" type="Sprite2D" parent="Node2D" unique_id=603704373]
-position = Vector2(18, -126)
-scale = Vector2(0.20707312, 0.20898436)
-texture = ExtResource("1_hrp06")
+position = Vector2(7, -115)
+texture = SubResource("ViewportTexture_68x11")
+
+[node name="Alfredito" parent="Node2D/Alfredo" unique_id=259962109 instance=ExtResource("5_xnbno")]

@@ -369,6 +369,7 @@ transparent_bg = true
 size = Vector2i(294, 440)
 
 [node name="Armature_001" type="Node3D" parent="." unique_id=1157058439]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -51.305733, 0)
 
 [node name="Skeleton3D" type="Skeleton3D" parent="Armature_001" unique_id=2133933275]
 bones/0/name = "Root"
@@ -522,7 +523,7 @@ libraries/ = SubResource("AnimationLibrary_ly37d")
 autoplay = &"Action2"
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=179050512]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.1967196, 9.914694)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -46.109013, 9.914694)
 projection = 1
 current = true
 size = 11.337

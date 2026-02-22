@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://dn8pk608jei26"]
+
+[ext_resource type="PackedScene" uid="uid://ccyb8uvwytb2o" path="res://escenas/ModelsScenes/aguja.tscn" id="1_qo32e"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_qvgb7"]
+viewport_path = NodePath("Aguja2")
+
+[node name="Aguja" type="Sprite2D" unique_id=1138073587]
+texture = SubResource("ViewportTexture_qvgb7")
+
+[node name="Aguja2" parent="." unique_id=1159572469 instance=ExtResource("1_qo32e")]

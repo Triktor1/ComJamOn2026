@@ -7,6 +7,11 @@ extends Node2D
 @export var minigame_manager:MiniGameManager
 
 @export var sprites:Array[Texture2D]
+
+@export var bajo:Sprite2D
+@export var won:Sprite2D
+@export var lost:Sprite2D
+
 var sprites_left:Array=[]
 var keys_to_press:Array=[]
 var current_key=0
@@ -56,10 +61,12 @@ func _input(event: InputEvent) -> void:
 				sprites_left[current_key].texture=null
 				current_key+=1
 			else:
-				print("lose :(") #perder automaticamente
+				lost.visible=true
+				bajo.visible=false
 				minigame_manager.changeWin(false)
 				done=true
 			if current_key==4:
-				print("win :)") #win automatico
+				won.visible=true
+				bajo.visible=false
 				minigame_manager.changeWin(true)
 				done=true

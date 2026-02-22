@@ -3,10 +3,16 @@
 [ext_resource type="Script" uid="uid://13iqj1l5uwo8" path="res://escenas/mini_data.gd" id="1_1rn7l"]
 [ext_resource type="Script" uid="uid://dj0xmhp165xq0" path="res://escenas/Minigames/scripts/mini_guitarra.gd" id="1_g0hk8"]
 [ext_resource type="Script" uid="uid://dvkp78n5nmrxa" path="res://scripts/minigame_manager.gd" id="1_x5euf"]
+[ext_resource type="PackedScene" uid="uid://lxinjspisotf" path="res://escenas/ModelsScenes/bajo.tscn" id="2_s2qsi"]
 [ext_resource type="Texture2D" uid="uid://byrvwb5fgokky" path="res://assets/UI/TeclaW.png" id="3_of2n6"]
 [ext_resource type="Texture2D" uid="uid://dws3g5a1mrg7f" path="res://assets/UI/TeclaA.png" id="4_s2qsi"]
 [ext_resource type="Texture2D" uid="uid://c7w8t43lflupg" path="res://assets/UI/TeclaS.png" id="5_fq6ps"]
 [ext_resource type="Texture2D" uid="uid://dpsk1jytbe2p7" path="res://assets/UI/TeclaD.png" id="6_xstek"]
+[ext_resource type="Texture2D" uid="uid://df8h4braadfoq" path="res://assets/3DModels/GuitarraMinigame/WinScreenGuitar.png" id="9_xstek"]
+[ext_resource type="Texture2D" uid="uid://d1la35ue5smb3" path="res://assets/3DModels/GuitarraMinigame/LoseScreenGuitar.png" id="10_u7ix7"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_fq6ps"]
+viewport_path = NodePath("BajoSprite/Bajo")
 
 [node name="Mini_Guitarra" type="Node2D" unique_id=1024897877]
 script = ExtResource("1_1rn7l")
@@ -14,36 +20,57 @@ instr = "TOCA"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=69519787]
 
+[node name="BajoSprite" type="Sprite2D" parent="." unique_id=474055202]
+position = Vector2(-5.9999995, 1284)
+rotation = -1.5707964
+scale = Vector2(3.2, 3.2)
+texture = SubResource("ViewportTexture_fq6ps")
+
+[node name="Bajo" parent="BajoSprite" unique_id=972485707 instance=ExtResource("2_s2qsi")]
+
 [node name="MiniGame_Manager" type="Node" parent="." unique_id=943754305]
 script = ExtResource("1_x5euf")
 endEarlyIfWon = true
 endEarlyIfLost = true
 
 [node name="Key1" type="Sprite2D" parent="." unique_id=1015072775]
-position = Vector2(-431, -4)
+position = Vector2(-410, -4)
 scale = Vector2(3, 3)
 texture = ExtResource("3_of2n6")
 
 [node name="Key2" type="Sprite2D" parent="." unique_id=1902875485]
-position = Vector2(-166, 0)
+position = Vector2(-148, 0)
 scale = Vector2(3, 3)
 texture = ExtResource("4_s2qsi")
 
 [node name="Key3" type="Sprite2D" parent="." unique_id=1468404162]
-position = Vector2(150, -1)
+position = Vector2(132, -1)
 scale = Vector2(3, 3)
 texture = ExtResource("5_fq6ps")
 
 [node name="Key4" type="Sprite2D" parent="." unique_id=95187940]
-position = Vector2(405, 0)
+position = Vector2(393, 0)
 scale = Vector2(3, 3)
 texture = ExtResource("6_xstek")
 
-[node name="GuitarraManager" type="Node2D" parent="." unique_id=1394385120 node_paths=PackedStringArray("key1", "key2", "key3", "key4", "minigame_manager")]
+[node name="GuitarraManager" type="Node2D" parent="." unique_id=1394385120 node_paths=PackedStringArray("key1", "key2", "key3", "key4", "minigame_manager", "bajo", "won", "lost")]
 script = ExtResource("1_g0hk8")
 key1 = NodePath("../Key1")
 key2 = NodePath("../Key2")
 key3 = NodePath("../Key3")
 key4 = NodePath("../Key4")
 minigame_manager = NodePath("../MiniGame_Manager")
-sprites = [ExtResource("3_of2n6"), ExtResource("4_s2qsi"), ExtResource("5_fq6ps"), ExtResource("6_xstek")]
+sprites = Array[Texture2D]([ExtResource("3_of2n6"), ExtResource("4_s2qsi"), ExtResource("5_fq6ps"), ExtResource("6_xstek")])
+bajo = NodePath("../BajoSprite")
+won = NodePath("../Won")
+lost = NodePath("../Lost")
+
+[node name="Won" type="Sprite2D" parent="." unique_id=395419809]
+visible = false
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("9_xstek")
+
+[node name="Lost" type="Sprite2D" parent="." unique_id=941196007]
+visible = false
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("10_u7ix7")

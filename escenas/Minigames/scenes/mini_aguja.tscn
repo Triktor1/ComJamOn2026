@@ -3,7 +3,8 @@
 [ext_resource type="Script" uid="uid://gghdf4b74d5y" path="res://escenas/Minigames/scripts/mini_aguja.gd" id="1_7x618"]
 [ext_resource type="Script" uid="uid://13iqj1l5uwo8" path="res://escenas/mini_data.gd" id="1_pjvlw"]
 [ext_resource type="Script" uid="uid://dvkp78n5nmrxa" path="res://scripts/minigame_manager.gd" id="1_vgh2l"]
-[ext_resource type="Texture2D" uid="uid://dgrur2vavys1n" path="res://icon.svg" id="3_o3q8y"]
+[ext_resource type="PackedScene" uid="uid://d0402hf4buurk" path="res://escenas/mano.tscn" id="4_xdq5c"]
+[ext_resource type="PackedScene" uid="uid://dn8pk608jei26" path="res://escenas/aguja.tscn" id="5_a8a75"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7x618"]
 size = Vector2(29, 93)
@@ -15,6 +16,12 @@ size = Vector2(47, 377)
 size = Vector2(36, 183)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vgh2l"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_p1o6e"]
+viewport_path = NodePath("ManoHilo")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_t3u0j"]
+viewport_path = NodePath("Aguja2")
 
 [node name="Mini_Aguja" type="Node2D" unique_id=1618101336]
 script = ExtResource("1_pjvlw")
@@ -63,12 +70,11 @@ position = Vector2(-37, -5)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="needle/needle_area" unique_id=70990058]
 shape = SubResource("RectangleShape2D_vgh2l")
 
-[node name="Sprite2D" type="Sprite2D" parent="needle" unique_id=515701056]
-position = Vector2(-88.99999, -6)
-scale = Vector2(0.95999974, 0.11999979)
-texture = ExtResource("3_o3q8y")
+[node name="mano" parent="needle" unique_id=213490138 instance=ExtResource("4_xdq5c")]
+position = Vector2(-155, 351)
+texture = SubResource("ViewportTexture_p1o6e")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1731791846]
-position = Vector2(159, -85)
-scale = Vector2(1, 0.7599999)
-texture = ExtResource("3_o3q8y")
+[node name="Aguja" parent="." unique_id=1138073587 instance=ExtResource("5_a8a75")]
+position = Vector2(136.00002, 275)
+scale = Vector2(3, 3)
+texture = SubResource("ViewportTexture_t3u0j")

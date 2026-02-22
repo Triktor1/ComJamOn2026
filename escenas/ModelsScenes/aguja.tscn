@@ -74,10 +74,11 @@ transparent_bg = true
 size = Vector2i(54, 477)
 
 [node name="Aguja" type="MeshInstance3D" parent="." unique_id=1670830292]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 175.66537, 0, 0)
 mesh = SubResource("ArrayMesh_oyxrb")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=388457410]
-transform = Transform3D(0.99999505, 0, -0.0031415876, 0, 1, 0, 0.0031415876, 0, 0.99999505, 0.42104745, 0.57061124, 19.826027)
+transform = Transform3D(0.99999505, 0, -0.0031415876, 0, 1, 0, 0.0031415876, 0, 0.99999505, 176.08643, 0.57061124, 19.826027)
 v_offset = -10.53
 projection = 1
 current = true

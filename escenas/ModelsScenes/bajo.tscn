@@ -135,9 +135,9 @@ transparent_bg = true
 size = Vector2i(1280, 720)
 
 [node name="Base" type="MeshInstance3D" parent="." unique_id=440176107]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5107763, 0.41892728)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.356197, -0.5107763, 0.41892728)
 mesh = SubResource("ArrayMesh_nw6fi")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=6802901]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.1374412)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.356197, 0, 2.1374412)
 current = true

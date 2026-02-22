@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://d0402hf4buurk"]
+
+[ext_resource type="PackedScene" uid="uid://dj775fn67fy18" path="res://escenas/ModelsScenes/mano_hilo.tscn" id="1_a8u2s"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_ae64q"]
+viewport_path = NodePath("ManoHilo")
+
+[node name="mano" type="Sprite2D" unique_id=213490138]
+texture = SubResource("ViewportTexture_ae64q")
+
+[node name="ManoHilo" parent="." unique_id=824151044 instance=ExtResource("1_a8u2s")]
