@@ -5,8 +5,7 @@
 [ext_resource type="Script" uid="uid://hqgnxhaemmhi" path="res://escenas/Minigames/scripts/alfredo_fall.gd" id="3_skode"]
 [ext_resource type="PackedScene" uid="uid://b54unurjerieg" path="res://escenas/managers/minigame_manager.tscn" id="3_xnbno"]
 [ext_resource type="PackedScene" uid="uid://botkdjgpn363i" path="res://escenas/ModelsScenes/alfredito.tscn" id="5_xnbno"]
-[ext_resource type="PackedScene" uid="uid://dywdg2xa4vxe3" path="res://escenas/pause_menu.tscn" id="7_kayi4"]
-[ext_resource type="PackedScene" path="res://escenas/ModelsScenes/cuerda_alfredo.tscn" id="8_cywdc"]
+[ext_resource type="PackedScene" uid="uid://whk6kmjpd1b6" path="res://escenas/ModelsScenes/cuerda_alfredo.tscn" id="8_cywdc"]
 [ext_resource type="AudioStream" uid="uid://b2qhxvrlnyl5a" path="res://assets/Sounds/funambulista.wav" id="8_lb7uc"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_68x11"]
@@ -38,12 +37,6 @@ position = Vector2(7, -115)
 texture = SubResource("ViewportTexture_68x11")
 
 [node name="Alfredito" parent="Node2D/Alfredo" unique_id=259962109 instance=ExtResource("5_xnbno")]
-
-[node name="PauseMenu" parent="." unique_id=1975666058 instance=ExtResource("7_kayi4")]
-offset_left = -576.0
-offset_top = -324.0
-offset_right = -576.0
-offset_bottom = -324.0
 
 [node name="Cuerda" type="Sprite2D" parent="." unique_id=708237972]
 position = Vector2(579, 475)

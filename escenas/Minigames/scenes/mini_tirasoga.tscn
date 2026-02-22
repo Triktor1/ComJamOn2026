@@ -1,14 +1,13 @@
 [gd_scene format=3 uid="uid://0xv1hppkgnqe"]
 
-[ext_resource type="Script" path="res://escenas/Minigames/scripts/mini_tirasoga.gd" id="1_ubnpu"]
+[ext_resource type="Script" uid="uid://c1sg54ny6asow" path="res://escenas/Minigames/scripts/mini_tirasoga.gd" id="1_ubnpu"]
 [ext_resource type="Script" uid="uid://13iqj1l5uwo8" path="res://escenas/mini_data.gd" id="1_xpre0"]
 [ext_resource type="Script" uid="uid://dvkp78n5nmrxa" path="res://scripts/minigame_manager.gd" id="2_xpre0"]
-[ext_resource type="Script" path="res://escenas/Minigames/scripts/tirasoga.gd" id="3_q7ktg"]
+[ext_resource type="Script" uid="uid://rqbqxgmt473w" path="res://escenas/Minigames/scripts/tirasoga.gd" id="3_q7ktg"]
 [ext_resource type="PackedScene" uid="uid://bpsuua2ja5d5i" path="res://escenas/ModelsScenes/cheering_guy_2.tscn" id="5_ro7t0"]
 [ext_resource type="PackedScene" uid="uid://pe5yqcwt8s7o" path="res://escenas/ModelsScenes/Soga.tscn" id="5_xpre0"]
 [ext_resource type="PackedScene" uid="uid://dvceifd5esbv8" path="res://escenas/ModelsScenes/cheering_guy.tscn" id="6_q7ktg"]
 [ext_resource type="PackedScene" uid="uid://bbydgh63rc1xo" path="res://escenas/time_string.tscn" id="8_yogf2"]
-[ext_resource type="PackedScene" uid="uid://dywdg2xa4vxe3" path="res://escenas/pause_menu.tscn" id="9_b4jxv"]
 [ext_resource type="AudioStream" uid="uid://bcvimhu1iptfs" path="res://assets/Sounds/soga.wav" id="10_lbxcr"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_ro7t0"]
@@ -108,12 +107,6 @@ shape = SubResource("RectangleShape2D_6k3k2")
 position = Vector2(-290, 258)
 scale = Vector2(2, 2)
 minigame_manager = NodePath("../Minigame_Manager")
-
-[node name="PauseMenu" parent="." unique_id=1975666058 instance=ExtResource("9_b4jxv")]
-offset_left = -576.0
-offset_top = -324.0
-offset_right = -576.0
-offset_bottom = -324.0
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1810617741]
 stream = ExtResource("10_lbxcr")
