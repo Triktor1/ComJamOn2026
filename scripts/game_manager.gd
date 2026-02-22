@@ -3,6 +3,8 @@ extends Node
 @export var minigames: Array[PackedScene]
 @export var boss_minigames: Array[PackedScene]
 
+@export var results: PackedScene
+
 @export var endless: bool = false
 @export var boss_interval: int = 2
 @export var speedup_interval: int = 22
@@ -131,7 +133,8 @@ func _state_game_over():
 	_apply_speed()
 	AudioManager.play("GAMEOVER", current_speed)
 	await get_tree().create_timer(2.4).timeout
-
+	get_tree().change_scene_to_packed(results)
+	
 # STATE 5 SPEED UP
 func _state_speed_up():
 	AudioManager.play("SPEEDUP", current_speed)
