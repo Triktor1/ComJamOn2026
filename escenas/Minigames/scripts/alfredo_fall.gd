@@ -32,6 +32,7 @@ func _process(delta):
 
 	if abs(current_angle) >= max_angle:
 		falling = true
+		AudioManager.play("ALFREDOSCREAM")
 		minigame_manager.changeWin(false)
 		return
 
@@ -40,7 +41,3 @@ func  _check_dir():
 		direction = 1.0
 	else:
 		direction = -1.0
-		
-		
-		
-		
