@@ -6,6 +6,7 @@ extends Node2D
 
 var hearts: Array[Node2D] = []
 var current_lives: int = 0
+var stopTweens: bool = false
 
 func _ready():
 	start_lives = GameManager.lives
@@ -14,9 +15,10 @@ func _ready():
 	GameManager.comence.connect(_on_game_start)
 	GameManager.UIocult.connect(_on_ui_ocult)
 	GameManager.minigame_end.connect(_on_minigame_end)
+	GameManager.transition_start.connect(_stop_on_beat)
 	
 	var timer = Timer.new()
-	timer.wait_time = 0.638
+	timer.wait_time = 60/100.0
 	timer.autostart = true
 	timer.one_shot = false
 	add_child(timer)
@@ -57,12 +59,14 @@ func _on_ui_ocult():
 
 func _on_minigame_end():
 	modulate.a = 1
+	_stop_on_beat()
 
 func _clear_hearts():
 	for h in hearts:
 		if is_instance_valid(h):
 			h.queue_free()
 	hearts.clear()
+
 
 func _squash_node(node: Node2D):
 	var tween = create_tween()
@@ -80,6 +84,11 @@ func _squash_node(node: Node2D):
 	tween_back.tween_property(node, "scale:x", 1.0, 0.15)
 
 func _on_beat():
-	for child in get_children():
-		if child is Node2D:
-			_squash_node(child)
+	if !stopTweens:
+		for child in get_children():
+			if child is Node2D:
+				_squash_node(child)
+
+func _stop_on_beat()->void:
+	stopTweens = !stopTweens
+	pass

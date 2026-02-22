@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://mky8kc7nfe0h"]
+
+[ext_resource type="Script" uid="uid://dnfp60q071onv" path="res://scripts/end_screen.gd" id="1_3373n"]
+[ext_resource type="PackedScene" uid="uid://bhq7k2fh6grn4" path="res://escenas/prefabs/button_effects_component.tscn" id="1_n825o"]
+
+[node name="EndScreen" type="Control" unique_id=112317611 node_paths=PackedStringArray("main_menu_button", "label_score")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3373n")
+main_menu_button = NodePath("Button")
+label_score = NodePath("Label2")
+
+[node name="Label" type="Label" parent="." unique_id=1226934891]
+layout_mode = 0
+offset_left = 210.0
+offset_top = 229.0
+offset_right = 717.0
+offset_bottom = 312.0
+theme_override_font_sizes/font_size = 60
+text = "Puntuación final: "
+
+[node name="Label2" type="Label" parent="." unique_id=670189766]
+layout_mode = 0
+offset_left = 740.0
+offset_top = 229.0
+offset_right = 1247.0
+offset_bottom = 312.0
+theme_override_font_sizes/font_size = 60
+text = "0"
+
+[node name="Button" type="Button" parent="." unique_id=1107768440]
+layout_mode = 0
+offset_left = 393.0
+offset_top = 437.0
+offset_right = 620.0
+offset_bottom = 528.0
+theme_override_font_sizes/font_size = 40
+text = "Main menu"
+
+[node name="ButtonEffectsComponent" parent="Button" unique_id=319245680 instance=ExtResource("1_n825o")]

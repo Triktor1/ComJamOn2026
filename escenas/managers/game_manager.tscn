@@ -5,8 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://xfryq41w5dvc" path="res://escenas/Minigames/scenes/mini_alfredo.tscn" id="3_idhd0"]
 [ext_resource type="PackedScene" uid="uid://bcjubf8rcupmq" path="res://escenas/Minigames/scenes/mini_guitarra.tscn" id="4_idhd0"]
 [ext_resource type="PackedScene" path="res://escenas/Minigames/scenes/mini_aguja.tscn" id="5_kkigx"]
-[ext_resource type="PackedScene" path="res://escenas/Minigames/scenes/mini_cableelectrico.tscn" id="6_252v0"]
-[ext_resource type="PackedScene" path="res://escenas/Minigames/scenes/mini_dialogo.tscn" id="7_pmw1n"]
+[ext_resource type="PackedScene" uid="uid://byjeqmexfvfmq" path="res://escenas/Minigames/scenes/mini_cableelectrico.tscn" id="6_252v0"]
+[ext_resource type="PackedScene" uid="uid://c5scdg5mdj3iq" path="res://escenas/Minigames/scenes/mini_dialogo.tscn" id="7_pmw1n"]
 
 [node name="GameManager" type="Node" unique_id=1288491050]
 script = ExtResource("1_70yv6")
