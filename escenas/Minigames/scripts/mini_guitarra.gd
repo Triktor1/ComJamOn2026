@@ -74,4 +74,5 @@ func _input(event: InputEvent) -> void:
 				won.visible=true
 				bajo.visible=false
 				minigame_manager.changeWin(true)
+				AudioManager.play("BassRiff")
 				done=true
