@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://bjjks0r417fqt" path="res://assets/UI/ButtonSalirHover.png" id="8_ee8nr"]
 [ext_resource type="Texture2D" uid="uid://dfb6toxkrutm7" path="res://assets/UI/ButtonEndless.png" id="10_nympv"]
 [ext_resource type="Texture2D" uid="uid://bo7ebxrubfjew" path="res://assets/UI/ButtonEndlessHover.png" id="11_cyout"]
-[ext_resource type="Script" uid="uid://cvtdanok0b855" path="res://scripts/boton_creditos.gd" id="12_6c51n"]
+[ext_resource type="Script" path="res://scripts/boton_creditos.gd" id="12_6c51n"]
 [ext_resource type="Script" uid="uid://6eboju2ojn52" path="res://escenas/boton_endless.gd" id="12_cyout"]
 [ext_resource type="Texture2D" uid="uid://bd8tetmqgayie" path="res://assets/UI/ButtonCreditos.png" id="13_jm1qe"]
 [ext_resource type="Texture2D" uid="uid://mmobdxlrdbmo" path="res://assets/UI/ButtonCreditosHover.png" id="14_drc3i"]

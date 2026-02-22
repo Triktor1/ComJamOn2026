@@ -4,10 +4,12 @@
 [ext_resource type="PackedScene" uid="uid://0xv1hppkgnqe" path="res://escenas/Minigames/scenes/mini_tirasoga.tscn" id="2_nkm13"]
 [ext_resource type="PackedScene" uid="uid://xfryq41w5dvc" path="res://escenas/Minigames/scenes/mini_alfredo.tscn" id="3_idhd0"]
 [ext_resource type="PackedScene" uid="uid://bcjubf8rcupmq" path="res://escenas/Minigames/scenes/mini_guitarra.tscn" id="4_idhd0"]
-[ext_resource type="PackedScene" path="res://escenas/Minigames/scenes/mini_aguja.tscn" id="5_kkigx"]
+[ext_resource type="PackedScene" uid="uid://b8afn2otjlwku" path="res://escenas/Minigames/scenes/mini_aguja.tscn" id="5_kkigx"]
 [ext_resource type="PackedScene" uid="uid://byjeqmexfvfmq" path="res://escenas/Minigames/scenes/mini_cableelectrico.tscn" id="6_252v0"]
 [ext_resource type="PackedScene" uid="uid://c5scdg5mdj3iq" path="res://escenas/Minigames/scenes/mini_dialogo.tscn" id="7_pmw1n"]
+[ext_resource type="PackedScene" path="res://escenas/Minigames/scenes/mini_pesca.tscn" id="8_pmw1n"]
 
 [node name="GameManager" type="Node" unique_id=1288491050]
 script = ExtResource("1_70yv6")
 minigames = Array[PackedScene]([ExtResource("3_idhd0"), ExtResource("2_nkm13"), ExtResource("4_idhd0"), ExtResource("5_kkigx"), ExtResource("6_252v0"), ExtResource("7_pmw1n")])
+boss_minigames = Array[PackedScene]([ExtResource("8_pmw1n")])

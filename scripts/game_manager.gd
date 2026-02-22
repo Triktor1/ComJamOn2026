@@ -4,8 +4,8 @@ extends Node
 @export var boss_minigames: Array[PackedScene]
 
 @export var endless: bool = false
-@export var boss_interval: int = 10
-@export var speedup_interval: int = 2
+@export var boss_interval: int = 2
+@export var speedup_interval: int = 22
 
 @export var max_speed: float = 3.0
 @export var speed_increment: float = 0.15
@@ -62,27 +62,12 @@ func _state_minigame_intro():
 	minigame_start.emit()
 	in_minigame = true
 	
-	_emit_intro_data()
+	_emit_intro_data(false)
 	await get_tree().create_timer(2.7).timeout
 	transition_start.emit()
 	UIocult.emit()
 	_fade_out_overlay()
 	_load_next_minigame()
-
-
-func _emit_intro_data():
-	if current_minigame_index >= shuffled_minigames.size():
-		_shuffle_minigames()
-	
-	var scene: PackedScene = shuffled_minigames[current_minigame_index]
-	var inst = scene.instantiate()
-
-	var text: String = inst.instr
-	var control: int = inst.control_type
-
-	inst.queue_free()
-
-	show_intro.emit(text, control)
 
 # ESTADO 2 SE GANA MINIJEUEGO
 func _state_win():
@@ -107,7 +92,7 @@ func _state_win():
 	else:
 		_state_minigame_intro()
 
-# ESTADO 3 SE PIERDE M9INIJUEGO
+# ESTADO 3 SE PIERDE MINIJUEGO
 func _state_lose():
 	minigame_end.emit()
 	lives -= 1
@@ -127,6 +112,9 @@ func _state_lose():
 			_state_boss_intro()
 			return
 		return
+	elif _boss_time():
+		_state_boss_intro()
+		return
 	if _speedup():
 		_state_speed_up()
 		return
@@ -134,6 +122,7 @@ func _state_lose():
 		_state_minigame_intro()
 		return
 
+# STATE 4 GAME OVER
 func _state_game_over():
 	current_speed = 1.0
 	current_pitch = 1.0
@@ -141,6 +130,7 @@ func _state_game_over():
 	AudioManager.play("GAMEOVER", current_speed)
 	await get_tree().create_timer(2.4).timeout
 
+# STATE 5 SPEED UP
 func _state_speed_up():
 	AudioManager.play("SPEEDUP", current_speed)
 	speedup.emit()
@@ -153,15 +143,28 @@ func _state_speed_up():
 	else:
 		_state_minigame_intro()
 
+# STATE 6 BOSS INTRO
 func _state_boss_intro():
 	boss_time = true
-	AudioManager.play("BOSSTIME", current_speed)     
-	_load_random_boss()
+	minigame_count += 1
+	
+	AudioManager.play("BOSSTIME", current_speed)
+	
+	minigame_start.emit()
+	in_minigame = true
+	
+	_emit_intro_data(true)
 	await get_tree().create_timer(2.4).timeout
+	
 	boss_intro.emit()
+	transition_start.emit()
+	UIocult.emit()
+	_fade_out_overlay()
+	_load_random_boss()
 
 func _state_results():
 	pass
+	
 func _state_final_victory():
 	return
 	
@@ -170,7 +173,7 @@ func _shuffle_minigames():
 	shuffled_minigames.shuffle()
 	current_minigame_index = 0
 	
-func _load_next_minigame():	
+func _load_next_minigame():
 	if current_minigame_index >= shuffled_minigames.size():
 		_shuffle_minigames()
 	var scene: PackedScene = shuffled_minigames[current_minigame_index]
@@ -178,9 +181,12 @@ func _load_next_minigame():
 	_spawn_minigame(scene)
 
 func _load_random_boss():
-	return
+	if boss_minigames.is_empty():
+		return
+	var scene: PackedScene = boss_minigames.pick_random()
+	_spawn_minigame(scene)
 
-func _spawn_minigame(scene: PackedScene):	
+func _spawn_minigame(scene: PackedScene):
 	current_minigame = scene.instantiate()
 	add_child(current_minigame)
 	move_child(current_minigame, 0)
@@ -189,7 +195,7 @@ func _speedup() -> bool:
 	return (minigame_count % speedup_interval) == 0
 
 func _boss_time() -> bool:
-	return false
+	return (minigame_count % boss_interval) == 0
 
 func _apply_speed():
 	Engine.time_scale = current_speed
@@ -207,3 +213,22 @@ func _cleanup_minigame():
 
 func get_mini_count() -> int:
 	return minigame_count
+	
+func _emit_intro_data(is_boss: bool):
+	var scene: PackedScene
+	
+	if is_boss:
+		if boss_minigames.is_empty():
+			return
+		scene = boss_minigames.pick_random()
+	else:
+		if current_minigame_index >= shuffled_minigames.size():
+			_shuffle_minigames()
+		scene = shuffled_minigames[current_minigame_index]
+	
+	var inst = scene.instantiate()
+	var text: String = inst.instr
+	var control: int = inst.control_type
+	inst.queue_free()
+	
+	show_intro.emit(text, control)
