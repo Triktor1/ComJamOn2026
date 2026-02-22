@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://df8h4braadfoq" path="res://assets/3DModels/GuitarraMinigame/WinScreenGuitar.png" id="9_xstek"]
 [ext_resource type="Texture2D" uid="uid://d1la35ue5smb3" path="res://assets/3DModels/GuitarraMinigame/LoseScreenGuitar.png" id="10_u7ix7"]
 [ext_resource type="PackedScene" uid="uid://bbydgh63rc1xo" path="res://escenas/time_string.tscn" id="11_u7ix7"]
+[ext_resource type="PackedScene" uid="uid://dywdg2xa4vxe3" path="res://escenas/pause_menu.tscn" id="12_8ywie"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_fq6ps"]
 viewport_path = NodePath("BajoSprite/Bajo")
@@ -22,9 +23,7 @@ instr = "TOCA"
 [node name="Camera2D" type="Camera2D" parent="." unique_id=69519787]
 
 [node name="BajoSprite" type="Sprite2D" parent="." unique_id=474055202]
-position = Vector2(-5.9999995, 1284)
-rotation = -1.5707964
-scale = Vector2(3.2, 3.2)
+position = Vector2(4, -24)
 texture = SubResource("ViewportTexture_fq6ps")
 
 [node name="Bajo" parent="BajoSprite" unique_id=972485707 instance=ExtResource("2_s2qsi")]
@@ -36,7 +35,7 @@ endEarlyIfWon = true
 endEarlyIfLost = true
 
 [node name="Key1" type="Sprite2D" parent="." unique_id=1015072775]
-position = Vector2(-410, -4)
+position = Vector2(-410, 10.000008)
 scale = Vector2(3, 3)
 texture = ExtResource("3_of2n6")
 
@@ -81,3 +80,9 @@ texture = ExtResource("10_u7ix7")
 position = Vector2(-290, 258)
 scale = Vector2(2, 2)
 minigame_manager = NodePath("../MiniGame_Manager")
+
+[node name="PauseMenu" parent="." unique_id=1975666058 instance=ExtResource("12_8ywie")]
+offset_left = -576.0
+offset_top = -324.0
+offset_right = -576.0
+offset_bottom = -324.0

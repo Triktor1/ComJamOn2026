@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://q3khdap5v0tf" path="res://assets/fish_rock.png" id="9_cyg7n"]
 [ext_resource type="Texture2D" uid="uid://d4klxq3antfbe" path="res://assets/Blowjob.png" id="10_cyg7n"]
 [ext_resource type="PackedScene" uid="uid://bbydgh63rc1xo" path="res://escenas/time_string.tscn" id="11_xi77v"]
+[ext_resource type="PackedScene" uid="uid://dywdg2xa4vxe3" path="res://escenas/pause_menu.tscn" id="12_huk1k"]
 
 [node name="Mini_Pesca" type="Node2D" unique_id=1386607904]
 script = ExtResource("1_12e0j")
@@ -65,3 +66,9 @@ texture = ExtResource("10_cyg7n")
 position = Vector2(-290, 258)
 scale = Vector2(2, 2)
 minigame_manager = NodePath("../MiniGame_Manager")
+
+[node name="PauseMenu" parent="." unique_id=1975666058 instance=ExtResource("12_huk1k")]
+offset_left = -576.0
+offset_top = -324.0
+offset_right = -576.0
+offset_bottom = -324.0

@@ -16,7 +16,7 @@ var sprites_left:Array=[]
 var keys_to_press:Array=[]
 var current_key=0
 
-var heights:Array=[-174,-37,37,174]
+var heights:Array=[-159,-68,19,109]
 
 var done:bool=false
 
