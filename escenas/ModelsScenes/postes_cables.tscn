@@ -73,8 +73,9 @@ transparent_bg = true
 size = Vector2i(644, 402)
 
 [node name="Cable" type="MeshInstance3D" parent="." unique_id=710791872]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 147.75317, 0)
 mesh = SubResource("ArrayMesh_mcu10")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1770932234]
-transform = Transform3D(1, 0, 0, 0, 0.983857, 0.17895678, 0, -0.17895678, 0.983857, 0, 53.210033, 46.072582)
+transform = Transform3D(1, 0, 0, 0, 0.983857, 0.17895678, 0, -0.17895678, 0.983857, 0, 200.96321, 46.072582)
 current = true

@@ -1,4 +1,4 @@
-extends Control
+extends CanvasLayer
 
 @onready var cont_button:Button=$ContinueButton
 @onready var main_button:Button=$MainMenuButton

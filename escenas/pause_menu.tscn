@@ -4,21 +4,17 @@
 [ext_resource type="PackedScene" uid="uid://bhq7k2fh6grn4" path="res://escenas/prefabs/button_effects_component.tscn" id="2_nwcfo"]
 [ext_resource type="PackedScene" uid="uid://hxfcwwnysmll" path="res://escenas/mainMenu.tscn" id="2_pjyxd"]
 
-[node name="PauseMenu" type="Control" unique_id=717342083]
+[node name="PauseMenu" type="CanvasLayer" unique_id=231955493]
 process_mode = 3
-layout_mode = 3
-anchors_preset = 0
 script = ExtResource("1_hdmo1")
 main_menu_scene = ExtResource("2_pjyxd")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=955781304]
-layout_mode = 0
 offset_right = 1941.0
 offset_bottom = 1099.0
 color = Color(0.10461459, 0.09223362, 0.11435678, 1)
 
 [node name="Label" type="Label" parent="." unique_id=464485481]
-layout_mode = 0
 offset_left = 466.0
 offset_top = 39.0
 offset_right = 1379.0
@@ -29,7 +25,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Panel" type="Panel" parent="." unique_id=1582009500]
-layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
