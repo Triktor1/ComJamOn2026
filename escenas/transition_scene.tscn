@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://0wqrbmshs52p" path="res://transition_scene.gd" id="1_ksm4v"]
 [ext_resource type="Script" uid="uid://bsfbodaqg44ws" path="res://escenas/level_count_text.gd" id="2_2t0xx"]
 [ext_resource type="Script" uid="uid://d2sdy00h8wea8" path="res://escenas/health_manager.gd" id="2_cow4l"]
+[ext_resource type="Script" uid="uid://diyx2v50axjbv" path="res://escenas/cameraCat.gd" id="2_o5o1d"]
 [ext_resource type="PackedScene" uid="uid://cx2ytn2ukatwr" path="res://escenas/ModelsScenes/main_scenario.tscn" id="2_thy87"]
 [ext_resource type="PackedScene" uid="uid://t4lkg1phd0fg" path="res://escenas/heart.tscn" id="3_8awbl"]
 [ext_resource type="PackedScene" uid="uid://eotlsmvlj8tq" path="res://escenas/heart_ovillo.tscn" id="4_o5o1d"]
@@ -15,29 +16,34 @@
 [ext_resource type="Texture2D" uid="uid://cd86fe8aivax3" path="res://assets/UI/TeclaSpace.png" id="13_su6wb"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_o5o1d"]
-viewport_path = NodePath("Sprite2D/MainScenario")
+viewport_path = NodePath("CanvasLayer/Sprite2D/MainScenario")
 
 [node name="TransitionScene" type="Node2D" unique_id=1906840405]
 script = ExtResource("1_ksm4v")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2062220404]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1736718160]
+script = ExtResource("2_o5o1d")
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer" unique_id=2062220404]
 position = Vector2(583, 321)
 scale = Vector2(0.60520834, 0.59629625)
 texture = SubResource("ViewportTexture_o5o1d")
 
-[node name="MainScenario" parent="Sprite2D" unique_id=1359479441 instance=ExtResource("2_thy87")]
+[node name="MainScenario" parent="CanvasLayer/Sprite2D" unique_id=1359479441 instance=ExtResource("2_thy87")]
 
-[node name="HealthManager" type="Node2D" parent="." unique_id=1650855632]
+[node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=262932187]
+
+[node name="HealthManager" type="Node2D" parent="CanvasLayer2" unique_id=1650855632]
 position = Vector2(260, 80)
 scale = Vector2(2, 2)
 script = ExtResource("2_cow4l")
 heart_scene = ExtResource("3_8awbl")
 
-[node name="AnimatedSprite2D" parent="HealthManager" unique_id=2011428439 instance=ExtResource("4_o5o1d")]
+[node name="AnimatedSprite2D" parent="CanvasLayer2/HealthManager" unique_id=2011428439 instance=ExtResource("4_o5o1d")]
 position = Vector2(-80, 2)
 autoplay = "heart_ov"
 
-[node name="Label" type="Label" parent="." unique_id=1620334625]
+[node name="Label" type="Label" parent="CanvasLayer2" unique_id=1620334625]
 offset_left = 68.0
 offset_top = 446.0
 offset_right = 600.0
@@ -49,7 +55,7 @@ theme_override_fonts/font = ExtResource("5_wdphn")
 theme_override_font_sizes/font_size = 128
 script = ExtResource("2_2t0xx")
 
-[node name="Controles" type="Control" parent="." unique_id=427053296]
+[node name="Controles" type="Control" parent="CanvasLayer2" unique_id=427053296]
 layout_mode = 3
 anchors_preset = 0
 offset_left = 466.0
@@ -63,7 +69,7 @@ zx_textures = Array[Texture2D]([ExtResource("9_fjaaw")])
 space_textures = Array[Texture2D]([ExtResource("13_su6wb")])
 ads_textures = Array[Texture2D]([ExtResource("11_fjaaw")])
 
-[node name="Instruccion" type="Label" parent="." unique_id=845575253]
+[node name="Instruccion" type="Label" parent="CanvasLayer2" unique_id=845575253]
 offset_left = 693.0
 offset_top = 511.0
 offset_right = 733.0
