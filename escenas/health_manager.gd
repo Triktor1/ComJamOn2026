@@ -27,6 +27,8 @@ func _ready():
 	timer.timeout.connect(_on_beat)
 
 func _on_game_start():
+	modulate.a = 1.0
+	start_lives = GameManager.lives    
 	_initialize_hearts(start_lives)
 
 func _initialize_hearts(lives: int):
@@ -36,6 +38,8 @@ func _initialize_hearts(lives: int):
 	for i in range(lives):
 		var heart = heart_scene.instantiate()
 		add_child(heart)
+		
+		heart.modulate.a = 1.0
 		
 		var anim_sprite = heart.get_node("AnimatedSprite2D")
 		heart.position.x = i * anim_sprite.sprite_frames.get_frame_texture("heart_idle", 0).get_width()
@@ -54,7 +58,8 @@ func _on_player_lost():
 	anim.play("heart_death")
 	
 	await anim.animation_finished
-	heart.modulate.a = 0.3 # se hace parcialmente transparente
+	
+	heart.modulate.a = 0.3
 
 func _on_ui_ocult():
 	modulate.a = 0
@@ -68,7 +73,6 @@ func _clear_hearts():
 		if is_instance_valid(h):
 			h.queue_free()
 	hearts.clear()
-
 
 func _squash_node(node: Node2D):
 	var tween = create_tween()
@@ -93,7 +97,6 @@ func _on_beat():
 
 func _stop_on_beat()->void:
 	stopTweens = !stopTweens
-	pass
 
 func _heal():
 	if current_lives >= hearts.size():

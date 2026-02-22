@@ -15,7 +15,7 @@ extends Node
 
 var current_speed: float = 1.0
 var current_pitch: float = 1.0
-var lives: int = 4
+var lives: int = 2
 var minigame_count: int = 0
 
 var shuffled_minigames: Array[PackedScene] = []
@@ -58,13 +58,17 @@ enum ControlType {
 func _state_start():
 	cat_comence.emit()
 	_shuffle_minigames()
-	lives = 4
+	
+	lives = 4      
 	minigame_count = 0
 	current_speed = 1.0
 	current_pitch = 1.0
 	in_minigame = false
-	AudioManager.play("GANAR", current_speed)
 	
+	GameManager.lives = lives
+	
+	AudioManager.play("GANAR", current_speed)
+	await get_tree().create_timer(0.001).timeout
 	comence.emit()
 	await get_tree().create_timer(4.45).timeout
 	_state_minigame_intro()
