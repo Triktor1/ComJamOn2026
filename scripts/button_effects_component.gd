@@ -17,7 +17,7 @@ func _ready() -> void:
 	button.pivot_offset_ratio = Vector2(0.5, 0.5)
 
 func _on_mouse_hovered(hovered: bool) -> void:
-	reset_tween()
+	reset_tween()	
 	tween.tween_property(button, "scale",
 		scale_amount if hovered else Vector2.ONE, duration)
 	tween.tween_property(button, "rotation_degrees",

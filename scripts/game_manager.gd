@@ -4,7 +4,7 @@ extends Node
 @export var boss_minigames: Array[PackedScene]
 
 @export var endless: bool = false
-@export var boss_interval: int = 15
+@export var boss_interval: int = 10
 @export var speedup_interval: int = 2
 
 @export var max_speed: float = 3.0

@@ -8,4 +8,5 @@ func _ready() -> void:
 
 func _startGame() -> void:
 	AudioManager.stop()
+	GameManager.endless = false
 	get_tree().change_scene_to_packed(startScene)
