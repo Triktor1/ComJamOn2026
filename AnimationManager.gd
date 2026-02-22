@@ -19,6 +19,8 @@ func _ready() -> void:
 	GameManager.cat_intro.connect(playMinigameStart)
 	GameManager.cat_boss.connect(playBossMinigame)
 	GameManager.cat_victory.connect(playGameEnding)
+	GameManager.UIocult.connect(_on_ui_ocult)
+	GameManager.minigame_end.connect(_on_minigame_end)
 	
 	pass # Replace with function body.
 
@@ -55,3 +57,9 @@ func playGameEnding() ->void:
 func playSpeedUp() -> void:
 	for anim in 2:
 		SceneAnimator.play(SpeedUpAnims[anim])
+		
+func _on_ui_ocult():
+	pass
+
+func _on_minigame_end():
+	pass
