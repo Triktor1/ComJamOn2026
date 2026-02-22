@@ -47,7 +47,7 @@ func _state_start():
 	AudioManager.play("GANAR", current_speed)
 	
 	comence.emit()
-	await get_tree().create_timer(2.4).timeout
+	await get_tree().create_timer(4.3).timeout
 	_state_minigame_intro()
 
 # ESTADO 1 COMIENZA MINIJUEGO
@@ -60,7 +60,7 @@ func _state_minigame_intro():
 	in_minigame = true
 	
 	_emit_intro_data()
-	await get_tree().create_timer(2).timeout
+	await get_tree().create_timer(2.7).timeout
 	
 	_fade_out_overlay()
 	_load_next_minigame()
@@ -79,14 +79,12 @@ func _emit_intro_data():
 
 	show_intro.emit(text, control)
 
-# RESTO DEL CÓDIGO SIN CAMBIOS
-
 func _state_win():
 	AudioManager.play("GANAR", current_speed)
 	win.emit()
 	in_minigame = false
 	_cleanup_minigame()
-	await get_tree().create_timer(2.4).timeout
+	await get_tree().create_timer(4.3).timeout
 	if boss_time:
 		if not endless:
 			_state_boss_intro()
@@ -108,7 +106,7 @@ func _state_lose():
 	AudioManager.play("PERDIDO", current_speed)
 	in_minigame = false
 	_cleanup_minigame()
-	await get_tree().create_timer(2.4).timeout
+	await get_tree().create_timer(2.7).timeout
 	if lives <= 0:
 		_state_game_over()
 		return
