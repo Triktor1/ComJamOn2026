@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://c6g2p0hl5wfta" path="res://assets/Facundo.png" id="8_ixalb"]
 [ext_resource type="Texture2D" uid="uid://q3khdap5v0tf" path="res://assets/fish_rock.png" id="9_cyg7n"]
 [ext_resource type="Texture2D" uid="uid://d4klxq3antfbe" path="res://assets/Blowjob.png" id="10_cyg7n"]
+[ext_resource type="Texture2D" uid="uid://bxocrpffq75cb" path="res://assets/napochoco.png" id="11_pe2ul"]
 [ext_resource type="PackedScene" uid="uid://bbydgh63rc1xo" path="res://escenas/time_string.tscn" id="11_xi77v"]
 [ext_resource type="PackedScene" uid="uid://dywdg2xa4vxe3" path="res://escenas/pause_menu.tscn" id="12_huk1k"]
 
@@ -61,6 +62,12 @@ visible = false
 position = Vector2(147, -19)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("10_cyg7n")
+
+[node name="NapoChoco" type="Sprite2D" parent="Fishes" unique_id=538134463]
+visible = false
+position = Vector2(147, -19)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("11_pe2ul")
 
 [node name="TimeString" parent="." unique_id=394185148 node_paths=PackedStringArray("minigame_manager") instance=ExtResource("11_xi77v")]
 position = Vector2(-290, 258)
