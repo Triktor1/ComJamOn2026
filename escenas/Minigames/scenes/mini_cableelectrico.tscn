@@ -5,10 +5,9 @@
 [ext_resource type="Script" uid="uid://cafx2uyhfuj8t" path="res://mini_cableelectrico.gd" id="1_flrll"]
 [ext_resource type="PackedScene" uid="uid://c1f5ia26wvvkm" path="res://escenas/ModelsScenes/trozo_cable_1.tscn" id="4_burv3"]
 [ext_resource type="PackedScene" uid="uid://bq0syuurlf5fb" path="res://escenas/ModelsScenes/trozo_cable_2.tscn" id="5_mi5tu"]
-[ext_resource type="Shader" uid="uid://ci0oujf5v7pyg" path="res://escenas/Minigames/scenes/outline.gdshader" id="6_mi5tu"]
 [ext_resource type="PackedScene" uid="uid://cdg6teqmw78yy" path="res://escenas/ModelsScenes/trozo_cable_3.tscn" id="7_qy11p"]
 [ext_resource type="PackedScene" uid="uid://c7u3tvpf211jn" path="res://escenas/ModelsScenes/postes_cables.tscn" id="8_an2rk"]
-[ext_resource type="PackedScene" uid="uid://bbydgh63rc1xo" path="res://escenas/time_string.tscn" id="8_burv3"]
+[ext_resource type="PackedScene" path="res://escenas/time_string.tscn" id="8_burv3"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_rb4fl"]
 viewport_path = NodePath("Wire1/TrozoCable1")
@@ -21,13 +20,6 @@ viewport_path = NodePath("Wire2/TrozoCable2")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_flrll"]
 size = Vector2(119.00001, 118.99999)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_qy11p"]
-render_priority = 0
-shader = ExtResource("6_mi5tu")
-shader_parameter/outline_color = Color(0, 0.5294118, 0.31764707, 1)
-shader_parameter/outline_width = 2.0
-shader_parameter/constant_width = true
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_burv3"]
 viewport_path = NodePath("Wire3/TrozoCable3")
@@ -85,8 +77,7 @@ shape = SubResource("RectangleShape2D_flrll")
 [node name="TrozoCable2" parent="Wire2" unique_id=2120458454 instance=ExtResource("5_mi5tu")]
 
 [node name="Wire3" type="Sprite2D" parent="." unique_id=868570844]
-material = SubResource("ShaderMaterial_qy11p")
-position = Vector2(170.00002, 7)
+position = Vector2(168, 6)
 scale = Vector2(0.491, 0.375)
 texture = SubResource("ViewportTexture_burv3")
 
