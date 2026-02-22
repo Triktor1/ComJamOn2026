@@ -1,3 +1,68 @@
 [gd_scene format=3 uid="uid://dn1nfrnlx06pi"]
 
+[ext_resource type="PackedScene" uid="uid://cfkpje13j28nh" path="res://assets/3DModels/TiraSogaMinigame/Player.glb" id="1_ti5gv"]
+[ext_resource type="PackedScene" uid="uid://p06fuch2j6wg" path="res://assets/3DModels/TiraSogaMinigame/CheeringGuy.glb" id="2_2ifvb"]
+
 [node name="Node3D" type="Node3D" unique_id=579689181]
+
+[node name="Player" parent="." unique_id=622301223 instance=ExtResource("1_ti5gv")]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=2106158625]
+transform = Transform3D(1, 0, 0, 0, 0.92271316, 0.38548738, 0, -0.38548738, 0.92271316, 0, 10.628559, 13.58946)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1382742980]
+transform = Transform3D(1, 0, 0, 0, 0.98717254, 0.15965721, 0, -0.15965721, 0.98717254, 0, 0, 0)
+
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="." unique_id=971280968]
+transform = Transform3D(-0.9687955, 0.039572872, -0.24468204, 0, 0.9871725, 0.1596572, 0.24786146, 0.15467517, -0.95636827, 0, 0, 0)
+
+[node name="CheeringGuy" parent="." unique_id=441440730 instance=ExtResource("2_2ifvb")]
+transform = Transform3D(0.9032904, 0, -0.42902973, 0, 1, 0, 0.42902973, 0, 0.9032904, 3.7021637, 0, -5.7728643)
+
+[node name="Skeleton3D" parent="CheeringGuy/Armature_001" parent_id_path=PackedInt32Array(441440730, 1882805076) index="0" unique_id=1735691741]
+bones/2/rotation = Quaternion(-0.7732604, 1.03306164e-07, 1.2598011e-07, 0.6340887)
+bones/3/rotation = Quaternion(-0.02139535, 0.020575486, -0.96957266, 0.24299753)
+bones/4/rotation = Quaternion(0.893126, -9.851226e-09, -2.0158236e-08, 0.4498067)
+bones/5/rotation = Quaternion(0.020470273, -0.061250415, 0.31634626, 0.9464431)
+bones/6/rotation = Quaternion(-3.6853454e-08, -7.4505797e-09, -1.8626414e-09, 1)
+bones/8/rotation = Quaternion(0.2661971, -2.0271343e-14, 6.346633e-08, 0.9639186)
+bones/9/rotation = Quaternion(-0.02139535, -0.020575486, 0.96957266, 0.24299753)
+bones/10/rotation = Quaternion(0.893126, 1.2032211e-08, 1.757149e-08, 0.4498067)
+bones/11/rotation = Quaternion(0.020470312, 0.06125044, -0.31634623, 0.9464431)
+bones/12/rotation = Quaternion(-3.4537642e-08, 7.450582e-09, 3.725287e-09, 1)
+bones/14/rotation = Quaternion(-0.010101922, -0.1615585, -0.06158294, 0.984888)
+bones/15/rotation = Quaternion(1.1264654e-09, -7.3341653e-09, -6.579226e-11, 1)
+bones/16/rotation = Quaternion(-0.69068307, -0.044155095, 0.044155262, 0.72045654)
+bones/17/rotation = Quaternion(-0.010101908, 0.16155873, 0.061582953, 0.98488796)
+bones/18/rotation = Quaternion(9.4710684e-11, -3.4924508e-10, -2.1447064e-09, 1)
+bones/19/rotation = Quaternion(-0.69068307, 0.044155095, -0.04415528, 0.72045654)
+
+[node name="AnimationPlayer" parent="CheeringGuy" index="1" unique_id=1343733845]
+autoplay = &"Action1"
+
+[node name="CheeringGuy2" parent="." unique_id=47379849 instance=ExtResource("2_2ifvb")]
+transform = Transform3D(0.9033353, 0, 0.42893514, 0, 1, 0, -0.42893514, 0, 0.9033353, -3.702, 0, -5.773)
+
+[node name="Skeleton3D" parent="CheeringGuy2/Armature_001" parent_id_path=PackedInt32Array(47379849, 1882805076) index="0" unique_id=1735691741]
+bones/2/rotation = Quaternion(-0.75031847, 0.12527157, -0.15643117, 0.6299671)
+bones/3/rotation = Quaternion(-0.10989295, 0.4129076, -0.6910841, 0.58295256)
+bones/4/rotation = Quaternion(0.8647959, -5.3030956e-08, -5.0037805e-09, 0.5021236)
+bones/5/rotation = Quaternion(-3.696785e-09, -9.313232e-10, -9.778887e-09, 1)
+bones/6/rotation = Quaternion(-1.2982843e-08, 2.4923915e-08, -0.9277245, 0.37326574)
+bones/8/rotation = Quaternion(0.24982871, -0.19082022, 0.06124829, 0.94732356)
+bones/9/rotation = Quaternion(0.12252062, -0.15841217, 0.69586515, 0.68968546)
+bones/10/rotation = Quaternion(0.9020263, 5.6991333e-08, 5.6635745e-08, 0.43168116)
+bones/11/rotation = Quaternion(2.8349643e-09, 3.7252907e-09, 3.7252907e-09, 1)
+bones/12/rotation = Quaternion(-2.5555494e-08, -2.3616305e-08, 0.9277245, 0.3732657)
+bones/14/rotation = Quaternion(-0.010101922, -0.1615585, -0.06158294, 0.984888)
+bones/15/rotation = Quaternion(1.1264654e-09, -7.3341653e-09, -6.579226e-11, 1)
+bones/16/rotation = Quaternion(-0.69068307, -0.044155095, 0.044155262, 0.72045654)
+bones/17/rotation = Quaternion(-0.010101908, 0.16155873, 0.061582953, 0.98488796)
+bones/18/rotation = Quaternion(9.4710684e-11, -3.4924508e-10, -2.1447064e-09, 1)
+bones/19/rotation = Quaternion(-0.69068307, 0.044155095, -0.04415528, 0.72045654)
+
+[node name="AnimationPlayer" parent="CheeringGuy2" index="1" unique_id=1343733845]
+autoplay = &"Action2"
+
+[editable path="CheeringGuy"]
+[editable path="CheeringGuy2"]
