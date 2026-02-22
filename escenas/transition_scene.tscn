@@ -20,7 +20,7 @@
 script = ExtResource("1_ksm4v")
 
 [node name="HealthManager" type="Node2D" parent="." unique_id=1650855632]
-position = Vector2(284.99997, 493)
+position = Vector2(260, 80)
 scale = Vector2(2, 2)
 script = ExtResource("2_cow4l")
 heart_scene = ExtResource("3_8awbl")
