@@ -70,7 +70,7 @@ shadow_mesh = SubResource("ArrayMesh_hpx75")
 
 [node name="PostesCables" type="SubViewport" unique_id=1615085955]
 transparent_bg = true
-size = Vector2i(644, 402)
+size = Vector2i(1932, 1206)
 
 [node name="Cable" type="MeshInstance3D" parent="." unique_id=710791872]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 147.75317, 0)

@@ -71,7 +71,7 @@ shadow_mesh = SubResource("ArrayMesh_0y40q")
 
 [node name="TrozoCable2" type="SubViewport" unique_id=2120458454]
 transparent_bg = true
-size = Vector2i(132, 509)
+size = Vector2i(396, 1527)
 
 [node name="Section2" type="MeshInstance3D" parent="." unique_id=801066742]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 51.765285, 0)

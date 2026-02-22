@@ -3,8 +3,8 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jyn3n"]
 resource_name = "Section3"
 cull_mode = 2
+shading_mode = 0
 albedo_color = Color(0.11577204, 0.53768295, 0, 1)
-metallic = 1.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4flqo"]
 resource_name = "Material"
@@ -71,7 +71,7 @@ shadow_mesh = SubResource("ArrayMesh_evn0h")
 
 [node name="TrozoCable3" type="SubViewport" unique_id=1877598045]
 transparent_bg = true
-size = Vector2i(132, 509)
+size = Vector2i(396, 1527)
 
 [node name="Section3" type="MeshInstance3D" parent="." unique_id=601854473]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.095163, 52.274162, 0)
