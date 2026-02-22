@@ -70,7 +70,6 @@ func _state_minigame_intro():
 
 
 func _emit_intro_data():
-	minigame_end.emit()
 	if current_minigame_index >= shuffled_minigames.size():
 		_shuffle_minigames()
 	
