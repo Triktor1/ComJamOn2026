@@ -11,7 +11,6 @@
 [ext_resource type="Texture2D" uid="uid://df8h4braadfoq" path="res://assets/3DModels/GuitarraMinigame/WinScreenGuitar.png" id="9_xstek"]
 [ext_resource type="Texture2D" uid="uid://d1la35ue5smb3" path="res://assets/3DModels/GuitarraMinigame/LoseScreenGuitar.png" id="10_u7ix7"]
 [ext_resource type="PackedScene" uid="uid://bbydgh63rc1xo" path="res://escenas/time_string.tscn" id="11_u7ix7"]
-[ext_resource type="PackedScene" uid="uid://dywdg2xa4vxe3" path="res://escenas/pause_menu.tscn" id="12_8ywie"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_fq6ps"]
 viewport_path = NodePath("BajoSprite/Bajo")
@@ -80,9 +79,3 @@ texture = ExtResource("10_u7ix7")
 position = Vector2(-290, 258)
 scale = Vector2(2, 2)
 minigame_manager = NodePath("../MiniGame_Manager")
-
-[node name="PauseMenu" parent="." unique_id=1975666058 instance=ExtResource("12_8ywie")]
-offset_left = -576.0
-offset_top = -324.0
-offset_right = -576.0
-offset_bottom = -324.0

@@ -72,6 +72,7 @@ func _randomize_direction():
 		key.texture=sprites[2]
 	elif current_direction=="D":
 		key.texture=sprites[3]
+	
 
 
 func _catch_fish():
