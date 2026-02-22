@@ -28,6 +28,9 @@ func rotar_pieza():
 		
 func intentar_fijar():
 	# Si ya está fijada no hacemos nada
+	if pieza_actual>= piezas.size():
+		return
+	
 	if piezas_fijadas[pieza_actual]:
 		return
 	
