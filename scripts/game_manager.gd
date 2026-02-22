@@ -56,7 +56,7 @@ func _state_start():
 	AudioManager.play("GANAR", current_speed)
 	
 	comence.emit()
-	await get_tree().create_timer(4.3).timeout
+	await get_tree().create_timer(4.45).timeout
 	_state_minigame_intro()
 
 # ESTADO 1 COMIENZA MINIJUEGO
@@ -69,7 +69,7 @@ func _state_minigame_intro():
 	in_minigame = true
 	
 	_emit_intro_data(false)
-	await get_tree().create_timer(2.7).timeout
+	await get_tree().create_timer(2.55).timeout
 	transition_start.emit()
 	UIocult.emit()
 	_fade_out_overlay()
@@ -82,7 +82,7 @@ func _state_win():
 	win.emit()
 	in_minigame = false
 	_cleanup_minigame()
-	await get_tree().create_timer(4.3).timeout
+	await get_tree().create_timer(4.5).timeout
 	if boss_time:
 		if not endless:
 			_state_final_victory()
@@ -145,7 +145,7 @@ func _state_speed_up():
 	current_speed = min(current_speed + speed_increment, max_speed)
 	current_pitch = min(current_pitch + speed_increment, max_speed)
 	_apply_speed()
-	await get_tree().create_timer(1.4).timeout
+	await get_tree().create_timer(2.4).timeout
 	if _boss_time():
 		_state_boss_intro()
 	else:
@@ -162,7 +162,7 @@ func _state_boss_intro():
 	in_minigame = true
 	
 	_emit_intro_data(true)
-	await get_tree().create_timer(2.4).timeout
+	await get_tree().create_timer(3.31).timeout
 	
 	boss_intro.emit()
 	transition_start.emit()
@@ -175,8 +175,8 @@ func _state_final_victory():
 	current_speed = 1.0
 	current_pitch = 1.0
 	_apply_speed()
-	AudioManager.play("GAMEOVER", current_speed)
-	await get_tree().create_timer(2.4).timeout
+	#AudioManager.play("GAMEOVER", current_speed)
+	await get_tree().create_timer(1).timeout
 	get_tree().change_scene_to_packed(win_screen)
 	return
 	
