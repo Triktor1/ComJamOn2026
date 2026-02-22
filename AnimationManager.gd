@@ -1,9 +1,11 @@
 extends Node
 
-@export var SceneAnimator:AnimationPlayer
+@export var CatAnim:AnimationPlayer
+@export var CamAnim:AnimationPlayer
+@export var WoolAnim:AnimationPlayer
 
 var IntroAnims = ["CamGameIntro" , "Game Intro" , "WoolGameIntro"]
-var WinAnims = ["CameMinigameWin" , "MinigameWin", "WoolMinigameWin"]
+var WinAnims = ["CamMinigameWin" , "MinigameWin", "WoolMinigameWin"]
 var LoseAnims = ["CamMinigameLost" , "MinigameLost", "WoolMinigameLost"]
 var SpeedUpAnims = ["CamSpeedUp" , "SpeedUp", "WoolSpeedUp"]
 var StartAnim = ["CamMinigameStart" , "MinigameStart", "WoolMinigameStart"]
@@ -30,34 +32,35 @@ func _process(delta: float) -> void:
 	pass
 	
 func playIntro() -> void:
-	for anim in 2:
-		SceneAnimator.play(IntroAnims[anim])
-	
+	CamAnim.play(IntroAnims[0])
+	CatAnim.play(IntroAnims[1])
+	WoolAnim.play(IntroAnims[2])
 func playMinigameStart() ->void:
-
-	for anim in 2:
-		SceneAnimator.play(StartAnim[anim])
+	CamAnim.play(StartAnim[0])
+	CatAnim.play(StartAnim[1])
+	WoolAnim.play(StartAnim[2])
 	
 func playMinigameWin() ->void:
-	for anim in 2:
-		SceneAnimator.play(WinAnims[anim])
-	
+	CamAnim.play(WinAnims[0])
+	CatAnim.play(WinAnims[1])
+	WoolAnim.play(WinAnims[2])
 func playMinigameLost() ->void:
-	for anim in 2:
-		SceneAnimator.play(LoseAnims[anim])
-	
+	CamAnim.play(LoseAnims[0])
+	CatAnim.play(LoseAnims[1])
+	WoolAnim.play(LoseAnims[2])
 func playBossMinigame() ->void:
-	for anim in 2:
-		SceneAnimator.play(BossAnim[anim])
+	CamAnim.play(BossAnim[0])
+	CatAnim.play(BossAnim[1])
+	WoolAnim.play(BossAnim[2])
 	
 func playGameEnding() ->void:
-	for anim in 2:
-		SceneAnimator.play(EndingAnim[anim])
-	
+	CamAnim.play(EndingAnim[0])
+	CatAnim.play(EndingAnim[1])
+	WoolAnim.play(EndingAnim[2])
 func playSpeedUp() -> void:
-	for anim in 2:
-		SceneAnimator.play(SpeedUpAnims[anim])
-		
+	CamAnim.play(SpeedUpAnims[0])
+	CatAnim.play(SpeedUpAnims[1])
+	WoolAnim.play(SpeedUpAnims[2])
 func _on_ui_ocult():
 	pass
 

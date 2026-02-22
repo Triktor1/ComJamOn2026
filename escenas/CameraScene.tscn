@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cisewbu0cqy5q"]
+
+[ext_resource type="PackedScene" uid="uid://b76sdo5c1usmp" path="res://assets/3DModels/MainScene/MainCamera.glb" id="1_gmihg"]
+
+[node name="MainCamera" unique_id=2075280477 instance=ExtResource("1_gmihg")]
+
+[node name="Camera" parent="." index="0" unique_id=152608918]
+transform = Transform3D(2.8192163e-08, -0.62166154, 0.78328586, 5.9604638e-08, 0.78328586, 0.62166154, -0.99999994, 2.916149e-08, 5.913644e-08, 9.456768, 6.5879626, 5.162903)

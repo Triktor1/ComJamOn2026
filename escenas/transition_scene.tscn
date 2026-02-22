@@ -3,9 +3,9 @@
 [ext_resource type="Script" uid="uid://0wqrbmshs52p" path="res://transition_scene.gd" id="1_ksm4v"]
 [ext_resource type="Script" uid="uid://bsfbodaqg44ws" path="res://escenas/level_count_text.gd" id="2_2t0xx"]
 [ext_resource type="Script" uid="uid://d2sdy00h8wea8" path="res://escenas/health_manager.gd" id="2_cow4l"]
-[ext_resource type="Script" uid="uid://diyx2v50axjbv" path="res://escenas/cameraCat.gd" id="2_o5o1d"]
-[ext_resource type="PackedScene" uid="uid://cx2ytn2ukatwr" path="res://escenas/ModelsScenes/main_scenario.tscn" id="2_thy87"]
+[ext_resource type="Script" path="res://escenas/cameraCat.gd" id="2_o5o1d"]
 [ext_resource type="PackedScene" uid="uid://t4lkg1phd0fg" path="res://escenas/heart.tscn" id="3_8awbl"]
+[ext_resource type="PackedScene" uid="uid://cg7064w8e6hum" path="res://escenas/NewMainScene.tscn" id="3_o5o1d"]
 [ext_resource type="PackedScene" uid="uid://eotlsmvlj8tq" path="res://escenas/heart_ovillo.tscn" id="4_o5o1d"]
 [ext_resource type="Script" uid="uid://dccalsp4nlcss" path="res://escenas/controles.gd" id="5_8bhlb"]
 [ext_resource type="Script" uid="uid://by13a1gehg4dw" path="res://escenas/instruccion.gd" id="5_ih10d"]
@@ -16,7 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://cd86fe8aivax3" path="res://assets/UI/TeclaSpace.png" id="13_su6wb"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_o5o1d"]
-viewport_path = NodePath("CanvasLayer/Sprite2D/MainScenario")
+viewport_path = NodePath("CanvasLayer/Sprite2D/Node3D")
 
 [node name="TransitionScene" type="Node2D" unique_id=1906840405]
 script = ExtResource("1_ksm4v")
@@ -29,7 +29,7 @@ position = Vector2(583, 321)
 scale = Vector2(0.60520834, 0.59629625)
 texture = SubResource("ViewportTexture_o5o1d")
 
-[node name="MainScenario" parent="CanvasLayer/Sprite2D" unique_id=1359479441 instance=ExtResource("2_thy87")]
+[node name="Node3D" parent="CanvasLayer/Sprite2D" unique_id=767813699 instance=ExtResource("3_o5o1d")]
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=262932187]
 
