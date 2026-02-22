@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://d34wxnh383b4o" path="res://assets/UI/HeartDeath.png" id="1_lxx6l"]
 [ext_resource type="Texture2D" uid="uid://bgufq54lorovc" path="res://assets/UI/HeartIdle.png" id="2_ogv0m"]
+[ext_resource type="Texture2D" uid="uid://fbuiasht6gbl" path="res://assets/UI/ovilloLana.png" id="3_ogv0m"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0pdua"]
 atlas = ExtResource("1_lxx6l")
@@ -37,6 +38,18 @@ region = Rect2(80, 0, 80, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w14vh"]
 atlas = ExtResource("2_ogv0m")
+region = Rect2(160, 0, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b0ltu"]
+atlas = ExtResource("3_ogv0m")
+region = Rect2(0, 0, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_whhg6"]
+atlas = ExtResource("3_ogv0m")
+region = Rect2(80, 0, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k0mlo"]
+atlas = ExtResource("3_ogv0m")
 region = Rect2(160, 0, 80, 64)
 
 [resource]
@@ -76,5 +89,19 @@ animations = [{
 }],
 "loop": true,
 "name": &"heart_idle",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b0ltu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_whhg6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k0mlo")
+}],
+"loop": true,
+"name": &"heart_ov",
 "speed": 10.0
 }]

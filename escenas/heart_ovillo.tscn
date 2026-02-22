@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://eotlsmvlj8tq"]
+
+[ext_resource type="SpriteFrames" uid="uid://c2yb666mqcwxr" path="res://escenas/Animations/heart_idle.tres" id="1_1xctd"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" unique_id=2011428439]
+sprite_frames = ExtResource("1_1xctd")
+animation = &"heart_ov"
