@@ -13,6 +13,10 @@
 [ext_resource type="Texture2D" uid="uid://bxocrpffq75cb" path="res://assets/napochoco.png" id="11_pe2ul"]
 [ext_resource type="PackedScene" uid="uid://bbydgh63rc1xo" path="res://escenas/time_string.tscn" id="11_xi77v"]
 [ext_resource type="PackedScene" uid="uid://dywdg2xa4vxe3" path="res://escenas/pause_menu.tscn" id="12_huk1k"]
+[ext_resource type="PackedScene" path="res://escenas/fishing_game.tscn" id="14_rglgw"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_whb4l"]
+viewport_path = NodePath("Sprite2D/FishingGame")
 
 [node name="Mini_Pesca" type="Node2D" unique_id=1386607904]
 script = ExtResource("1_12e0j")
@@ -37,6 +41,23 @@ max_score_to_reach = 10.0
 key = NodePath("../key")
 fishes = NodePath("../Fishes")
 speed = 20.0
+
+[node name="TimeString" parent="." unique_id=394185148 node_paths=PackedStringArray("minigame_manager") instance=ExtResource("11_xi77v")]
+position = Vector2(-290, 258)
+scale = Vector2(2, 2)
+minigame_manager = NodePath("../MiniGame_Manager")
+
+[node name="PauseMenu" parent="." unique_id=1975666058 instance=ExtResource("12_huk1k")]
+offset_left = -576.0
+offset_top = -324.0
+offset_right = -576.0
+offset_bottom = -324.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=570675715]
+scale = Vector2(0.6, 0.6)
+texture = SubResource("ViewportTexture_whb4l")
+
+[node name="FishingGame" parent="Sprite2D" unique_id=850522679 instance=ExtResource("14_rglgw")]
 
 [node name="key" type="Sprite2D" parent="." unique_id=1358478556]
 visible = false
@@ -68,14 +89,3 @@ visible = false
 position = Vector2(147, -19)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("11_pe2ul")
-
-[node name="TimeString" parent="." unique_id=394185148 node_paths=PackedStringArray("minigame_manager") instance=ExtResource("11_xi77v")]
-position = Vector2(-290, 258)
-scale = Vector2(2, 2)
-minigame_manager = NodePath("../MiniGame_Manager")
-
-[node name="PauseMenu" parent="." unique_id=1975666058 instance=ExtResource("12_huk1k")]
-offset_left = -576.0
-offset_top = -324.0
-offset_right = -576.0
-offset_bottom = -324.0

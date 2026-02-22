@@ -33,7 +33,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if can_start:
+	if can_start and not won:
 		if (current_direction == "W" and Input.is_action_pressed("Up")) \
 		or (current_direction == "A" and Input.is_action_pressed("Left")) \
 		or (current_direction == "S" and Input.is_action_pressed("Down")) \
@@ -80,3 +80,4 @@ func _catch_fish():
 		caught_fish.visible=true
 		minigame_manager.changeWin(true)
 		won=true
+		key.visible=false
