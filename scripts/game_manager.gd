@@ -31,6 +31,7 @@ signal boss_intro
 signal show_intro(text: String, control_type: int)
 signal UIocult
 signal minigame_end
+signal transition_start
 
 enum ControlType {
 	WASD,
@@ -63,7 +64,7 @@ func _state_minigame_intro():
 	
 	_emit_intro_data()
 	await get_tree().create_timer(2.7).timeout
-	
+	transition_start.emit()
 	UIocult.emit()
 	_fade_out_overlay()
 	_load_next_minigame()
