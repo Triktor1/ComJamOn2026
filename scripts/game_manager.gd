@@ -160,6 +160,8 @@ func _state_boss_intro():
 	await get_tree().create_timer(2.4).timeout
 	boss_intro.emit()
 
+func _state_results():
+	pass
 func _state_final_victory():
 	return
 	
