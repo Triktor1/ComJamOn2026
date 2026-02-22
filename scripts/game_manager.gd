@@ -165,6 +165,7 @@ func _state_boss_intro():
 	
 	boss_intro.emit()
 	transition_start.emit()
+	AudioManager.play("MINIBOSS", current_speed)
 	UIocult.emit()
 	_fade_out_overlay()
 	_load_random_boss()
