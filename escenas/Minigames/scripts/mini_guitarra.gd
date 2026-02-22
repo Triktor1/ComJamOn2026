@@ -68,6 +68,7 @@ func _input(event: InputEvent) -> void:
 				lost.visible=true
 				bajo.visible=false
 				minigame_manager.changeWin(false)
+				AudioManager.play("Bwrong")
 				done=true
 			if current_key==4:
 				won.visible=true
