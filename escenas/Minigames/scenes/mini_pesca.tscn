@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://cfgtk2u5b8qf7"]
+
+[ext_resource type="Script" uid="uid://13iqj1l5uwo8" path="res://escenas/mini_data.gd" id="1_12e0j"]
+[ext_resource type="Script" uid="uid://dvkp78n5nmrxa" path="res://scripts/minigame_manager.gd" id="1_hpre5"]
+[ext_resource type="Script" uid="uid://b3uk0je7vq3k3" path="res://escenas/Minigames/scripts/pesca_manager.gd" id="3_0r4pm"]
+[ext_resource type="Texture2D" uid="uid://byrvwb5fgokky" path="res://assets/UI/TeclaW.png" id="4_0r4pm"]
+[ext_resource type="Texture2D" uid="uid://dws3g5a1mrg7f" path="res://assets/UI/TeclaA.png" id="5_ufhah"]
+[ext_resource type="Texture2D" uid="uid://c7w8t43lflupg" path="res://assets/UI/TeclaS.png" id="6_61y0g"]
+[ext_resource type="Texture2D" uid="uid://dpsk1jytbe2p7" path="res://assets/UI/TeclaD.png" id="7_ixalb"]
+
+[node name="Mini_Pesca" type="Node2D" unique_id=1386607904]
+script = ExtResource("1_12e0j")
+instr = "FISH"
+
+[node name="MiniGame_Manager" type="Node" parent="." unique_id=1099008650]
+script = ExtResource("1_hpre5")
+isWining = false
+time = 12.0
+endEarlyIfWon = true
+endEarlyIfLost = true
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1812756266]
+
+[node name="pesca_manager" type="Node2D" parent="." unique_id=1131390873 node_paths=PackedStringArray("minigame_manager", "key")]
+script = ExtResource("3_0r4pm")
+sprites = Array[Texture2D]([ExtResource("4_0r4pm"), ExtResource("5_ufhah"), ExtResource("6_61y0g"), ExtResource("7_ixalb")])
+minigame_manager = NodePath("../MiniGame_Manager")
+start_wait_time = 1.5
+time_to_change = 2.0
+max_score_to_reach = 6.0
+key = NodePath("../key")
+speed = 20.0
+
+[node name="key" type="Sprite2D" parent="." unique_id=1358478556]
+visible = false
+position = Vector2(261, 21)
+texture = ExtResource("4_0r4pm")
