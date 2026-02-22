@@ -14,6 +14,13 @@ func _ready():
 	GameManager.comence.connect(_on_game_start)
 	GameManager.UIocult.connect(_on_ui_ocult)
 	GameManager.minigame_end.connect(_on_minigame_end)
+	
+	var timer = Timer.new()
+	timer.wait_time = 0.638
+	timer.autostart = true
+	timer.one_shot = false
+	add_child(timer)
+	timer.timeout.connect(_on_beat)
 
 func _on_game_start():
 	_initialize_hearts(start_lives)
@@ -56,3 +63,23 @@ func _clear_hearts():
 		if is_instance_valid(h):
 			h.queue_free()
 	hearts.clear()
+
+func _squash_node(node: Node2D):
+	var tween = create_tween()
+	tween.set_parallel(true)
+	
+	tween.tween_property(node, "scale:y", 0.7, 0.15).set_trans(Tween.TRANS_SINE)
+	tween.tween_property(node, "scale:x", 1.2, 0.15).set_trans(Tween.TRANS_SINE)
+	
+	await tween.finished
+	
+	var tween_back = create_tween()
+	tween_back.set_parallel(true)
+	
+	tween_back.tween_property(node, "scale:y", 1.0, 0.15)
+	tween_back.tween_property(node, "scale:x", 1.0, 0.15)
+
+func _on_beat():
+	for child in get_children():
+		if child is Node2D:
+			_squash_node(child)
