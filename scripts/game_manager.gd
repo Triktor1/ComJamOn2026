@@ -7,8 +7,8 @@ extends Node
 @export var win_screen: PackedScene
 
 @export var endless: bool = false
-@export var boss_interval: int = 2
-@export var speedup_interval: int = 22
+@export var boss_interval: int = 15
+@export var speedup_interval: int = 5
 
 @export var max_speed: float = 3.0
 @export var speed_increment: float = 0.15
@@ -39,6 +39,14 @@ signal minigame_end
 signal transition_start
 signal heal
 
+signal cat_comence
+signal cat_win
+signal cat_loose
+signal cat_speedup
+signal cat_intro
+signal cat_victory
+signal cat_boss
+
 enum ControlType {
 	WASD,
 	ZX,
@@ -47,6 +55,7 @@ enum ControlType {
 
 # ESTADO 0 START
 func _state_start():
+	cat_comence.emit()
 	_shuffle_minigames()
 	lives = 4
 	minigame_count = 0
@@ -61,6 +70,7 @@ func _state_start():
 
 # ESTADO 1 COMIENZA MINIJUEGO
 func _state_minigame_intro():
+	cat_intro.emit()
 	boss_time = false
 	minigame_count += 1
 	AudioManager.play("NEXT", current_speed)
@@ -77,6 +87,7 @@ func _state_minigame_intro():
 
 # ESTADO 2 SE GANA MINIJEUEGO
 func _state_win():
+	cat_win.emit()
 	minigame_end.emit()
 	AudioManager.play("GANAR", current_speed)
 	win.emit()
@@ -101,6 +112,7 @@ func _state_win():
 
 # ESTADO 3 SE PIERDE MINIJUEGO
 func _state_lose():
+	cat_loose.emit()
 	minigame_end.emit()
 	lives -= 1
 	lost.emit()
@@ -131,6 +143,7 @@ func _state_lose():
 
 # STATE 4 GAME OVER
 func _state_game_over():
+	cat_loose.emit()
 	current_speed = 1.0
 	current_pitch = 1.0
 	_apply_speed()
@@ -140,6 +153,7 @@ func _state_game_over():
 	
 # STATE 5 SPEED UP
 func _state_speed_up():
+	cat_speedup.emit()
 	AudioManager.play("SPEEDUP", current_speed)
 	speedup.emit()
 	current_speed = min(current_speed + speed_increment, max_speed)
@@ -153,6 +167,7 @@ func _state_speed_up():
 
 # STATE 6 BOSS INTRO
 func _state_boss_intro():
+	cat_boss.emit()
 	boss_time = true
 	minigame_count += 1
 	
@@ -172,6 +187,7 @@ func _state_boss_intro():
 	_load_random_boss()
 	
 func _state_final_victory():
+	cat_victory.emit()
 	current_speed = 1.0
 	current_pitch = 1.0
 	_apply_speed()
