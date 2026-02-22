@@ -2,16 +2,12 @@
 
 [ext_resource type="Script" uid="uid://b5ash1gwygw01" path="res://scripts/pause_menu.gd" id="1_hdmo1"]
 [ext_resource type="PackedScene" uid="uid://bhq7k2fh6grn4" path="res://escenas/prefabs/button_effects_component.tscn" id="2_nwcfo"]
-[ext_resource type="PackedScene" uid="uid://b6gvdyse5dqo7" path="res://escenas/mainMenu.tscn" id="2_pjyxd"]
+[ext_resource type="PackedScene" uid="uid://hxfcwwnysmll" path="res://escenas/mainMenu.tscn" id="2_pjyxd"]
 
-[node name="PauseMenu" type="Control" unique_id=1735628407]
+[node name="PauseMenu" type="Control" unique_id=717342083]
 process_mode = 3
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 0
 script = ExtResource("1_hdmo1")
 main_menu_scene = ExtResource("2_pjyxd")
 
@@ -19,7 +15,7 @@ main_menu_scene = ExtResource("2_pjyxd")
 layout_mode = 0
 offset_right = 1941.0
 offset_bottom = 1099.0
-color = Color(0, 0, 0, 0.41960785)
+color = Color(0.10461459, 0.09223362, 0.11435678, 1)
 
 [node name="Label" type="Label" parent="." unique_id=464485481]
 layout_mode = 0
@@ -32,7 +28,12 @@ text = "Paused"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ContinueButton" type="Button" parent="." unique_id=1796792896]
+[node name="Panel" type="Panel" parent="." unique_id=1582009500]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ContinueButton" type="Button" parent="Panel" unique_id=1796792896]
 layout_mode = 0
 offset_left = 757.0
 offset_top = 392.0
@@ -41,9 +42,9 @@ offset_bottom = 491.0
 theme_override_font_sizes/font_size = 40
 text = "Continue"
 
-[node name="ButtonEffectsComponent" parent="ContinueButton" unique_id=319245680 instance=ExtResource("2_nwcfo")]
+[node name="ButtonEffectsComponent" parent="Panel/ContinueButton" unique_id=319245680 instance=ExtResource("2_nwcfo")]
 
-[node name="MainMenuButton" type="Button" parent="." unique_id=634969405]
+[node name="MainMenuButton" type="Button" parent="Panel" unique_id=634969405]
 layout_mode = 0
 offset_left = 757.0
 offset_top = 541.0
@@ -52,9 +53,9 @@ offset_bottom = 640.0
 theme_override_font_sizes/font_size = 40
 text = "Main menu"
 
-[node name="ButtonEffectsComponent" parent="MainMenuButton" unique_id=1650582091 instance=ExtResource("2_nwcfo")]
+[node name="ButtonEffectsComponent" parent="Panel/MainMenuButton" unique_id=1650582091 instance=ExtResource("2_nwcfo")]
 
-[node name="QuitButton" type="Button" parent="." unique_id=179745614]
+[node name="QuitButton" type="Button" parent="Panel" unique_id=179745614]
 layout_mode = 0
 offset_left = 757.0
 offset_top = 688.0
@@ -63,4 +64,4 @@ offset_bottom = 787.0
 theme_override_font_sizes/font_size = 40
 text = "Quit"
 
-[node name="ButtonEffectsComponent" parent="QuitButton" unique_id=1001322589 instance=ExtResource("2_nwcfo")]
+[node name="ButtonEffectsComponent" parent="Panel/QuitButton" unique_id=1001322589 instance=ExtResource("2_nwcfo")]

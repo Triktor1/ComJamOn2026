@@ -9,16 +9,22 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	process_mode = Node.PROCESS_MODE_ALWAYS
+	visible = false
+	
 	cont_button.pressed.connect(_continue)
 	main_button.pressed.connect(_main_menu)
 	quit_button.pressed.connect(_quit)
 
+func _process(delta):
+	visible = GameManager.paused
+	
 func _continue():
-	visible=false
-	get_tree().paused=!get_tree().paused
+	GameManager.toogle_pause()
 
 func _main_menu():
+	GameManager.paused = false; 
 	get_tree().change_scene_to_packed(main_menu_scene)
-
+	
 func _quit():
-	get_tree().quit()
+	get_tree().quit()	
