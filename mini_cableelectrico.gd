@@ -76,11 +76,10 @@ func actualizar_contorno():
 		
 		if piezas_fijadas[i] and rot_actual !=rot_correcta:
 			piezas_fijadas[i] = false	
-		if piezas_fijadas[i]:
-			piezas[i].modulate = Color(0.325, 0.831, 0.29, 1.0) # verde
+		if i == pieza_actual:
+			piezas[i].modulate = Color(0.486, 0.463, 0.471, 1.0) # gris
 		else:
-			if i == pieza_actual:
-				piezas[i].modulate = Color(0.486, 0.463, 0.471, 1.0) # amarillo seleccionada
+			piezas[i].modulate = Color(1, 1, 1, 1) # color original
 			
 		
 		   
