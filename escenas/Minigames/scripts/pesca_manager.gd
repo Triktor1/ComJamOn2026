@@ -17,7 +17,7 @@ var time:float=0
 var directions:Array=["W","A","S","D"]
 var current_direction:String=""
 
-var score:float=1.5
+var score:float=2.0
 var evil_score:float=0.0
 
 var is_pressed:bool=false

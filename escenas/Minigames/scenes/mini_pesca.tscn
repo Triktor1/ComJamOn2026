@@ -16,7 +16,7 @@ instr = "FISH"
 [node name="MiniGame_Manager" type="Node" parent="." unique_id=1099008650]
 script = ExtResource("1_hpre5")
 isWining = false
-time = 12.0
+time = 30.0
 endEarlyIfWon = true
 endEarlyIfLost = true
 
@@ -28,7 +28,7 @@ sprites = Array[Texture2D]([ExtResource("4_0r4pm"), ExtResource("5_ufhah"), ExtR
 minigame_manager = NodePath("../MiniGame_Manager")
 start_wait_time = 1.5
 time_to_change = 2.0
-max_score_to_reach = 6.0
+max_score_to_reach = 8.0
 key = NodePath("../key")
 fishes = NodePath("../Fishes")
 speed = 20.0
