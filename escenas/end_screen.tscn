@@ -3,7 +3,25 @@
 [ext_resource type="Script" uid="uid://dnfp60q071onv" path="res://scripts/end_screen.gd" id="1_3373n"]
 [ext_resource type="PackedScene" uid="uid://bhq7k2fh6grn4" path="res://escenas/prefabs/button_effects_component.tscn" id="1_n825o"]
 [ext_resource type="Texture2D" uid="uid://5v8ucruc03vx" path="res://assets/UI/ButtonMenu.png" id="2_ra2i1"]
+[ext_resource type="Shader" uid="uid://jwwg2huy2cr1" path="res://Particulas y shaders/mainMenu.gdshader" id="2_wwcb6"]
 [ext_resource type="Texture2D" uid="uid://bisrjfdcfu3xw" path="res://assets/UI/ButtonMenuHover.png" id="3_ny2qg"]
+[ext_resource type="Texture2D" uid="uid://dgrur2vavys1n" path="res://icon.svg" id="3_ymjfp"]
+[ext_resource type="FontFile" uid="uid://bhdfurpui1ibs" path="res://assets/PlaywriteNZBasic-VariableFont_wght.ttf" id="4_ymjfp"]
+
+[sub_resource type="Gradient" id="Gradient_otayg"]
+colors = PackedColorArray(0, 0, 1, 1, 1, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_58y3s"]
+gradient = SubResource("Gradient_otayg")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jkk5l"]
+shader = ExtResource("2_wwcb6")
+shader_parameter/gradient = SubResource("GradientTexture2D_58y3s")
+shader_parameter/circle_color = Color(0, 0.35686275, 0.6745098, 1)
+shader_parameter/circle_multiplier = 10.0
+shader_parameter/speed = 1.0
+shader_parameter/direction = Vector2(1, 0)
+shader_parameter/rotation = Transform2D(1, -1, 1, 1, 0, 0)
 
 [node name="EndScreen" type="Control" unique_id=112317611 node_paths=PackedStringArray("main_menu_button", "label_score")]
 layout_mode = 3
@@ -16,31 +34,55 @@ script = ExtResource("1_3373n")
 main_menu_button = NodePath("Button")
 label_score = NodePath("Label2")
 
+[node name="Node2D" type="Sprite2D" parent="." unique_id=723172413]
+material = SubResource("ShaderMaterial_jkk5l")
+position = Vector2(577.3806, 348.6019)
+rotation = 1.57149
+scale = Vector2(7.6039553, 9.244015)
+texture = ExtResource("3_ymjfp")
+
 [node name="Label" type="Label" parent="." unique_id=1226934891]
 layout_mode = 0
-offset_left = 210.0
-offset_top = 229.0
-offset_right = 717.0
-offset_bottom = 312.0
-theme_override_font_sizes/font_size = 60
+offset_left = 198.0
+offset_top = 255.0
+offset_right = 875.0
+offset_bottom = 387.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("4_ymjfp")
+theme_override_font_sizes/font_size = 80
 text = "Puntuación final: "
 
 [node name="Label2" type="Label" parent="." unique_id=670189766]
 layout_mode = 0
-offset_left = 740.0
-offset_top = 229.0
-offset_right = 1247.0
-offset_bottom = 312.0
-theme_override_font_sizes/font_size = 60
+offset_left = 861.0
+offset_top = 255.0
+offset_right = 1368.0
+offset_bottom = 387.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("4_ymjfp")
+theme_override_font_sizes/font_size = 80
 text = "0"
+
+[node name="GameOver" type="Label" parent="." unique_id=1422346874]
+layout_mode = 0
+offset_left = 232.0
+offset_top = 69.0
+offset_right = 898.0
+offset_bottom = 235.0
+theme_override_colors/font_color = Color(0.8392157, 0.21176471, 0.21176471, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("4_ymjfp")
+theme_override_font_sizes/font_size = 100
+text = "GAME OVER"
 
 [node name="Button" type="TextureButton" parent="." unique_id=1239724046]
 custom_minimum_size = Vector2(200, 105)
 layout_mode = 0
-offset_left = 393.0
-offset_top = 437.0
-offset_right = 620.0
-offset_bottom = 528.0
+offset_left = 441.0
+offset_top = 433.0
+offset_right = 668.0
+offset_bottom = 538.0
 texture_normal = ExtResource("2_ra2i1")
 texture_pressed = ExtResource("2_ra2i1")
 texture_hover = ExtResource("3_ny2qg")
