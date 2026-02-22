@@ -3,6 +3,8 @@ extends Node
 @export var minigames: Array[PackedScene]
 @export var boss_minigames: Array[PackedScene]
 
+@export var results: PackedScene
+
 @export var endless: bool = false
 @export var boss_interval: int = 2
 @export var speedup_interval: int = 22
@@ -20,6 +22,7 @@ var current_minigame_index: int = 0
 var current_minigame: Node
 var boss_time: bool = false
 var in_minigame: bool = false
+var paused: bool = false
 
 # SEÑALES
 signal comence
@@ -30,6 +33,7 @@ signal speedup
 signal boss_intro
 signal show_intro(text: String, control_type: int)
 signal UIocult
+signal pause_changed(is_paused: bool)
 signal minigame_end
 signal transition_start
 signal heal
@@ -131,7 +135,8 @@ func _state_game_over():
 	_apply_speed()
 	AudioManager.play("GAMEOVER", current_speed)
 	await get_tree().create_timer(2.4).timeout
-
+	get_tree().change_scene_to_packed(results)
+	
 # STATE 5 SPEED UP
 func _state_speed_up():
 	AudioManager.play("SPEEDUP", current_speed)
@@ -169,6 +174,21 @@ func _state_results():
 	
 func _state_final_victory():
 	return
+	
+#menu de pausa en juego
+func toggle_pause():
+	if not current_minigame:
+		return
+	
+	paused = !paused
+	print("Pause:",paused)
+	
+	if paused:
+		current_minigame.process_mode = Node.PROCESS_MODE_DISABLED
+	else:
+		current_minigame.process_mode = Node.PROCESS_MODE_INHERIT
+	
+	pause_changed.emit(paused)
 	
 func _shuffle_minigames():
 	shuffled_minigames = minigames.duplicate()
@@ -208,6 +228,10 @@ func _fade_out_overlay():
 func _fade_in_overlay():
 	return
 	
+func _input(event):
+	if event.is_action_pressed("Pause"):
+		toggle_pause()
+		
 func _cleanup_minigame():
 	if current_minigame:
 		current_minigame.queue_free()
