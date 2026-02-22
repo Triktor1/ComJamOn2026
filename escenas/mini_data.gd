@@ -5,7 +5,8 @@ extends Node2D
 enum ControlType {
 	WASD,
 	ZX,
-	SPACE
+	SPACE,
+	ADS
 }
 
 @export var control_type: ControlType = ControlType.WASD

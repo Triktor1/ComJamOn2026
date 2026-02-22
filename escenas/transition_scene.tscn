@@ -10,6 +10,7 @@
 [ext_resource type="FontFile" uid="uid://bhdfurpui1ibs" path="res://assets/PlaywriteNZBasic-VariableFont_wght.ttf" id="5_wdphn"]
 [ext_resource type="Texture2D" uid="uid://bl6kxi4ebfue7" path="res://assets/UI/TeclaWASD.png" id="8_mojdm"]
 [ext_resource type="Texture2D" uid="uid://56g7m8jwje3b" path="res://assets/UI/TeclaAD.png" id="9_fjaaw"]
+[ext_resource type="Texture2D" uid="uid://bldc7rd18rxe8" path="res://assets/UI/TeclaADSpace.png" id="11_fjaaw"]
 [ext_resource type="Texture2D" uid="uid://cd86fe8aivax3" path="res://assets/UI/TeclaSpace.png" id="13_su6wb"]
 
 [node name="TransitionScene" type="Node2D" unique_id=1906840405]
@@ -49,6 +50,7 @@ script = ExtResource("5_ih10d")
 wasd_textures = Array[Texture2D]([ExtResource("8_mojdm")])
 zx_textures = Array[Texture2D]([ExtResource("9_fjaaw")])
 space_textures = Array[Texture2D]([ExtResource("13_su6wb")])
+ads_textures = Array[Texture2D]([ExtResource("11_fjaaw")])
 
 [node name="Instruccion" type="Label" parent="." unique_id=845575253]
 offset_left = 693.0

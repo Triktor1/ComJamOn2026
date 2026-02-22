@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bq0syuurlf5fb" path="res://escenas/ModelsScenes/trozo_cable_2.tscn" id="5_mi5tu"]
 [ext_resource type="PackedScene" uid="uid://cdg6teqmw78yy" path="res://escenas/ModelsScenes/trozo_cable_3.tscn" id="7_qy11p"]
 [ext_resource type="PackedScene" uid="uid://c7u3tvpf211jn" path="res://escenas/ModelsScenes/postes_cables.tscn" id="8_an2rk"]
-[ext_resource type="PackedScene" path="res://escenas/time_string.tscn" id="8_burv3"]
+[ext_resource type="PackedScene" uid="uid://bbydgh63rc1xo" path="res://escenas/time_string.tscn" id="8_burv3"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_rb4fl"]
 viewport_path = NodePath("Wire1/TrozoCable1")
@@ -33,7 +33,7 @@ viewport_path = NodePath("fondo/PostesCables")
 [node name="MiniCableelectrico" type="Node2D" unique_id=916984755]
 script = ExtResource("1_ahtef")
 instr = "CONECTA"
-control_type = 1
+control_type = 3
 
 [node name="cableManager" type="Node2D" parent="." unique_id=531922096 node_paths=PackedStringArray("miniGameManager", "piezas")]
 script = ExtResource("1_flrll")

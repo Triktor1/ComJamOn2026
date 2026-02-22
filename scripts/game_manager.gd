@@ -50,7 +50,8 @@ signal cat_boss
 enum ControlType {
 	WASD,
 	ZX,
-	SPACE
+	SPACE,
+	ADS
 }
 
 # ESTADO 0 START
@@ -249,10 +250,12 @@ func _fade_out_overlay():
 func _fade_in_overlay():
 	return
 	
-func _input(event):
-	if event.is_action_pressed("Pause"):
-		toggle_pause()
-		
+
+#func _input(event):
+	#if event.is_action_pressed("Pause"):
+		#toggle_pause()
+		#
+
 func _cleanup_minigame():
 	if current_minigame:
 		current_minigame.queue_free()

@@ -36,7 +36,7 @@ minigame_manager = NodePath("../MiniGame_Manager")
 needle = NodePath("../needle")
 win_area = NodePath("../win_area")
 lose_area = NodePath("../lose_area")
-speed = 750.0
+speed = 375.0
 
 [node name="MiniGame_Manager" type="Node" parent="." unique_id=567200864]
 script = ExtResource("1_vgh2l")
