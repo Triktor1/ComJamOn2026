@@ -2,14 +2,17 @@
 
 [ext_resource type="Script" uid="uid://13iqj1l5uwo8" path="res://escenas/mini_data.gd" id="1_xnbno"]
 [ext_resource type="PackedScene" uid="uid://bbydgh63rc1xo" path="res://escenas/time_string.tscn" id="2_68x11"]
-[ext_resource type="Texture2D" uid="uid://dgrur2vavys1n" path="res://icon.svg" id="2_skode"]
 [ext_resource type="Script" uid="uid://hqgnxhaemmhi" path="res://escenas/Minigames/scripts/alfredo_fall.gd" id="3_skode"]
 [ext_resource type="PackedScene" uid="uid://b54unurjerieg" path="res://escenas/managers/minigame_manager.tscn" id="3_xnbno"]
 [ext_resource type="PackedScene" uid="uid://botkdjgpn363i" path="res://escenas/ModelsScenes/alfredito.tscn" id="5_xnbno"]
 [ext_resource type="PackedScene" uid="uid://dywdg2xa4vxe3" path="res://escenas/pause_menu.tscn" id="7_kayi4"]
+[ext_resource type="PackedScene" uid="uid://whk6kmjpd1b6" path="res://escenas/ModelsScenes/cuerda_alfredo.tscn" id="8_cywdc"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_68x11"]
 viewport_path = NodePath("Node2D/Alfredo/Alfredito")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_lb7uc"]
+viewport_path = NodePath("Cuerda/CuerdaAlfredo")
 
 [node name="Mini_Alfredo" type="Node2D" unique_id=1716738336]
 script = ExtResource("1_xnbno")
@@ -20,11 +23,6 @@ control_type = 1
 position = Vector2(295, 607)
 scale = Vector2(2, 2)
 minigame_manager = NodePath("../MinigameManager")
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=500726510]
-position = Vector2(561, 477)
-scale = Vector2(0.3515625, 0.3125)
-texture = ExtResource("2_skode")
 
 [node name="MinigameManager" parent="." unique_id=1806882873 instance=ExtResource("3_xnbno")]
 endEarlyIfLost = true
@@ -45,3 +43,10 @@ offset_left = -576.0
 offset_top = -324.0
 offset_right = -576.0
 offset_bottom = -324.0
+
+[node name="Cuerda" type="Sprite2D" parent="." unique_id=708237972]
+position = Vector2(579, 475)
+scale = Vector2(2, 2)
+texture = SubResource("ViewportTexture_lb7uc")
+
+[node name="CuerdaAlfredo" parent="Cuerda" unique_id=1617431029 instance=ExtResource("8_cywdc")]
