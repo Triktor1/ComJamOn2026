@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://1v88p3t3ofqy"]
+
+[ext_resource type="Shader" uid="uid://jwwg2huy2cr1" path="res://Particulas y shaders/mainMenu.gdshader" id="2_fkp8p"]
+[ext_resource type="Texture2D" uid="uid://dgrur2vavys1n" path="res://icon.svg" id="3_ig545"]
+[ext_resource type="FontFile" uid="uid://bhdfurpui1ibs" path="res://assets/PlaywriteNZBasic-VariableFont_wght.ttf" id="4_cvusj"]
+[ext_resource type="Texture2D" uid="uid://5v8ucruc03vx" path="res://assets/UI/ButtonMenu.png" id="5_bndas"]
+[ext_resource type="Texture2D" uid="uid://bisrjfdcfu3xw" path="res://assets/UI/ButtonMenuHover.png" id="6_42s0m"]
+[ext_resource type="PackedScene" uid="uid://bhq7k2fh6grn4" path="res://escenas/prefabs/button_effects_component.tscn" id="7_h6hke"]
+
+[sub_resource type="Gradient" id="Gradient_otayg"]
+colors = PackedColorArray(0, 0, 1, 1, 1, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_58y3s"]
+gradient = SubResource("Gradient_otayg")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jkk5l"]
+shader = ExtResource("2_fkp8p")
+shader_parameter/gradient = SubResource("GradientTexture2D_58y3s")
+shader_parameter/circle_color = Color(0, 0.35686275, 0.6745098, 1)
+shader_parameter/circle_multiplier = 10.0
+shader_parameter/speed = 1.0
+shader_parameter/direction = Vector2(1, 0)
+shader_parameter/rotation = Transform2D(1, -1, 1, 1, 0, 0)
+
+[node name="EndScreen" type="Control" unique_id=112317611]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Node2D" type="Sprite2D" parent="." unique_id=723172413]
+material = SubResource("ShaderMaterial_jkk5l")
+position = Vector2(577.3806, 348.6019)
+rotation = 1.57149
+scale = Vector2(7.6039553, 9.244015)
+texture = ExtResource("3_ig545")
+
+[node name="Victoria" type="Label" parent="." unique_id=1422346874]
+layout_mode = 0
+offset_left = 178.0
+offset_top = 144.0
+offset_right = 967.0
+offset_bottom = 393.0
+theme_override_colors/font_color = Color(0, 0.5294118, 0.31764707, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("4_cvusj")
+theme_override_font_sizes/font_size = 150
+text = "VICTORIA"
+horizontal_alignment = 1
+
+[node name="Button" type="TextureButton" parent="." unique_id=1239724046]
+custom_minimum_size = Vector2(200, 105)
+layout_mode = 0
+offset_left = 441.0
+offset_top = 433.0
+offset_right = 668.0
+offset_bottom = 538.0
+texture_normal = ExtResource("5_bndas")
+texture_pressed = ExtResource("5_bndas")
+texture_hover = ExtResource("6_42s0m")
+stretch_mode = 6
+
+[node name="ButtonEffectsComponent" parent="Button" unique_id=319245680 instance=ExtResource("7_h6hke")]

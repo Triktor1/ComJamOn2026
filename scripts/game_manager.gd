@@ -4,6 +4,7 @@ extends Node
 @export var boss_minigames: Array[PackedScene]
 
 @export var results: PackedScene
+@export var win_screen: PackedScene
 
 @export var endless: bool = false
 @export var boss_interval: int = 2
@@ -84,7 +85,7 @@ func _state_win():
 	await get_tree().create_timer(4.3).timeout
 	if boss_time:
 		if not endless:
-			_state_boss_intro()
+			_state_final_victory()
 			return
 		else:
 			lives += 1
@@ -169,11 +170,14 @@ func _state_boss_intro():
 	UIocult.emit()
 	_fade_out_overlay()
 	_load_random_boss()
-
-func _state_results():
-	pass
 	
 func _state_final_victory():
+	current_speed = 1.0
+	current_pitch = 1.0
+	_apply_speed()
+	AudioManager.play("GAMEOVER", current_speed)
+	await get_tree().create_timer(2.4).timeout
+	get_tree().change_scene_to_packed(win_screen)
 	return
 	
 #menu de pausa en juego
