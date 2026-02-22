@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bq0syuurlf5fb" path="res://escenas/ModelsScenes/trozo_cable_2.tscn" id="5_mi5tu"]
 [ext_resource type="PackedScene" uid="uid://cdg6teqmw78yy" path="res://escenas/ModelsScenes/trozo_cable_3.tscn" id="7_qy11p"]
 [ext_resource type="PackedScene" uid="uid://c7u3tvpf211jn" path="res://escenas/ModelsScenes/postes_cables.tscn" id="8_an2rk"]
+[ext_resource type="PackedScene" uid="uid://bbydgh63rc1xo" path="res://escenas/time_string.tscn" id="8_burv3"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_rb4fl"]
 viewport_path = NodePath("Wire1/TrozoCable1")
@@ -94,3 +95,8 @@ scale = Vector2(1.7763975, 1.6144279)
 texture = SubResource("ViewportTexture_1jsmp")
 
 [node name="PostesCables" parent="fondo" unique_id=1615085955 instance=ExtResource("8_an2rk")]
+
+[node name="TimeString" parent="." unique_id=394185148 node_paths=PackedStringArray("minigame_manager") instance=ExtResource("8_burv3")]
+position = Vector2(-290, 258)
+scale = Vector2(2, 2)
+minigame_manager = NodePath("../MiniGameManager")
