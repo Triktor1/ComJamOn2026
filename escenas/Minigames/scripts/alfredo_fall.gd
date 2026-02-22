@@ -23,9 +23,9 @@ func _process(delta):
 	current_angle += direction * fall_accel * delta
 
 	# control jugador
-	if Input.is_key_pressed(KEY_Z):
+	if Input.is_key_pressed(KEY_A):
 		current_angle -= tilt_speed * delta
-	if Input.is_key_pressed(KEY_X):
+	if Input.is_key_pressed(KEY_D):
 		current_angle += tilt_speed * delta
 
 	rotation_degrees = current_angle
