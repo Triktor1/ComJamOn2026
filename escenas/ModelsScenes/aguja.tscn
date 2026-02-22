@@ -71,7 +71,7 @@ shadow_mesh = SubResource("ArrayMesh_l3plf")
 
 [node name="Aguja2" type="SubViewport" unique_id=1159572469]
 transparent_bg = true
-size = Vector2i(54, 477)
+size = Vector2i(184, 1200)
 
 [node name="Aguja" type="MeshInstance3D" parent="." unique_id=1670830292]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 175.66537, 0, 0)
