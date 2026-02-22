@@ -9,7 +9,7 @@
 
 [node name="Mini_Dialogo" type="Node2D" unique_id=1446933127]
 script = ExtResource("1_8apfu")
-instr = "SKIP"
+instr = "SALTA DIALOGO"
 control_type = 2
 
 [node name="MiniGame_Manager" type="Node" parent="." unique_id=1283280026]
@@ -64,3 +64,5 @@ offset_left = -576.0
 offset_top = -324.0
 offset_right = -576.0
 offset_bottom = -324.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=864238614]
