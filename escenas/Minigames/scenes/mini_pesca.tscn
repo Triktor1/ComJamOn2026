@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dws3g5a1mrg7f" path="res://assets/UI/TeclaA.png" id="5_ufhah"]
 [ext_resource type="Texture2D" uid="uid://c7w8t43lflupg" path="res://assets/UI/TeclaS.png" id="6_61y0g"]
 [ext_resource type="Texture2D" uid="uid://dpsk1jytbe2p7" path="res://assets/UI/TeclaD.png" id="7_ixalb"]
+[ext_resource type="Texture2D" uid="uid://dgrur2vavys1n" path="res://icon.svg" id="8_61y0g"]
 
 [node name="Mini_Pesca" type="Node2D" unique_id=1386607904]
 script = ExtResource("1_12e0j")
@@ -21,7 +22,7 @@ endEarlyIfLost = true
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1812756266]
 
-[node name="pesca_manager" type="Node2D" parent="." unique_id=1131390873 node_paths=PackedStringArray("minigame_manager", "key")]
+[node name="pesca_manager" type="Node2D" parent="." unique_id=1131390873 node_paths=PackedStringArray("minigame_manager", "key", "fishes")]
 script = ExtResource("3_0r4pm")
 sprites = Array[Texture2D]([ExtResource("4_0r4pm"), ExtResource("5_ufhah"), ExtResource("6_61y0g"), ExtResource("7_ixalb")])
 minigame_manager = NodePath("../MiniGame_Manager")
@@ -29,9 +30,17 @@ start_wait_time = 1.5
 time_to_change = 2.0
 max_score_to_reach = 6.0
 key = NodePath("../key")
+fishes = NodePath("../Fishes")
 speed = 20.0
 
 [node name="key" type="Sprite2D" parent="." unique_id=1358478556]
 visible = false
 position = Vector2(261, 21)
 texture = ExtResource("4_0r4pm")
+
+[node name="Fishes" type="Node" parent="." unique_id=1116940378]
+
+[node name="fish" type="Sprite2D" parent="Fishes" unique_id=912481060]
+visible = false
+position = Vector2(149, 19)
+texture = ExtResource("8_61y0g")
