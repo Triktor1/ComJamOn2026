@@ -11,6 +11,8 @@ var stopTweens: bool = false
 func _ready():
 	start_lives = GameManager.lives
 	
+	GameManager.heal.connect(_heal)
+	
 	GameManager.lost.connect(_on_player_lost)
 	GameManager.comence.connect(_on_game_start)
 	GameManager.UIocult.connect(_on_ui_ocult)
@@ -92,3 +94,18 @@ func _on_beat():
 func _stop_on_beat()->void:
 	stopTweens = !stopTweens
 	pass
+
+func _heal():
+	if current_lives >= hearts.size():
+		return
+	
+	var heart = hearts[current_lives]
+	heart.modulate.a = 1.0
+	
+	var anim = heart.get_node("AnimatedSprite2D")
+	anim.play("heart_heal")
+	
+	await anim.animation_finished
+	
+	anim.play("heart_idle")
+	current_lives += 1

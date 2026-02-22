@@ -1,6 +1,7 @@
 [gd_resource type="SpriteFrames" format=3 uid="uid://c2yb666mqcwxr"]
 
 [ext_resource type="Texture2D" uid="uid://d34wxnh383b4o" path="res://assets/UI/HeartDeath.png" id="1_lxx6l"]
+[ext_resource type="Texture2D" uid="uid://ngqkapbv7kys" path="res://assets/UI/HeartRevive.png" id="2_0pdua"]
 [ext_resource type="Texture2D" uid="uid://bgufq54lorovc" path="res://assets/UI/HeartIdle.png" id="2_ogv0m"]
 [ext_resource type="Texture2D" uid="uid://fbuiasht6gbl" path="res://assets/UI/ovilloLana.png" id="3_ogv0m"]
 
@@ -31,6 +32,50 @@ region = Rect2(400, 0, 80, 64)
 [sub_resource type="AtlasTexture" id="AtlasTexture_bwijt"]
 atlas = ExtResource("1_lxx6l")
 region = Rect2(480, 0, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dl55x"]
+atlas = ExtResource("2_0pdua")
+region = Rect2(0, 0, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hcqt3"]
+atlas = ExtResource("2_0pdua")
+region = Rect2(80, 0, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ckgu"]
+atlas = ExtResource("2_0pdua")
+region = Rect2(160, 0, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u0yyw"]
+atlas = ExtResource("2_0pdua")
+region = Rect2(240, 0, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_firm5"]
+atlas = ExtResource("2_0pdua")
+region = Rect2(320, 0, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0wryy"]
+atlas = ExtResource("2_0pdua")
+region = Rect2(400, 0, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ics8f"]
+atlas = ExtResource("2_0pdua")
+region = Rect2(480, 0, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5u2d0"]
+atlas = ExtResource("2_0pdua")
+region = Rect2(560, 0, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_txs6g"]
+atlas = ExtResource("2_0pdua")
+region = Rect2(640, 0, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_drvk0"]
+atlas = ExtResource("2_0pdua")
+region = Rect2(720, 0, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r70o8"]
+atlas = ExtResource("2_0pdua")
+region = Rect2(800, 0, 80, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uknvu"]
 atlas = ExtResource("2_ogv0m")
@@ -82,6 +127,44 @@ animations = [{
 }],
 "loop": false,
 "name": &"heart_death",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dl55x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hcqt3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ckgu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u0yyw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_firm5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0wryy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ics8f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5u2d0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_txs6g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_drvk0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r70o8")
+}],
+"loop": false,
+"name": &"heart_heal",
 "speed": 15.0
 }, {
 "frames": [{

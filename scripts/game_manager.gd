@@ -32,6 +32,7 @@ signal show_intro(text: String, control_type: int)
 signal UIocult
 signal minigame_end
 signal transition_start
+signal heal
 
 enum ControlType {
 	WASD,
@@ -83,6 +84,7 @@ func _state_win():
 			return
 		else:
 			lives += 1
+			heal.emit()
 	if _speedup():
 		_state_speed_up()
 		return
