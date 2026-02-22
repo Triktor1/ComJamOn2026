@@ -26,3 +26,8 @@ func stop() ->void:
 	if active_music_stream && active_music_stream.playing:
 		active_music_stream.stop()
 	active_music_stream = null
+
+func is_playing() -> bool:
+	if !active_music_stream:
+		return false
+	return active_music_stream.playing

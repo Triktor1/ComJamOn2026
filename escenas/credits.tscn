@@ -2,40 +2,82 @@
 
 [ext_resource type="PackedScene" uid="uid://bhq7k2fh6grn4" path="res://escenas/prefabs/button_effects_component.tscn" id="1_000v3"]
 [ext_resource type="Script" uid="uid://d0ye38lh4so8l" path="res://scripts/credits.gd" id="1_ccpcd"]
+[ext_resource type="Shader" uid="uid://jwwg2huy2cr1" path="res://Particulas y shaders/mainMenu.gdshader" id="2_dix24"]
+[ext_resource type="FontFile" uid="uid://bhdfurpui1ibs" path="res://assets/PlaywriteNZBasic-VariableFont_wght.ttf" id="2_ncsgl"]
+[ext_resource type="Texture2D" uid="uid://5v8ucruc03vx" path="res://assets/UI/ButtonMenu.png" id="3_mcurn"]
+[ext_resource type="Texture2D" uid="uid://dgrur2vavys1n" path="res://icon.svg" id="3_oqc4f"]
+[ext_resource type="Texture2D" uid="uid://bisrjfdcfu3xw" path="res://assets/UI/ButtonMenuHover.png" id="4_dix24"]
 
-[node name="Credits" type="Control" unique_id=507493597 node_paths=PackedStringArray("back_button")]
+[sub_resource type="Gradient" id="Gradient_rscwi"]
+colors = PackedColorArray(0, 0, 1, 1, 1, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_3rwlf"]
+gradient = SubResource("Gradient_rscwi")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dqp4g"]
+shader = ExtResource("2_dix24")
+shader_parameter/gradient = SubResource("GradientTexture2D_3rwlf")
+shader_parameter/circle_color = Color(0, 0.5294118, 0.31764707, 1)
+shader_parameter/circle_multiplier = 10.0
+shader_parameter/speed = 1.0
+shader_parameter/direction = Vector2(1, 0)
+shader_parameter/rotation = Transform2D(1, -1, 1, 1, 0, 0)
+
+[node name="Credits" type="Control" unique_id=507493597]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_ccpcd")
-back_button = NodePath("Back_Button")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=208783343]
 layout_mode = 1
 offset_right = 1152.0
 offset_bottom = 648.0
-color = Color(0, 0, 0, 1)
+
+[node name="Node2D" type="Sprite2D" parent="." unique_id=730851108]
+material = SubResource("ShaderMaterial_dqp4g")
+position = Vector2(577.3806, 412.6019)
+rotation = 1.57149
+scale = Vector2(7.6039553, 9.244015)
+texture = ExtResource("3_oqc4f")
+
+[node name="LabelCreditos" type="Label" parent="." unique_id=1077530375]
+layout_mode = 0
+offset_top = 15.0
+offset_right = 1191.0
+offset_bottom = 789.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_ncsgl")
+theme_override_font_sizes/font_size = 40
+text = "CRÉDITOS"
+horizontal_alignment = 1
 
 [node name="Label" type="Label" parent="." unique_id=489592771]
 layout_mode = 0
-offset_right = 1241.0
-offset_bottom = 751.0
-theme_override_font_sizes/font_size = 65
-text = "CRÉDITOS
-Adrián de Miguel Cerezo
-Óscar Daniel Fernández
+offset_top = 72.67
+offset_right = 1191.0
+offset_bottom = 846.67
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_ncsgl")
+theme_override_font_sizes/font_size = 50
+text = "Óscar Daniel Fernández
 Óscar Silva Urbina
 Víctor Castro Álvarez
 Víctor Álvarez Peral
-Mars(Música)"
+Adrián de Miguel Cerezo
+Mars"
 horizontal_alignment = 1
 
-[node name="Back_Button" type="Button" parent="." unique_id=1759254898]
+[node name="Back_Button" type="TextureButton" parent="." unique_id=155269352]
+custom_minimum_size = Vector2(216.01, 100)
 layout_mode = 0
-offset_left = 79.0
-offset_top = 468.0
-offset_right = 179.0
-offset_bottom = 568.0
-theme_override_font_sizes/font_size = 40
-text = "Back"
+offset_left = 42.0
+offset_top = 509.0
+offset_right = 258.01
+offset_bottom = 609.0
+texture_normal = ExtResource("3_mcurn")
+texture_hover = ExtResource("4_dix24")
+stretch_mode = 6
 
 [node name="ButtonEffectsComponent" parent="Back_Button" unique_id=319245680 instance=ExtResource("1_000v3")]
+
+[connection signal="pressed" from="Back_Button" to="." method="_on_back_button_pressed"]
