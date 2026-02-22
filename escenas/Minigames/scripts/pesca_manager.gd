@@ -17,10 +17,12 @@ var time:float=0
 var directions:Array=["W","A","S","D"]
 var current_direction:String=""
 
-var score:float=2.0
+var score:float=3.0
 var evil_score:float=0.0
 
 var is_pressed:bool=false
+
+var won:bool=false
 
 func _ready() -> void:
 	_randomize_direction()
@@ -73,6 +75,8 @@ func _randomize_direction():
 
 
 func _catch_fish():
-	var caught_fish:Sprite2D=fishes.get_children().pick_random()
-	caught_fish.visible=true
-	minigame_manager.changeWin(true)
+	if not won:
+		var caught_fish:Sprite2D=fishes.get_children().pick_random()
+		caught_fish.visible=true
+		minigame_manager.changeWin(true)
+		won=true

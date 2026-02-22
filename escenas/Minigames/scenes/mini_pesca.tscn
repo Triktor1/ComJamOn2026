@@ -7,7 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://dws3g5a1mrg7f" path="res://assets/UI/TeclaA.png" id="5_ufhah"]
 [ext_resource type="Texture2D" uid="uid://c7w8t43lflupg" path="res://assets/UI/TeclaS.png" id="6_61y0g"]
 [ext_resource type="Texture2D" uid="uid://dpsk1jytbe2p7" path="res://assets/UI/TeclaD.png" id="7_ixalb"]
-[ext_resource type="Texture2D" uid="uid://dgrur2vavys1n" path="res://icon.svg" id="8_61y0g"]
+[ext_resource type="Texture2D" uid="uid://c6g2p0hl5wfta" path="res://assets/Facundo.png" id="8_ixalb"]
+[ext_resource type="Texture2D" uid="uid://q3khdap5v0tf" path="res://assets/fish_rock.png" id="9_cyg7n"]
+[ext_resource type="Texture2D" uid="uid://d4klxq3antfbe" path="res://assets/Blowjob.png" id="10_cyg7n"]
 
 [node name="Mini_Pesca" type="Node2D" unique_id=1386607904]
 script = ExtResource("1_12e0j")
@@ -28,7 +30,7 @@ sprites = Array[Texture2D]([ExtResource("4_0r4pm"), ExtResource("5_ufhah"), ExtR
 minigame_manager = NodePath("../MiniGame_Manager")
 start_wait_time = 1.5
 time_to_change = 2.0
-max_score_to_reach = 8.0
+max_score_to_reach = 10.0
 key = NodePath("../key")
 fishes = NodePath("../Fishes")
 speed = 20.0
@@ -40,7 +42,20 @@ texture = ExtResource("4_0r4pm")
 
 [node name="Fishes" type="Node" parent="." unique_id=1116940378]
 
-[node name="fish" type="Sprite2D" parent="Fishes" unique_id=912481060]
+[node name="Facundo" type="Sprite2D" parent="Fishes" unique_id=912481060]
 visible = false
-position = Vector2(149, 19)
-texture = ExtResource("8_61y0g")
+position = Vector2(132, 1)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("8_ixalb")
+
+[node name="FishRock" type="Sprite2D" parent="Fishes" unique_id=702762880]
+visible = false
+position = Vector2(147, -19)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("9_cyg7n")
+
+[node name="BlowJob" type="Sprite2D" parent="Fishes" unique_id=1502050]
+visible = false
+position = Vector2(147, -19)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("10_cyg7n")
