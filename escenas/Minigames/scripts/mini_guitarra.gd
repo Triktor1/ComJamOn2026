@@ -60,7 +60,7 @@ func _input(event: InputEvent) -> void:
 			elif event.is_action_pressed("Right") and keys_to_press[current_key]==4:
 				sprites_left[current_key].texture=null
 				current_key+=1
-			else:
+			elif (event.is_action_pressed("Up") and keys_to_press[current_key]!=1) or (event.is_action_pressed("Left") and keys_to_press[current_key]!=2) or (event.is_action_pressed("Down") and keys_to_press[current_key]!=3) or (event.is_action_pressed("Right") and keys_to_press[current_key]!=4) :
 				lost.visible=true
 				bajo.visible=false
 				minigame_manager.changeWin(false)
