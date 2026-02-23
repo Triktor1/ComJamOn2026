@@ -78,7 +78,7 @@ position = Vector2(-155, 351)
 texture = SubResource("ViewportTexture_p1o6e")
 
 [node name="Aguja" parent="." unique_id=1138073587 instance=ExtResource("5_a8a75")]
-position = Vector2(134, 192)
+position = Vector2(133, 192)
 texture = SubResource("ViewportTexture_t3u0j")
 
 [node name="TimeString" parent="." unique_id=394185148 node_paths=PackedStringArray("minigame_manager") instance=ExtResource("6_a8a75")]
