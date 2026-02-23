@@ -104,7 +104,7 @@ func _state_win():
 		if not endless:
 			_state_final_victory()
 			return
-		else:
+		elif lives < 4:
 			lives += 1
 			heal.emit()
 	if _speedup():
