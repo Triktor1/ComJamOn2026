@@ -22,6 +22,7 @@ viewport_path = NodePath("Sprite2D/FishingGame")
 [node name="Mini_Pesca" type="Node2D" unique_id=1386607904]
 script = ExtResource("1_12e0j")
 instr = "FISH"
+control_type = 4
 
 [node name="MiniGame_Manager" type="Node" parent="." unique_id=1099008650]
 script = ExtResource("1_hpre5")

@@ -51,7 +51,8 @@ enum ControlType {
 	WASD,
 	ZX,
 	SPACE,
-	ADS
+	ADS,
+	HOLD
 }
 
 # ESTADO 0 START

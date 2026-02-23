@@ -6,7 +6,8 @@ enum ControlType {
 	WASD,
 	ZX,
 	SPACE,
-	ADS
+	ADS,
+	HOLD
 }
 
 @export var control_type: ControlType = ControlType.WASD
