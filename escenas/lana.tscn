@@ -146,6 +146,7 @@ tracks/2/keys = PackedFloat32Array(0, 1, 1, 1, 1)
 [sub_resource type="Animation" id="Animation_x0vc6"]
 resource_name = "WoolMinigameStart"
 length = 0.5
+loop_mode = 1
 tracks/0/type = "position_3d"
 tracks/0/imported = true
 tracks/0/enabled = true
@@ -171,6 +172,7 @@ tracks/2/keys = PackedFloat32Array(0, 1, 1, 1, 1)
 [sub_resource type="Animation" id="Animation_2ur7w"]
 resource_name = "WoolMinigameWin"
 length = 4.5
+loop_mode = 1
 tracks/0/type = "position_3d"
 tracks/0/imported = true
 tracks/0/enabled = true
@@ -232,7 +234,7 @@ _data = {
 [node name="Lana" type="Node3D" unique_id=1031653453]
 
 [node name="Sphere_001" type="MeshInstance3D" parent="." unique_id=1514505665]
-transform = Transform3D(5.5426397, 0, 1.485146, 0, 5.738162, 0, -1.485146, 0, 5.5426397, 13.719682, 3.8160732, 5.069277)
+transform = Transform3D(0.96592575, 0, 0.25881904, 0, 1, 0, -0.25881904, 0, 0.96592575, 13.719682, 4.4549036, 5.289563)
 mesh = SubResource("ArrayMesh_ojf8o")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1173237873]
