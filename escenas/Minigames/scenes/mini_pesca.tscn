@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://d4klxq3antfbe" path="res://assets/Blowjob.png" id="10_cyg7n"]
 [ext_resource type="Texture2D" uid="uid://bxocrpffq75cb" path="res://assets/napochoco.png" id="11_pe2ul"]
 [ext_resource type="PackedScene" uid="uid://bbydgh63rc1xo" path="res://escenas/time_string.tscn" id="11_xi77v"]
-[ext_resource type="PackedScene" uid="uid://b00ddgp5yma75" path="res://escenas/fishing_game.tscn" id="14_rglgw"]
+[ext_resource type="PackedScene" path="res://escenas/fishing_game.tscn" id="14_rglgw"]
 [ext_resource type="Texture2D" uid="uid://yghjtocjnbjh" path="res://assets/Goliat.png" id="15_whb4l"]
 [ext_resource type="Texture2D" uid="uid://bkngimiyg81u7" path="res://assets/Alfonso.png" id="16_1erxw"]
 
@@ -38,7 +38,7 @@ sprites = Array[Texture2D]([ExtResource("4_0r4pm"), ExtResource("5_ufhah"), ExtR
 minigame_manager = NodePath("../MiniGame_Manager")
 start_wait_time = 1.5
 time_to_change = 2.0
-max_score_to_reach = 10.0
+max_score_to_reach = 8.0
 key = NodePath("../key")
 fishes = NodePath("../Fishes")
 speed = 20.0

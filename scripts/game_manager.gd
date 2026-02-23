@@ -197,7 +197,7 @@ func _state_final_victory():
 	current_pitch = 1.0
 	_apply_speed()
 	#AudioManager.play("GAMEOVER", current_speed)
-	await get_tree().create_timer(1).timeout
+	await get_tree().create_timer(5).timeout
 	get_tree().change_scene_to_packed(win_screen)
 	return
 	
