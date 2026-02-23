@@ -7,6 +7,7 @@ extends Control
 func _ready() -> void:
 	main_menu_button.pressed.connect(_go_to_main_menu)
 	label_score.text=str(GameManager.get_mini_count())
+	AudioManager.play("Main")
 
 
 func _go_to_main_menu():

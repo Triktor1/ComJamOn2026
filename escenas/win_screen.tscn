@@ -1,11 +1,14 @@
-[gd_scene format=3 uid="uid://1v88p3t3ofqy"]
+[gd_scene format=3 uid="uid://iddufs7bl6j6"]
 
+[ext_resource type="Script" uid="uid://d1uaaiyyonjfb" path="res://escenas/win_screen.gd" id="1_81nbl"]
 [ext_resource type="Shader" uid="uid://jwwg2huy2cr1" path="res://Particulas y shaders/mainMenu.gdshader" id="2_fkp8p"]
 [ext_resource type="Texture2D" uid="uid://dgrur2vavys1n" path="res://icon.svg" id="3_ig545"]
 [ext_resource type="FontFile" uid="uid://bhdfurpui1ibs" path="res://assets/PlaywriteNZBasic-VariableFont_wght.ttf" id="4_cvusj"]
 [ext_resource type="Texture2D" uid="uid://5v8ucruc03vx" path="res://assets/UI/ButtonMenu.png" id="5_bndas"]
 [ext_resource type="Texture2D" uid="uid://bisrjfdcfu3xw" path="res://assets/UI/ButtonMenuHover.png" id="6_42s0m"]
+[ext_resource type="Script" uid="uid://bef0ik3yrja8c" path="res://escenas/buttonwin.gd" id="7_fkp8p"]
 [ext_resource type="PackedScene" uid="uid://bhq7k2fh6grn4" path="res://escenas/prefabs/button_effects_component.tscn" id="7_h6hke"]
+[ext_resource type="PackedScene" uid="uid://hxfcwwnysmll" path="res://escenas/mainMenu.tscn" id="8_ig545"]
 
 [sub_resource type="Gradient" id="Gradient_otayg"]
 colors = PackedColorArray(0, 0, 1, 1, 1, 0, 0, 1)
@@ -22,13 +25,14 @@ shader_parameter/speed = 1.0
 shader_parameter/direction = Vector2(1, 0)
 shader_parameter/rotation = Transform2D(1, -1, 1, 1, 0, 0)
 
-[node name="EndScreen" type="Control" unique_id=112317611]
+[node name="WinScreen" type="Control" unique_id=112317611]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_81nbl")
 
 [node name="Node2D" type="Sprite2D" parent="." unique_id=723172413]
 material = SubResource("ShaderMaterial_jkk5l")
@@ -51,16 +55,18 @@ theme_override_font_sizes/font_size = 150
 text = "VICTORIA"
 horizontal_alignment = 1
 
-[node name="Button" type="TextureButton" parent="." unique_id=1239724046]
+[node name="Button" type="TextureButton" parent="." unique_id=601885114]
 custom_minimum_size = Vector2(200, 105)
 layout_mode = 0
-offset_left = 441.0
-offset_top = 433.0
-offset_right = 668.0
-offset_bottom = 538.0
+offset_left = 462.0
+offset_top = 457.0
+offset_right = 689.0
+offset_bottom = 562.0
 texture_normal = ExtResource("5_bndas")
 texture_pressed = ExtResource("5_bndas")
 texture_hover = ExtResource("6_42s0m")
 stretch_mode = 6
+script = ExtResource("7_fkp8p")
+startScene = ExtResource("8_ig545")
 
 [node name="ButtonEffectsComponent" parent="Button" unique_id=319245680 instance=ExtResource("7_h6hke")]
