@@ -17,4 +17,4 @@ minigames = Array[PackedScene]([ExtResource("3_idhd0"), ExtResource("2_nkm13"), 
 boss_minigames = Array[PackedScene]([ExtResource("8_pmw1n")])
 results = ExtResource("9_rffmm")
 win_screen = ExtResource("10_sawpx")
-boss_interval = 1
+boss_interval = 14

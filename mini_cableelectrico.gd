@@ -1,6 +1,8 @@
 extends Node2D
 @export var miniGameManager : MiniGameManager
 @export var piezas: Array[Node2D]
+@export var colorNormal: Color
+@export var colorHover: Color
 
 var rotaciones_correctas = [0,0,0]
 var rotaciones = [90,180,270]
@@ -77,9 +79,9 @@ func actualizar_contorno():
 		if piezas_fijadas[i] and rot_actual !=rot_correcta:
 			piezas_fijadas[i] = false	
 		if i == pieza_actual:
-			piezas[i].modulate = Color(0.486, 0.463, 0.471, 1.0) # gris
+			piezas[i].modulate = colorHover
 		else:
-			piezas[i].modulate = Color(1, 1, 1, 1) # color original
+			piezas[i].modulate = colorNormal
 			
 		
 		   

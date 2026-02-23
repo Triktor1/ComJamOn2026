@@ -40,6 +40,8 @@ control_type = 3
 script = ExtResource("1_flrll")
 miniGameManager = NodePath("../MiniGameManager")
 piezas = [NodePath("../Wire1"), NodePath("../Wire2"), NodePath("../Wire3")]
+colorNormal = Color(0.34108633, 0.34108615, 0.341086, 1)
+colorHover = Color(2.8099163, 2.8099163, 2.8099163, 1)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=617459185]
 
