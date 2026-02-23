@@ -10,9 +10,10 @@ func _on_ui_ocult():
 	modulate.a = 0
 
 func _on_minigame_end():
-	modulate.a = 1
+	pass
 
 func _on_show_intro(text: String, _control_type: int):
+	modulate.a = 1
 	visible = false
 	self.text = text
 	await get_tree().create_timer(1.0).timeout

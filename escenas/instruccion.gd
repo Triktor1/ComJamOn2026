@@ -14,7 +14,7 @@ func _on_ui_ocult():
 	modulate.a = 0
 
 func _on_minigame_end():
-	modulate.a = 1
+	pass
 
 func _on_show_intro(_text: String, control_type: int):
 	for child in get_children():
@@ -36,3 +36,4 @@ func _on_show_intro(_text: String, control_type: int):
 		var sprite := Sprite2D.new()
 		sprite.texture = texture
 		add_child(sprite)
+	modulate.a = 1
