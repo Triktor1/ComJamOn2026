@@ -59,10 +59,10 @@ script = ExtResource("2_2t0xx")
 [node name="Controles" type="Control" parent="CanvasLayer2" unique_id=427053296]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 466.0
-offset_top = 546.0
-offset_right = 623.6666
-offset_bottom = 624.3333
+offset_left = 468.00003
+offset_top = 506.0
+offset_right = 625.6666
+offset_bottom = 584.3333
 scale = Vector2(3, 3)
 script = ExtResource("5_ih10d")
 wasd_textures = Array[Texture2D]([ExtResource("8_mojdm")])
